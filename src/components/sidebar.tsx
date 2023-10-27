@@ -15,7 +15,7 @@ import GlitchText from "./GlitchText";
 interface menu 
 {
   menuOpened : boolean;
-  updateMenuOpened : boolean;
+  updateMenuOpened : any;
 }
 
 export default function Sidebar({menuOpened, updateMenuOpened} : menu) {
