@@ -1,0 +1,17 @@
+/* styles/custom-font.css */
+@font-face {
+    font-family: 'black-zuume-soft';
+    src: url('/public/fonts/Zuume_Soft_Bold.ttf') format('opentype');
+    /* Specify other font properties like font-weight and font-style if needed */
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  /* Apply the custom font to specific elements or globally */
+  /* For example, to apply it globally to all elements */
+  body {
+    font-family: 'black-zuume-soft', sans-serif;
+  }
+  
+  /* You can also apply the font to specific elements by targeting their classes or IDs */
+  
