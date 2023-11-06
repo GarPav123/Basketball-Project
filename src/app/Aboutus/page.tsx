@@ -57,7 +57,7 @@ function AboutUs() {
             uniqueKey="whorewetext"
           />
         </div>
-        <div className="flex flex-around justify-evenly py-[2%] px-[2%] space-x-4 flex-grow overflow-y-auto scrollbar-none">
+        <div className="flex flex-around justify-evenly py-[2%] px-[2%] space-x-4 flex-grow  scrollbar-none">
           <div className="relative text-ellipsis bg-slate-300/10 rounded-lg p-[2%] flex-grow w-[50%] h-[50vh] text-xl text-justify text-[#f0f0f0] overflow-y-auto scrollbar-none font-medium font-sans font-family-arial">
             <p>
               Chi SquareX Technologies is a leading DeepTech startup in India,
@@ -124,19 +124,25 @@ function AboutUs() {
         </div>
          <div className="flex flex-col mt-[5%] h-[80%] w-[100%]">
          <div className="grid grid-flow-col justify-evenly mb-[5%] ">
-          <IconBox imageUrl="/images/desktop.png" text="This is nlp box" />
-          <IconBox imageUrl="/images/aibrain.png" text="This is ai box" />
-          <IconBox imageUrl="/images/robot.png" text="This is robot box" />
+          <IconBox imageUrl="/images/desktop.png" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pretium nec libero non bibendum. Curabitur nec bibendum orci, vel luctus tellus. Vestibulum posuere, tortor ac fermentum condimentum, mauris eros egestas nulla, eget lacinia odio ligula eu orci. Nulla facilisi. Integer auctor congue mi, ac pellentesque est dignissim a. Sed semper odio non felis luctus auctor. Fusce gravida ipsum quis dolor scelerisque, a volutpat purus dictum." />
+          <IconBox imageUrl="/images/aibrain.png" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pretium nec libero non bibendum. Curabitur nec bibendum orci, vel luctus tellus. Vestibulum posuere, tortor ac fermentum condimentum, mauris eros egestas nulla, eget lacinia odio ligula eu orci. Nulla facilisi. Integer auctor congue mi, ac pellentesque est dignissim a. Sed semper odio non felis luctus auctor. Fusce gravida ipsum quis dolor scelerisque, a volutpat purus dictum." />
+          <IconBox imageUrl="/images/robot.png" text="TLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pretium nec libero non bibendum. Curabitur nec bibendum orci, vel luctus tellus. Vestibulum posuere, tortor ac fermentum condimentum, mauris eros egestas nulla, eget lacinia odio ligula eu orci. Nulla facilisi. Integer auctor congue mi, ac pellentesque est dignissim a. Sed semper odio non felis luctus auctor. Fusce gravida ipsum quis dolor scelerisque, a volutpat purus dictum." />
         </div>
         <div className="grid grid-flow-col justify-evenly">
-          <IconBox imageUrl="/images/application.png" text="This is mobile box" />
-          <IconBox imageUrl="/images/machine-learning.png" text="This is ml box" />
+          <IconBox imageUrl="/images/application.png" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pretium nec libero non bibendum. Curabitur nec bibendum orci, vel luctus tellus. Vestibulum posuere, tortor ac fermentum condimentum, mauris eros egestas nulla, eget lacinia odio ligula eu orci. Nulla facilisi. Integer auctor congue mi, ac pellentesque est dignissim a. Sed semper odio non felis luctus auctor. Fusce gravida ipsum quis dolor scelerisque, a volutpat purus dictum." />
+          <IconBox imageUrl="/images/machine-learning.png" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pretium nec libero non bibendum. Curabitur nec bibendum orci, vel luctus tellus. Vestibulum posuere, tortor ac fermentum condimentum, mauris eros egestas nulla, eget lacinia odio ligula eu orci. Nulla facilisi. Integer auctor congue mi, ac pellentesque est dignissim a. Sed semper odio non felis luctus auctor. Fusce gravida ipsum quis dolor scelerisque, a volutpat purus dictum." />
+          <IconBox imageUrl="/images/desktop.png" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pretium nec libero non bibendum. Curabitur nec bibendum orci, vel luctus tellus. Vestibulum posuere, tortor ac fermentum condimentum, mauris eros egestas nulla, eget lacinia odio ligula eu orci. Nulla facilisi. Integer auctor congue mi, ac pellentesque est dignissim a. Sed semper odio non felis luctus auctor. Fusce gravida ipsum quis dolor scelerisque, a volutpat purus dictum." />
           
         </div>
-                  
-          
+        
+        {/* <div className="w-[100%] flex flex-wrap mt-[2%] border-t-red-600 rounded-xl">
+  <div>1</div>
+  <div>2</div>
+</div> */}
+
         </div>
       </div>
+      
       </div>
     
   );
