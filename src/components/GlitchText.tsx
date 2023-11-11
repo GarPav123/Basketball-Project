@@ -6,7 +6,7 @@ interface GlitchTextProps {
   uniqueKey: string; // Add a unique key prop
 }
 
-function GlitchText({ displayText, uniqueKey }: GlitchTextProps) {
+function GlitchTextNoMargin({ displayText, uniqueKey }: GlitchTextProps) {
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   let interval: NodeJS.Timeout | null = null;
 
@@ -48,12 +48,12 @@ function GlitchText({ displayText, uniqueKey }: GlitchTextProps) {
   }, [uniqueKey]);
 
   return (
-    <div className='hover:text-black ml-[3.5%]'>
-      <h1 id={uniqueKey} data-value={displayText} className='hover:text-black font-abc text-3xl'>
+    <div>
+      <h1 id={uniqueKey} data-value={displayText} className=' font-abc '>
         {displayText}
       </h1>
     </div>
   );
 }
 
-export default GlitchText;
+export default GlitchTextNoMargin;
