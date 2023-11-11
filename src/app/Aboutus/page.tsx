@@ -9,6 +9,7 @@ import Image from "next/image";
 
 import * as THREE from "three";
 import IconBox from "../components/IconBox";
+import VideoPlayer from "@/components/VideoPlayer";
 
 function AboutUs() {
   const [menuOpened, setMenuOpened] = useState(false);
@@ -100,16 +101,17 @@ function AboutUs() {
           </div> */}
           </div>
           <div className="w-[50%]">
-            <Canvas camera={{ position: [0.2, 0.02, 0.2], near: 0.0001 }}>
+            {/* <Canvas camera={{ position: [0.2, 0.02, 0.2], near: 0.0001 }}>
               <ambientLight />
               {/* <OrbitControls/>  */}
-              <Brain
+              {/* <Brain
                 x_Scale={1.3}
                 y_Scale={1.3}
                 z_Scale={1.3}
                 position={new THREE.Vector3(0, 0, 0)}
               />
-            </Canvas>
+            // </Canvas> */} 
+            <VideoPlayer/>
           </div>
         </div>
         <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden"></div>

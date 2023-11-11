@@ -150,4 +150,3 @@ export default function Brain({ x_Scale, y_Scale, z_Scale, position }: BrainProp
     </group>
   );
 }
-
