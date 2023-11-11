@@ -9,6 +9,8 @@ const path = data.economics[0].paths;
 const clock = new THREE.Clock();
 
 
+
+
 interface OneCurveProps {
   curve: THREE.Curve<THREE.Vector3>;
   index: number;
@@ -32,7 +34,9 @@ function OneCurve({ curve, index, xScale, yScale, zScale  } : OneCurveProps) {
 
 
   const materialRef = useRef<THREE.ShaderMaterial>();
-  const meshRef = useRef<THREE.Mesh>();
+  const meshRef = useRef<THREE.Mesh>(null!);
+
+
 
   useFrame(({ mouse, viewport }) => {
     let time = clock.getElapsedTime();
