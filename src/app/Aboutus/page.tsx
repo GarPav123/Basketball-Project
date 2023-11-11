@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import GlitchTextNoMargin from "@/components/GlitchTextNoMargin";
 import Sidebar from "@/components/sidebar";
 import { Canvas } from "@react-three/fiber";
-import Brain from "@/components/brain";
+// import Brain from "@/components/brain";
 import Image from "next/image";
 
 import * as THREE from "three";
