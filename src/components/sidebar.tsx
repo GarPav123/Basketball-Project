@@ -57,7 +57,7 @@ export default function Sidebar({menuOpened, updateMenuOpened} : menu) {
 
   return (
     <div
-      className={`${menuOpened ? "bg-[#171717] duration-0 lg:translate-x-0" : "bg-[#171717] lg:-translate-x-full"} fixed w-[100%] p-2 mt-0 md:h-16 md:flex md:items-center md:justify-center text-xl lg:min-h-full lg:min-w-[27%] lg:rounded-tr-[10px] lg:rounded-bl-none lg:p-0 lg:w-[16%] duration-300 ease-linear z-50 lg:fixed`}
+      className={`${menuOpened ? "bg-[#171717] duration-0 lg:translate-x-0" : "bg-[#171717] lg:-translate-x-full"} fixed w-[100%] p-2 mt-0 md:h-16 md:flex md:items-center md:justify-center text-xl lg:min-h-full lg:min-w-[27%] lg:  lg:p-0 lg:w-[16%] duration-300 ease-linear z-50 lg:fixed`}
     >
       
       {/* <button 
@@ -112,7 +112,7 @@ export default function Sidebar({menuOpened, updateMenuOpened} : menu) {
           className="relative z-100 top-3 -left-[5.5%] mt-0 hover:scale-110 hover:duration-300 ease-in-out hover:-rotate-3"
       >
             <Image
-              className="md:w-[2rem] lg:w-[3rem] rounded-[10px] ml-8 mr-1"
+              className="md:w-[2rem] lg:w-[3rem]  ml-8 mr-1"
               src="/images/chisquare.png"
               width={160}
               height={160}
@@ -219,7 +219,7 @@ export default function Sidebar({menuOpened, updateMenuOpened} : menu) {
         onMouseLeave={handleBottomMouseLeave}
         >
        
-          <div className={`relative ${isBottomHovered ? "bg-slate-700/30" : "bg-white/10"} p-3 px-8 font-medium uppercase text-gray-800 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-y-0 before:bg-[#ff0000] before:transition-transform before:duration-500 before:content-[''] hover:text-white before:hover:scale-y-100 rounded-xl before:rounded-xl`}>
+          <div className={`relative ${isBottomHovered ? "bg-slate-700/30" : "bg-white/10"} p-3 px-8 font-medium uppercase text-gray-800 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-y-0 before:bg-[#ff0000] before:transition-transform before:duration-500 before:content-[''] hover:text-white before:hover:scale-y-100  `}>
             <a
               href="https://www.facebook.com/chisquarex"
               target="blank"
@@ -235,7 +235,7 @@ export default function Sidebar({menuOpened, updateMenuOpened} : menu) {
               />
             </a>
           </div>
-          <div className={`relative ${isBottomHovered ? "bg-slate-700/30" : "bg-white/10"} p-3 px-8 font-medium uppercase text-gray-800 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-y-0 before:bg-[#ff0000] before:transition-transform before:duration-500 before:content-[''] hover:text-white before:hover:scale-y-100 rounded-xl before:rounded-xl`}>
+          <div className={`relative ${isBottomHovered ? "bg-slate-700/30" : "bg-white/10"} p-3 px-8 font-medium uppercase text-gray-800 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-y-0 before:bg-[#ff0000] before:transition-transform before:duration-500 before:content-[''] hover:text-white before:hover:scale-y-100  `}>
             <a
               href="https://github.com/Chi-SquareX"
               target="blank"
@@ -251,7 +251,7 @@ export default function Sidebar({menuOpened, updateMenuOpened} : menu) {
               />
             </a>
           </div>
-          <div className={`relative ${isBottomHovered ? "bg-slate-700/30" : "bg-white/10"} p-3 px-8 font-medium uppercase text-gray-800 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-y-0 before:bg-[#ff0000] before:transition-transform before:duration-500 before:content-[''] hover:text-white before:hover:scale-y-100 rounded-xl before:rounded-xl`}>
+          <div className={`relative ${isBottomHovered ? "bg-slate-700/30" : "bg-white/10"} p-3 px-8 font-medium uppercase text-gray-800 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-y-0 before:bg-[#ff0000] before:transition-transform before:duration-500 before:content-[''] hover:text-white before:hover:scale-y-100  `}>
             <a
               href="https://www.linkedin.com/company/chi-squarex/"
               target="blank"

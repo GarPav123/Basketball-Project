@@ -17,7 +17,14 @@ const config: Config = {
       
     },
     fontFamily :{
-      abc:["Dela Gothic One","cursive"]
+      abc:["Dela Gothic One","cursive"],
+      sans: ['ui-sans-serif', 'system-ui'],
+      serif: ['ui-serif', 'Georgia'],
+      mono: ['ui-monospace', 'SFMono-Regular'],
+      comfortaa: ['Comfortaa', 'sans'],
+      abc2 :['Dela Gothic One', 'sans']
+      
+      
     },
   },
   plugins: [],

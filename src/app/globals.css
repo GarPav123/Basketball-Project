@@ -64,6 +64,19 @@ body {
 ::-webkit-scrollbar-thumb:hover { 
   background: #f9e4e4de; 
 }
+.text-outline {
+  -webkit-text-fill-color: transparent; /* For WebKit (Safari, Chrome) */
+  -webkit-text-stroke: 2px rgb(255, 255, 255); /* Outline width and color */
+  text-fill-color: transparent; /* For Firefox */
+  text-stroke: 2px rgb(0, 0, 0); /* Outline width and color */
+  
+}
+.textContainer {
+  /* Add any container styles here */
+}
+
+
+
 
 
 
