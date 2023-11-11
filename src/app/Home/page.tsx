@@ -3,7 +3,7 @@ import Head from "next/head";
 import React, { useState, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import * as THREE from "three";
-import Brain from "../../components/brain";
+// import Brain from "../../components/brain";
 import Sidebar from "../../components/sidebar";
 import openMainPage from "../../components/openMainPage";
 import closedMainPage from "../../components/closedMainPage";
