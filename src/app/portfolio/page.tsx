@@ -69,7 +69,7 @@ function Portfolio() {
                     </div>
                     <div className="h-[90%] ellipsis text-md text-center mt-[12%]">
                       Our approach utilized pre-training and fine-tuning
-                      techniques on HuggingFace's BERT, RoBERTa, and GPT2 models
+                      techniques on HuggingFaces BERT, RoBERTa, and GPT2 models
                       to achieve accurate classification of medical datasets.
                       The implementation yielded promising results in terms of
                       precise medical data categorization.
