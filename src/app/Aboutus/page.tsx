@@ -10,6 +10,7 @@ import Image from "next/image";
 import * as THREE from "three";
 import IconBox from "../components/IconBox";
 import VideoPlayer from "@/components/VideoPlayer";
+const isClient = typeof window !== 'undefined';
 
 function AboutUs() {
   const [menuOpened, setMenuOpened] = useState(false);
@@ -123,7 +124,7 @@ function AboutUs() {
             />
           </div>
         </div>
-        <div className="flex flex-col mt-[5%] h-[80%] w-[100%]">
+        <div className="flex flex-col mt-[5%] h-[80%] w-[100%] mb-[3%]">
           <div className="grid grid-flow-col justify-evenly mb-[5%] ">
             <IconBox
               imageUrl="/images/desktop.png"
@@ -164,7 +165,24 @@ function AboutUs() {
   <div>2</div>
 </div> */}
         </div>
-      </div>
+        <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden"></div>
+        {/* <div className=" mt-[3%] font-abc flex flex-row w-[100%] h-[80%]">
+          <div className="w-[50%] flex flex-col border-[#ff0000] border-4 ml-[4.5%]">
+            <div className=" ml-[3%] mt-[2%] flex flex-row">
+              <div className="text-9xl"><GlitchTextNoMargin uniqueKey="111" displayText="Why"/></div>
+              <div className="mr-[1%]">
+              <video width="360" height="520" autoPlay={isClient} loop muted playsInline controlsList="nodownload">
+          <source src="/images/qm.mp4" type="video/mp4"  />
+          Your browser does not support the video tag.
+        </video>
+              </div>
+            </div>
+            <div className=" ml-[3%] mb-[2%] text-8xl"><GlitchTextNoMargin uniqueKey="111" displayText="ChiSquareX"/></div>
+
+          </div>
+          <div className=" ml-[2%] border-4 border-[#ff0000] flex justify-center w-[40%]">text box scrollable </div>
+        </div>*/}
+      </div> 
     </div>
   );
 }

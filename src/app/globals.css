@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,12 +12,10 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 18, 8 , 8 ;
-    --background-end-rgb: 18, 8 , 8 ;
+    --background-start-rgb: 18, 8, 8;
+    --background-end-rgb: 18, 8, 8;
   }
 }
-
-
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -45,41 +43,37 @@ body {
 }
 
 /* width */
-::-webkit-scrollbar { 
-  width: 10px; 
-} 
+::-webkit-scrollbar {
+  width: 10px;
+}
 
 /* Track */
-::-webkit-scrollbar-track { 
-  background: #ff00006f; 
-} 
+::-webkit-scrollbar-track {
+  background: #ff00006f;
+}
 
 /* Handle */
-::-webkit-scrollbar-thumb { 
-  background: #ffffff95; 
-  border-radius: 5px; 
-} 
+::-webkit-scrollbar-thumb {
+  background: #ffffff95;
+  border-radius: 5px;
+}
 
 /* Handle on hover */
-::-webkit-scrollbar-thumb:hover { 
-  background: #f9e4e4de; 
+::-webkit-scrollbar-thumb:hover {
+  background: #f9e4e4de;
 }
 .text-outline {
+  -webkit-text-fill-color: transparent; /* For WebKit (Safari, Chrome) */
+  -webkit-text-stroke: 2px rgb(0, 0, 0); /* Outline width and color */
+  text-fill-color: transparent; /* For Firefox */
+  text-stroke: 2px rgb(0, 0, 0); /* Outline width and color */
+}
+.text-outlineW {
   -webkit-text-fill-color: transparent; /* For WebKit (Safari, Chrome) */
   -webkit-text-stroke: 2px rgb(255, 255, 255); /* Outline width and color */
   text-fill-color: transparent; /* For Firefox */
   text-stroke: 2px rgb(0, 0, 0); /* Outline width and color */
-  
 }
 .textContainer {
   /* Add any container styles here */
 }
-
-
-
-
-
-
-
-
-

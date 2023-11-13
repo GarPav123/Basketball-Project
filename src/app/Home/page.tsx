@@ -29,7 +29,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex min-h-screen items-center justify-center relative">
+    <main className="flex min-h-screen items-center justify-center relative sm:w-14 md:w-1/4 lg:w-1/5">
       <Head>
         <link rel="icon" href="/public/favicon.ico" />
       </Head>
@@ -51,7 +51,7 @@ export default function Home() {
                   <div className="justify-left flex py-[3%] text-6xl pl-[1%] shadow-md">
                     Providing solutions
                   </div>
-                  <div className="text-8xl py-[2%] pl-[1%] justify-left flex text-outline">
+                  <div className="text-8xl py-[2%] pl-[1%] justify-left flex text-outlineW">
                     BEYOND
                   </div>
                   <div className="justify-left flex py-[2%] text-8xl pl-[1%]">
