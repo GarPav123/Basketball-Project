@@ -53,7 +53,7 @@ function Portfolio() {
                 <div className="h-[10%] font-abc text-3xl ">
                   GAN ART GENERATOR
                 </div>
-                <div className="ellipsis text-3xl text-center ">
+                <div className="ellipsis text-3xl text-center text-[#100404]">
                   Our research approach involved utilizing advanced generative
                   modeling techniques, namely WGANs, CGANs, and DCGANs, which
                   leverage the power of an improved Wasserstein metric within a
