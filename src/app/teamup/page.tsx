@@ -10,6 +10,7 @@ import Image from "next/image";
 import * as THREE from "three";
 import IconBox from "../components/IconBox";
 import VideoPlayer from "@/components/VideoPlayer";
+import MapG from "@/components/MapG";
 const isClient = typeof window !== "undefined";
 
 function TeamUp() {
@@ -48,7 +49,7 @@ function TeamUp() {
         <div className=" font-abc flex justify-center text-8xl text-[#ffffff] ">
           TEAM UP
         </div>
-        
+        <MapG/>
         </div>
           
           
