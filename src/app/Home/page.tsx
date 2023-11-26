@@ -268,6 +268,14 @@ export default function Home() {
           {showBrain && <Brain x_Scale={1.5} y_Scale={1.5} z_Scale={1.5} position={new THREE.Vector3(0, 0, 0)} />}
         </Canvas>
       </div> */}
+      <div className="w-full h-screen bg-[#100404] flex flex-col overflow-y-auto over">
+      <div className="flex flex-col">
+        <div className=" font-abc flex justify-center text-8xl text-[#ffffff] ">
+          TESTIMONIALS
+        </div>
+        </div>
+      </div>
+      
       </div>
       </div>
     </main>
