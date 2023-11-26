@@ -77,3 +77,12 @@ body {
 .textContainer {
   /* Add any container styles here */
 }
+/* styles/globals.css */
+
+.bg-image {
+  background-image: url('/images/cta-bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+

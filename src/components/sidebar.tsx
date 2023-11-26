@@ -1,6 +1,5 @@
 "use client";
 import { Dela_Gothic_One } from "@next/font/google";
-
 import "./style.css";
 import { useState } from "react";
 import Link from "next/link";

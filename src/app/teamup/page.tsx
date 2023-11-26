@@ -22,7 +22,7 @@ function TeamUp() {
 
   return (
     <div className="w-full h-screen bg-[#100404] flex flex-col overflow-y-auto over">
-       <div className="flex justify-center items-center ">
+       
         <div className="font-abc text-8xl">
           <div>
             <div className="absolute inset-y-0 left-0 w-16">
@@ -49,12 +49,15 @@ function TeamUp() {
         <div className=" font-abc flex justify-center text-8xl text-[#ffffff] ">
           TEAM UP
         </div>
-        <MapG/>
+        <div className=" flex flex-row">
+          <div className="w-[50%]"><MapG/></div>
+        </div>
+        
         </div>
           
           
           
-        </div>
+        
       </div>
       
       
