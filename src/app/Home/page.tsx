@@ -143,17 +143,14 @@ export default function Home() {
         </button>
       </div>
       <div id="aboutus" className="bg-black">
-      <GlitchTextNoMargin displayText="ABOUT US"  uniqueKey="aboutus"/>
+      <div className="font-abc text-8xl flex justify-center mt-[2%]">ABOUT US</div>
           
           
         
       
       <div className="flex flex-col flex-grow justify-start  text-6xl text-[#ff0000]">
         <div className="py-[2%] px-[1%] font-abc">
-          <GlitchTextNoMargin
-            displayText="WHO ARE WE ?"
-            uniqueKey="whorewetext"
-          />
+          
         </div>
         <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh] "></div>
         <div className="flex flex-around justify-evenly py-[2%] px-[2%] space-x-4 flex-grow  scrollbar-none">
