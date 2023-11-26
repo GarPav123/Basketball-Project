@@ -3,6 +3,8 @@ import Head from "next/head";
 import React, { useState, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import * as THREE from "three";
+
+import "./background.css";
 import Image from "next/image";
 import GlitchTextNoMargin from "@/components/GlitchTextNoMargin";
 import Link from "next/link";
