@@ -35,12 +35,13 @@ export default function Home() {
         <link rel="icon" href="/public/favicon.ico" />
       </Head>
       <div className="absolute inset-y-0 left-0 w-16">
-        <Sidebar menuOpened={menuOpened} updateMenuOpened={updateMenuOpened} />
+        <Sidebar menuOpened={menuOpened} updateMenuOpened={updateMenuOpened} delayDuration={2000} />
       </div>
       <div className="font-abc text-center text-6xl text-[#100404] bg">
         {menuOpened ? (
-          <div className=" mt-[1%] text-6xl h-screen flex flex-col">
-            <div className="font-abc2">CHI SQUAREX TECHNOLOGIES</div>
+          <div className=" mt-[1%] text-8xl h-screen flex flex-col">
+            <div className="font-abc2 mt-[20%]">CHI SQUAREX</div>
+            <div className="font-abc2 mt-[5%]">TECHNOLOGIES</div>
 
             {/* <div className=" font-sans font-bold h-[10%] flex justify-center mt-[1.5%] text-3xl text-ellipsis text-[#ff0000]">
                 Your DeepTech Catalyst For Innovation
@@ -73,7 +74,7 @@ export default function Home() {
                   </Link>
                 </div>
               </div> */}
-            <div className="h-[70%]"></div>
+            <div className="h-[20%]"></div>
             <div className="h-[12%] flex justify-center">
               <a
                 href="/teamup"
@@ -84,8 +85,9 @@ export default function Home() {
             </div>
           </div>
         ) : (
-          <div className=" mt-[1%] text-6xl h-screen flex flex-col">
-            <div className="font-abc2">CHI SQUAREX TECHNOLOGIES</div>
+          <div className=" mt-[1%] text-8xl h-screen flex flex-col">
+            <div className="font-abc2 mt-[20%]">CHI SQUAREX</div>
+            <div className="font-abc2 mt-[5%]">TECHNOLOGIES</div>
             {/* <div className=" font-sans font-bold h-[10%] flex justify-center mt-[1.5%] text-3xl text-ellipsis text-[#ff0000]">
                 Your DeepTech Catalyst For Innovation
               </div>
@@ -116,7 +118,7 @@ export default function Home() {
                   </Link>
                 </div>
               </div> */}
-              <div className="h-[70%]"></div>
+              <div className="h-[20%]"></div>
             <div className="h-[12%] flex justify-center">
               <a
                 href="/teamup"

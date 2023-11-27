@@ -1,131 +1,111 @@
+// Import necessary modules and styles
 "use client";
 import { Dela_Gothic_One } from "@next/font/google";
 import "./style.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+// Import images
 import i1 from "/public/images/fb.png";
 import i2 from "/public/images/x.png";
 import i3 from "/public/images/lkdn.png";
 import GlitchText from "./GlitchText";
 
-
-interface menu 
-{
-  menuOpened : boolean;
-  updateMenuOpened : any;
+// Define interface for menu props
+interface menu {
+  menuOpened: boolean;
+  updateMenuOpened: any;
 }
 
-export default function Sidebar({menuOpened, updateMenuOpened} : menu) {
-  // const [menuOpened, setMenuOpened] = useState(true);
+// Define interface for Sidebar props
+interface SidebarProps extends menu {
+  delayDuration: number;
+}
 
-  // const toggleMenu = () => {
-  //   setMenuOpened((prevMenuOpened) => !prevMenuOpened);
-  // };
-
+// Define Sidebar component
+export default function Sidebar({ menuOpened, updateMenuOpened, delayDuration }: SidebarProps) {
   const [isTopHovered, setIsTopHovered] = useState(false);
-  const [delayedTopChange, setDelayedTopChange] = useState(false);
+  const [delayedTopChange, setDelayedTopChange] = useState<NodeJS.Timeout | null>(null);
 
   const handleTopMouseEnter = () => {
     setIsTopHovered(true);
-    setTimeout(() => {
-      setDelayedTopChange(true);
-    }, 100);
+    if (delayedTopChange) {
+      clearTimeout(delayedTopChange);
+      setDelayedTopChange(null);
+    }
   };
 
   const handleTopMouseLeave = () => {
     setIsTopHovered(false);
-    setDelayedTopChange(false);
+    setDelayedTopChange(setTimeout(() => updateMenuOpened(), delayDuration));
   };
 
   const [isBottomHovered, setIsBottomHovered] = useState(false);
-  const [delayedBottomChange, setBottomDelayedChange] = useState(false);
+  const [delayedBottomChange, setBottomDelayedChange] = useState<NodeJS.Timeout | null>(null);
 
   const handleBottomMouseEnter = () => {
     setIsBottomHovered(true);
-    setTimeout(() => {
-      setBottomDelayedChange(true);
-    }, 100);
+    if (delayedBottomChange) {
+      clearTimeout(delayedBottomChange);
+      setBottomDelayedChange(null);
+    }
   };
 
   const handleBottomMouseLeave = () => {
     setIsBottomHovered(false);
-    setBottomDelayedChange(false);
+    setBottomDelayedChange(setTimeout(() => updateMenuOpened(), delayDuration));
   };
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const handleScreenClick = () => {
+    if (menuOpened) {
+      updateMenuOpened();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleScreenClick);
+
+    return () => {
+      document.removeEventListener("click", handleScreenClick);
+    };
+  }, [handleScreenClick, menuOpened]);
 
   return (
     <div
-      className={`${menuOpened ? "bg-[#171717] duration-0 lg:translate-x-0" : "bg-[#171717] lg:-translate-x-full"} fixed w-[100%] p-2 mt-0 md:h-16 md:flex md:items-center md:justify-center text-xl lg:min-h-full lg:min-w-[27%] lg:  lg:p-0 lg:w-[16%] duration-300 ease-linear z-50 lg:fixed`}
+      className={`${menuOpened ? "bg-[#171717] duration-0 lg:translate-x-0" : "bg-[#171717] lg:-translate-x-full"} fixed w-[100%] p-2 mt-0 md:h-16 md:flex md:items-center md:justify-center text-xl lg:min-h-full lg:min-w-[27%] lg:p-0 lg:w-[16%] duration-300 ease-linear z-50 lg:fixed`}
     >
-      
-      {/* <button 
-          onClick={updateMenuOpened}
-          className="fixed z-100 top-[2%] -left-1 mt-5 hover:scale-110 hover:duration-300 ease-in-out hover:-rotate-3"
-      >
-            <Image
-              className="md:w-[2rem] lg:w-[3rem] rounded-[10px] ml-8 mr-1"
-              src="/images/chisquare.png"
-              width={160}
-              height={160}
-              alt="Company Logo"
-              priority
-            />
-      </button> */}
-
       <div
         className={`items-center ${menuOpened ? "lg:block" : "lg:hidden"
           } flex-col gap-5 lg:flex lg:justify-around lg:w-[100%] lg:flex-col lg:text-xl lg:min-h-full lg:gap-0`}
       >
-        
-
-        {/* <div className="flex items-center w-full lg:w-full min-h-[16%] mt-4 hover:bg-white">
-        <button 
-          onClick={updateMenuOpened}
-          className="relative z-100 top-0 -left-1 mt-0 hover:scale-110 hover:duration-300 ease-in-out hover:-rotate-3"
-      >
-            <Image
-              className="md:w-[2rem] lg:w-[3rem] rounded-[10px] ml-8 mr-1"
-              src="/images/chisquare.png"
-              width={160}
-              height={160}
-              alt="Company Logo"
-              priority
-            />
-      </button>
-          <span
-            className={`py-2 text-center flex-grow text-3xl text-right px-[8%] text-weight-800 font-abc`}
-          >
-            
-          </span>
-        </div> */}
-
         <div className=" flex flex-col w-full mt-0">
-        <div
+          <div
             className="relative bg-transparent pt-3 pb-1 px-5 font-medium uppercase text-white-800 before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0  before:bg-[#ffffff]  before:transition-transform before:duration-500 before:content-[''] hover:text-black before:hover:scale-x-100 mb-1"
             onMouseEnter={handleTopMouseEnter}
             onMouseLeave={handleTopMouseLeave}
           >
             <button 
-          onClick={updateMenuOpened}
-          className="relative z-100 top-3 -left-[5.5%] mt-0 hover:scale-110 hover:duration-300 ease-in-out hover:-rotate-3"
-      >
-            <Image
-              className="md:w-[2rem] lg:w-[3rem]  ml-8 mr-1"
-              src="/images/chisquare.png"
-              width={160}
-              height={160}
-              alt="Company Logo"
-              priority
-            />
-      </button>
+              onClick={updateMenuOpened}
+              className="relative z-100 top-3 -left-[5.5%] mt-0 hover:scale-110 hover:duration-300 ease-in-out hover:-rotate-3"
+            >
+              <Image
+                className="md:w-[2rem] lg:w-[3rem]  ml-8 mr-1"
+                src="/images/chisquare.png"
+                width={160}
+                height={160}
+                alt="Company Logo"
+                priority
+              />
+            </button>
             <Link
               href="#"
               className="w-full md:w-[14.28%] lg:w-full flex justify-center py-4 align-items-center md:justify-center md:gap-2 lg:flex-col duration-300 relative hover:text-black"
             >
-              <GlitchText displayText="CHISQUAREX" uniqueKey="chisquarex"/>
+              <GlitchText displayText="CHISQUAREX" uniqueKey="chisquarex" />
             </Link>
-        </div>
+          </div>
         </div>
 
         <div
@@ -211,13 +191,12 @@ export default function Sidebar({menuOpened, updateMenuOpened} : menu) {
 
         {/* Socials */}
 
-
         <div className="relative  bg-transparent py-2.5 px-5 font-medium uppercase text-white-800 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0  before:bg-[#ffffff]  before:transition-transform before:duration-500 before:content-[''] hover:text-black before:hover:scale-x-100 flex justify-around w-full h-full mt-1 mb-5 
         "
         onMouseEnter={handleBottomMouseEnter}
         onMouseLeave={handleBottomMouseLeave}
         >
-       
+
           <div className={`relative ${isBottomHovered ? "bg-slate-700/30" : "bg-white/10"} p-3 px-8 font-medium uppercase text-gray-800 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-y-0 before:bg-[#ff0000] before:transition-transform before:duration-500 before:content-[''] hover:text-white before:hover:scale-y-100  `}>
             <a
               href="https://www.facebook.com/chisquarex"
@@ -267,7 +246,7 @@ export default function Sidebar({menuOpened, updateMenuOpened} : menu) {
             </a>
           </div>
         </div>
-        </div>
       </div>
+    </div>
   );
 }
