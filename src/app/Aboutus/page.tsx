@@ -28,6 +28,7 @@ function AboutUs() {
               <Sidebar
                 menuOpened={menuOpened}
                 updateMenuOpened={updateMenuOpened}
+                delayDuration={2000}
               />
             </div>    
             <button
