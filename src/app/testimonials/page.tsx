@@ -38,7 +38,7 @@ function TestimonialsPage() {
           </div>
           <div className="flex flex-col">
         <div className=" font-abc flex justify-center text-8xl text-[#ffffff] ">
-          TESTIMONIALS
+          PROJECTS
         </div>
         
         </div>

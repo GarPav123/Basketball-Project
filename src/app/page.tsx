@@ -10,6 +10,8 @@ import Link from "next/link";
 import Sidebar from "@/components/sidebar";
 import IconBox from "./components/IconBox";
 import VideoPlayer from "@/components/VideoPlayer";
+import CountsSection from "./components/CountsSection";
+
 
 export default function Home() {
   const [showBrain, setShowBrain] = useState<boolean>(false);
@@ -19,6 +21,12 @@ export default function Home() {
   const updateMenuOpened = () => {
     setMenuOpened(!menuOpened);
   };
+  const counters = [
+    { value: 200, label: 'Happy Clients' },
+    { value: 300, label: 'Projects' },
+    { value: 5000, label: 'Hours Of Support' },
+    { value: 45, label: 'Hard Workers' },
+  ];
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -35,7 +43,7 @@ export default function Home() {
         <link rel="icon" href="/public/favicon.ico" />
       </Head>
       <div className="absolute inset-y-0 left-0 w-16">
-        <Sidebar menuOpened={menuOpened} updateMenuOpened={updateMenuOpened} delayDuration={2000}/>
+        <Sidebar menuOpened={menuOpened} updateMenuOpened={updateMenuOpened} delayDuration={2000} />
       </div>
       <div className="font-abc text-center text-6xl text-[#100404] bg">
         {menuOpened ? (
@@ -262,7 +270,9 @@ export default function Home() {
   <div>2</div>
 </div> */}
         </div>
-        <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden"></div>
+        <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden mt-[2%] mb-[5%]"></div>
+          <CountsSection title={"OUR ACHIEVEMENTS"} counters={counters} />
+        <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden mt-[5%]"></div>
 
       {/* <div className="absolute inset-y-0 ml-[23vw] mb-[5vh] w-full max-h-screen bg-[#131415] overflow-hidden">
         <Canvas camera={{ position: [.2, .02, 0.2], near: 0.0001 }}>
@@ -270,11 +280,27 @@ export default function Home() {
           {showBrain && <Brain x_Scale={1.5} y_Scale={1.5} z_Scale={1.5} position={new THREE.Vector3(0, 0, 0)} />}
         </Canvas>
       </div> */}
-      <div className="w-full h-screen bg-[#100404] flex flex-col overflow-y-auto over">
+      <div className="w-full  bg-[#100404] flex flex-col ">
       <div className="flex flex-col">
-        <div className=" font-abc flex justify-center text-8xl text-[#ffffff] ">
-          TESTIMONIALS
+        <div className=" font-abc flex flex-col items-center justify-center text-8xl text-[#ffffff] ">
+          PROJECTS
+          <div className=" border-2 border-[#ffffff] h-screen mt-[2%] ml-[2%] mr-[2%] w-[95%] rounded-lg  flex flex-row text-3xl overflow-hidden">
+            <div className="w-[33%] m-[0.5%] flex flex-col">
+              <div className="h-[40%] border-2 border-[#ffffff] m-[1%] mr-[0.5%] rounded-lg transition duration-1000 ease-in-out hover:-translate-y-0.5 hover:scale-105">Nlp</div>
+              <div className="h-[60%] border-2 border-[#ffffff] m-[1%] mr-[0.5%] rounded-lg transition duration-1000 ease-in-out hover:-translate-y-0.5 hover:scale-105">gans</div>
+            </div>
+            
+            <div className="w-[33%] m-[0.5%] flex flex-col">
+              <div className=" h-[100%] border-2 border-[#ffffff] m-[1%] mr-[0.5%] rounded-lg transition duration-1000 ease-in-out hover:-translate-y-0.5 hover:scale-105">computer vision</div>
+              
+            </div>
+            <div className="w-[33%] m-[0.5%] flex flex-col">
+              <div className="h-[50%] border-2 border-[#ffffff] m-[1%] mr-[0.5%] rounded-lg transition duration-1000 ease-in-out hover:-translate-y-0.5 hover:scale-105">machine learning</div>
+              <div className="h-[50%] border-2 border-[#ffffff] m-[1%] mr-[0.5%] rounded-lg transition duration-1000 ease-in-out hover:-translate-y-0.5 hover:scale-105">deep learning</div>
+            </div>
+          </div>
         </div>
+        
         </div>
       </div>
       
