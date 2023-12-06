@@ -42,60 +42,59 @@ export default function Home() {
       <Head>
         <link rel="icon" href="/public/favicon.ico" />
       </Head>
+      
       <div className="absolute inset-y-0 left-0 w-16">
         <Sidebar menuOpened={menuOpened} updateMenuOpened={updateMenuOpened} delayDuration={2000} />
       </div>
-      <div className="font-abc text-center text-6xl text-[#100404] bg">
+      <div className="font-abc text-center text-6xl  text-outline">
         {menuOpened ? (
-          <div className=" mt-[1%] text-8xl h-screen flex flex-col">
-            <div className="font-abc2 mt-[20%]">CHI SQUAREX</div>
-            <div className="font-abc2 mt-[5%]">TECHNOLOGIES</div>
+         <div className=" mt-[1%] text-8xl h-screen flex flex-col">
+         <div className="font-abc2 mt-[5%]">CHI SQUAREX</div>
+         <div className="font-abc2 mt-[5%] mb-[5%]">TECHNOLOGIES</div>
+         {/* <div className=" font-sans font-bold h-[10%] flex justify-center mt-[1.5%] text-3xl text-ellipsis text-[#ff0000]">
+             Your DeepTech Catalyst For Innovation
+           </div>
+           <div className="h-[59%] flex flex-row">
+             <div className="w-[50%] flex flex-col  border-solid border-2 border-[#a62b2b] bg-[#a62b2bbb] ml-[2%] mb-[1%]  ">
+               <div className="justify-left flex py-[3%] text-6xl pl-[1%]">
+                 Providing solutions
+               </div>
+               <div className="text-8xl py-[2%] pl-[1%] justify-left flex text-outline">
+                 BEYOND
+               </div>
+               <div className="justify-left flex py-[2%] text-8xl pl-[1%]">
+                 Intelligence
+               </div>
+             </div>
 
-            {/* <div className=" font-sans font-bold h-[10%] flex justify-center mt-[1.5%] text-3xl text-ellipsis text-[#ff0000]">
-                Your DeepTech Catalyst For Innovation
-              </div> */}
-            {/* <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh] w-screen"></div> */}
-            {/* <div className="h-[59%] flex flex-row">
-                <div className="w-[50%] flex flex-col  border-solid border-2 border-[#a62b2b] bg-[#a62b2bbb] ml-[2%] mb-[1%]">
-                  <div className="justify-left flex py-[3%] text-6xl pl-[1%] shadow-md">
-                    Providing solutions
-                  </div>
-                  <div className="text-8xl py-[2%] pl-[1%] justify-left flex text-outline">
-                    BEYOND
-                  </div>
-                  <div className="justify-left flex py-[2%] text-8xl pl-[1%]">
-                    Intelligence
-                  </div>
-                </div> */}
-
-            {/* <div className="w-[50%] flex justify-center items-center border-solid border-2 border-[#a62b2b] bg-[#a62b2bbb] mr-[2%] ml-[1%] mb-[1%] text-outline">
-                  <Link
-                    href="https://www.cioinsiderindia.com/magazine/deeptech-startups-august-2022/#page=20"
-                    target="blank"
-                  >
-                    <Image
-                      src="/images/cio.jpg"
-                      alt=""
-                      width={600}
-                      height={300}
-                    />
-                  </Link>
-                </div>
-              </div> */}
-            <div className="h-[20%]"></div>
-            <div className="h-[12%] flex justify-center">
-              <a
-                href="/teamup"
-                className="flex justify-center items-center border-1 text-[#100404]  bg-[#ff0000] border-opacity-100  px-3 py-2  text-4xl "
-              >
-                Team Up
-              </a>
-            </div>
-          </div>
+             <div className="w-[50%] flex justify-center items-center border-solid border-2 border-[#a62b2b] bg-[#a62b2bbb] mr-[2%] ml-[1%] mb-[1%] text-outline">
+               <Link
+                 href="https://www.cioinsiderindia.com/magazine/deeptech-startups-august-2022/#page=20"
+                 target="blank"
+               >
+                 <Image
+                   src="/images/cio.jpg"
+                   alt=""
+                   width={600}
+                   height={300}
+                 />
+               </Link>
+             </div>
+           </div> */}
+         <div className="h-[20%] text-4xl text-[#ff0000]"> Bridging the Future - Uniting AI Research with Corporate Innovation</div>
+         <div className="h-[12%] flex justify-center">
+           <a
+             href="/teamup"
+             className="flex justify-center items-center  bg-[#ff0000] text-[#100404]  font-thin px-3 py-3 text-3xl text-outlinew"
+           >
+             Team Up 
+           </a>
+         </div>
+       </div>
         ) : (
           <div className=" mt-[1%] text-8xl h-screen flex flex-col">
-            <div className="font-abc2 mt-[20%]">CHI SQUAREX</div>
-            <div className="font-abc2 mt-[5%]">TECHNOLOGIES</div>
+            <div className="font-abc2 mt-[5%]">CHI SQUAREX</div>
+            <div className="font-abc2 mt-[5%] mb-[5%]">TECHNOLOGIES</div>
             {/* <div className=" font-sans font-bold h-[10%] flex justify-center mt-[1.5%] text-3xl text-ellipsis text-[#ff0000]">
                 Your DeepTech Catalyst For Innovation
               </div>
@@ -126,13 +125,13 @@ export default function Home() {
                   </Link>
                 </div>
               </div> */}
-            <div className="h-[20%]"></div>
+            <div className="h-[20%] text-4xl text-[#ff0000]"> Bridging the Future - Uniting AI Research with Corporate Innovation</div>
             <div className="h-[12%] flex justify-center">
               <a
                 href="/teamup"
-                className="flex justify-center items-center border-1 text-[#100404]  bg-[#ff0000] border-opacity-100  px-3 py-2 text-4xl "
+                className="flex justify-center items-center  bg-[#ff0000] text-[#100404]  font-thin px-3 py-3 text-3xl text-outlinew"
               >
-                Team Up
+                Team Up 
               </a>
             </div>
           </div>
@@ -153,7 +152,7 @@ export default function Home() {
         </button>
       </div>
       <div id="aboutus" className="bg-black">
-        <div className="font-abc text-8xl flex justify-center mt-[2%]">ABOUT US</div>
+        <div className="font-abc text-8xl flex justify-center mt-[2%] text-[#ff0000]">ABOUT US</div>
 
 
 
@@ -164,7 +163,7 @@ export default function Home() {
           </div>
           <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh] "></div>
           <div className="flex flex-around justify-evenly py-[2%] px-[2%] space-x-4 flex-grow  scrollbar-none">
-            <div className="relative text-ellipsis bg-slate-300/10 p-[2%] flex-grow w-[50%] h-[50vh] text-xl text-justify text-[#f1eeee] overflow-y-auto scrollbar-none font-medium font-sans font-family-arial">
+            <div className="relative text-ellipsis bg-slate-300/10 p-[2%] flex-grow w-[50%] h-[50vh] text-xl text-justify text-[#ff0000] overflow-y-auto scrollbar-none font-medium font-sans font-family-arial">
               <p>
                 Chi SquareX Technologies is a leading DeepTech startup in India,
                 specializing in providing cutting-edge research assistance
@@ -270,7 +269,7 @@ export default function Home() {
   <div>2</div>
 </div> */}
           </div>
-          <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden mt-[2%] mb-[5%]"></div>
+          <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden mt-[1%] mb-[5%]"></div>
           <CountsSection title={"OUR ACHIEVEMENTS"} counters={counters} />
           <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden mt-[5%]"></div>
 

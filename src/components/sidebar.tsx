@@ -58,8 +58,15 @@ export default function Sidebar({ menuOpened, updateMenuOpened, delayDuration }:
   };
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const handleScreenClick = () => {
-    if (menuOpened) {
+  const handleScreenClick = (e: MouseEvent) => {
+    const isClickInsideSidebar = e.target instanceof Node && document.getElementById("sidebar")?.contains(e.target);
+    if (menuOpened && !isClickInsideSidebar) {
+      updateMenuOpened();
+    }
+  };
+
+  const handleSidebarMouseEnter = () => {
+    if (!menuOpened) {
       updateMenuOpened();
     }
   };
@@ -74,6 +81,8 @@ export default function Sidebar({ menuOpened, updateMenuOpened, delayDuration }:
 
   return (
     <div
+      id="sidebar"
+      onMouseEnter={handleSidebarMouseEnter} // Add onMouseEnter to open the menu when the mouse enters the sidebar
       className={`${menuOpened ? "bg-[#171717] duration-0 lg:translate-x-0" : "bg-[#171717] lg:-translate-x-full"} fixed w-[100%] p-2 mt-0 md:h-16 md:flex md:items-center md:justify-center text-xl lg:min-h-full lg:min-w-[27%] lg:p-0 lg:w-[16%] duration-300 ease-linear z-50 lg:fixed`}
     >
       <div
@@ -82,7 +91,7 @@ export default function Sidebar({ menuOpened, updateMenuOpened, delayDuration }:
       >
         <div className=" flex flex-col w-full mt-0">
           <div
-            className="relative bg-transparent pt-3 pb-1 px-5 font-medium uppercase text-white-800 before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0  before:bg-[#ffffff]  before:transition-transform before:duration-500 before:content-[''] hover:text-black before:hover:scale-x-100 mb-1"
+            className="relative bg-transparent pt-3 pb-1 px-5 font-medium uppercase text-white-800 before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0  before:bg-[#ff0000]   before:transition-transform before:duration-500 before:content-[''] hover:text-black before:hover:scale-x-100 mb-1"
             onMouseEnter={handleTopMouseEnter}
             onMouseLeave={handleTopMouseLeave}
           >
@@ -101,9 +110,9 @@ export default function Sidebar({ menuOpened, updateMenuOpened, delayDuration }:
             </button>
             <Link
               href="#"
-              className="w-full md:w-[14.28%] lg:w-full flex justify-center py-4 align-items-center md:justify-center md:gap-2 lg:flex-col duration-300 relative hover:text-black"
+              className="w-full md:w-[14.28%] lg:w-full flex justify-center py-4 align-items-center md:justify-center md:gap-2 lg:flex-col duration-300 relative hover:text-black text-[#ff0000] text-outline font-abc"
             >
-              <GlitchText displayText="CHISQUAREX" uniqueKey="chisquarex" />
+             CHI SQUARE X
             </Link>
           </div>
         </div>
@@ -123,7 +132,7 @@ export default function Sidebar({ menuOpened, updateMenuOpened, delayDuration }:
 
         <div className=" flex flex-col w-full mt-1 mb-1">
           <div
-            className="relative bg-transparent py-2.5 px-5 font-medium uppercase text-white-800 before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0  before:bg-[#ff0000]  before:transition-transform before:duration-500 before:content-[''] hover:text-black before:hover:scale-x-100 "
+            className="relative bg-transparent py-2.5 px-5 font-medium uppercase text-white-800 before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0  before:bg-[#ff0000] text-[#ff0000] before:transition-transform before:duration-500 before:content-[''] hover:text-black before:hover:scale-x-100 "
             onMouseEnter={handleTopMouseEnter}
             onMouseLeave={handleTopMouseLeave}
           >
@@ -135,7 +144,7 @@ export default function Sidebar({ menuOpened, updateMenuOpened, delayDuration }:
             </Link>
           </div>
 
-          <div className="relative  bg-transparent py-2.5 px-5 font-medium uppercase text-white-800 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0  before:bg-[#ff0000]  before:transition-transform before:duration-500 before:content-[''] hover:text-black before:hover:scale-x-100">
+          <div className="relative  bg-transparent py-2.5 px-5 font-medium uppercase text-white-800 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 text-[#ff0000]  before:bg-[#ff0000]  before:transition-transform before:duration-500 before:content-[''] hover:text-black before:hover:scale-x-100">
             <Link
               href="/Aboutus"
               className="w-full md:w-[14.28%] lg:w-full flex justify-center py-5 align-items-center md:justify-center md:gap-2 lg:flex-col  duration-300 relative"
@@ -144,7 +153,7 @@ export default function Sidebar({ menuOpened, updateMenuOpened, delayDuration }:
             </Link>
           </div>
 
-          <div className="relative   bg-transparent py-2.5 px-5 font-medium uppercase text-white-800 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0  before:bg-[#ff0000]   before:transition-transform before:duration-500 before:content-[''] hover:text-black before:hover:scale-x-100">
+          <div className="relative   bg-transparent py-2.5 px-5 font-medium uppercase text-white-800 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 text-[#ff0000]  before:bg-[#ff0000]   before:transition-transform before:duration-500 before:content-[''] hover:text-black before:hover:scale-x-100">
             <Link
               href="/testimonials"
               className="w-full md:w-[14.28%] lg:w-full flex justify-center py-5 align-items-center md:justify-center md:gap-2 lg:flex-col  duration-300 relative"
@@ -153,7 +162,7 @@ export default function Sidebar({ menuOpened, updateMenuOpened, delayDuration }:
             </Link>
           </div>
 
-          <div className="relative  bg-transparent py-2.5 px-5 font-medium uppercase text-white-800 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 before:bg-[#ff0000] before:transition-transform before:duration-500 before:content-[''] hover:text-black before:hover:scale-x-100">
+          <div className="relative  bg-transparent py-2.5 px-5 font-medium uppercase text-white-800 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 text-[#ff0000]  before:bg-[#ff0000] before:transition-transform before:duration-500 before:content-[''] hover:text-black before:hover:scale-x-100">
             <Link
               href="/portfolio"
               className="w-full md:w-[14.28%] lg:w-full flex justify-center py-5 align-items-center md:justify-center md:gap-2 lg:flex-col  duration-300 relative"
@@ -163,7 +172,7 @@ export default function Sidebar({ menuOpened, updateMenuOpened, delayDuration }:
           </div>
 
           <div
-            className="relative bg-transparent py-2.5 px-5 font-medium uppercase text-white-800 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0  before:bg-[#ff0000]  before:transition-transform before:duration-500 before:content-[''] hover:text-black before:hover:scale-x-100"
+            className="relative bg-transparent py-2.5 px-5 font-medium uppercase text-white-800 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 text-[#ff0000]   before:bg-[#ff0000]  before:transition-transform before:duration-500 before:content-[''] hover:text-black before:hover:scale-x-100"
             onMouseEnter={handleBottomMouseEnter}
             onMouseLeave={handleBottomMouseLeave}
           >

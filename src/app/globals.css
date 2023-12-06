@@ -63,17 +63,19 @@ body {
   background: #f9e4e4de;
 }
 .text-outline {
-  -webkit-text-fill-color: transparent; /* For WebKit (Safari, Chrome) */
-  -webkit-text-stroke: 2px rgb(0, 0, 0); /* Outline width and color */
-  text-fill-color: transparent; /* For Firefox */
-  text-stroke: 2px rgb(0, 0, 0); /* Outline width and color */
+  -webkit-text-fill-color: #ff0000; /* Text color for WebKit (Safari, Chrome) */
+  -webkit-text-stroke: 2px rgb(0, 0, 0); /* Outline width and color for WebKit (Safari, Chrome) */
+  text-fill-color: #ff0000; /* Text color for Firefox */
+  text-stroke: 2px rgb(0, 0, 0); /* Outline width and color for other browsers */
 }
-.text-outlineW {
-  -webkit-text-fill-color: transparent; /* For WebKit (Safari, Chrome) */
-  -webkit-text-stroke: 2px rgb(255, 255, 255); /* Outline width and color */
-  text-fill-color: transparent; /* For Firefox */
-  text-stroke: 2px rgb(0, 0, 0); /* Outline width and color */
+.text-outlinew {
+  -webkit-text-fill-color: #000000; /* Text color for WebKit (Safari, Chrome) */
+  -webkit-text-stroke: 2px rgb(255, 255, 255); /* Outline width and color for WebKit (Safari, Chrome) */
+  text-fill-color: #000000; /* Text color for Firefox */
+  text-stroke: 2px rgb(255, 255, 255); /* Outline width and color for other browsers */
+  padding: 10px;
 }
+
 .textContainer {
   /* Add any container styles here */
 }
