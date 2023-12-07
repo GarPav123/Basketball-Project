@@ -38,7 +38,12 @@ export default function Sidebar({ menuOpened, updateMenuOpened, delayDuration }:
 
   const handleTopMouseLeave = () => {
     setIsTopHovered(false);
-    setDelayedTopChange(setTimeout(() => updateMenuOpened(), delayDuration));
+    setDelayedTopChange(setTimeout(() => updateMenuOpened(), 10000)); // 10 seconds delay
+  };
+  
+  const handleBottomMouseLeave = () => {
+    setIsBottomHovered(false);
+    setBottomDelayedChange(setTimeout(() => updateMenuOpened(), 10000)); // 10 seconds delay
   };
 
   const [isBottomHovered, setIsBottomHovered] = useState(false);
@@ -52,10 +57,7 @@ export default function Sidebar({ menuOpened, updateMenuOpened, delayDuration }:
     }
   };
 
-  const handleBottomMouseLeave = () => {
-    setIsBottomHovered(false);
-    setBottomDelayedChange(setTimeout(() => updateMenuOpened(), delayDuration));
-  };
+ 
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleScreenClick = (e: MouseEvent) => {
@@ -82,8 +84,9 @@ export default function Sidebar({ menuOpened, updateMenuOpened, delayDuration }:
   return (
     <div
       id="sidebar"
-      onMouseEnter={handleSidebarMouseEnter} // Add onMouseEnter to open the menu when the mouse enters the sidebar
-      className={`${menuOpened ? "bg-[#171717] duration-0 lg:translate-x-0" : "bg-[#171717] lg:-translate-x-full"} fixed w-[100%] p-2 mt-0 md:h-16 md:flex md:items-center md:justify-center text-xl lg:min-h-full lg:min-w-[27%] lg:p-0 lg:w-[16%] duration-300 ease-linear z-50 lg:fixed`}
+      onMouseEnter={handleSidebarMouseEnter}
+      className={`${menuOpened ? 'bg-[#171717] lg:w-[10%] lg:translate-x-0' : 'bg-[#171717] lg:w-[10%] lg:-translate-x-full'
+        } fixed w-[100%] p-2 mt-0 md:h-16 md:flex md:items-center md:justify-center text-xl lg:min-h-full lg:min-w-[10%] lg:p-0 lg:w-[20%] duration-300 ease-linear z-50 lg:fixed`}
     >
       <div
         className={`items-center ${menuOpened ? "lg:block" : "lg:hidden"
@@ -213,10 +216,10 @@ export default function Sidebar({ menuOpened, updateMenuOpened, delayDuration }:
               className="text-white hover:text-black duration-300"
             >
               <Image
-                className="w-8 h-8 justify-center items-center"
+                className="w-6 h-6 justify-center items-center"
                 src={i1}
-                width={64}
-                height={64}
+                width={32}
+                height={32}
                 alt="Facebook"
                 priority
               />
@@ -229,7 +232,7 @@ export default function Sidebar({ menuOpened, updateMenuOpened, delayDuration }:
               className="text-white hover:text-black duration-300"
             >
               <Image
-                className="w-8 h-8 justify-center items-center"
+                className="w-6 h-6 justify-center items-center"
                 src={i2}
                 width={64}
                 height={64}
@@ -245,7 +248,7 @@ export default function Sidebar({ menuOpened, updateMenuOpened, delayDuration }:
               className="text-white hover:text-black duration-300"
             >
               <Image
-                className="w-8 h-8 justify-center items-center"
+                className="w-6 h-6 justify-center items-center"
                 src={i3}
                 width={64}
                 height={64}
