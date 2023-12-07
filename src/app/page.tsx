@@ -221,11 +221,8 @@ export default function Home() {
           </div>
           <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden"></div>
           <div className="flex flex-col mt-[5%]">
-            <div className="flex justify-center font-abc">
-              <GlitchTextNoMargin
-                displayText="SERVICES WE PROVIDE"
-                uniqueKey="services"
-              />
+            <div className="flex justify-center font-abc text-8xl">
+              SERVICES WE PROVIDE
             </div>
           </div>
           <div className="flex flex-col mt-[5%] h-[80%] w-[100%] mb-[3%]">
