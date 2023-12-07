@@ -38,12 +38,12 @@ export default function Sidebar({ menuOpened, updateMenuOpened, delayDuration }:
 
   const handleTopMouseLeave = () => {
     setIsTopHovered(false);
-    setDelayedTopChange(setTimeout(() => updateMenuOpened(), 10000)); // 10 seconds delay
+    setDelayedTopChange(setTimeout(() => updateMenuOpened(), 5000)); // 10 seconds delay
   };
   
   const handleBottomMouseLeave = () => {
     setIsBottomHovered(false);
-    setBottomDelayedChange(setTimeout(() => updateMenuOpened(), 10000)); // 10 seconds delay
+    setBottomDelayedChange(setTimeout(() => updateMenuOpened(), 5000)); // 10 seconds delay
   };
 
   const [isBottomHovered, setIsBottomHovered] = useState(false);
