@@ -389,11 +389,11 @@ export default function Home() {
     </div>
   </div>
 </div>
-<div className="w-full h-screen bg-[#100404] flex flex-col overflow-y-auto over">
+{/* <div className="w-full h-screen bg-[#100404] flex flex-col overflow-y-auto over">
        <div className="flex justify-center items-center ">
         <div className="font-abc text-8xl">TESTIMONIALS</div>
         </div>
-        </div>
+        </div> */}
 
 
 
