@@ -11,12 +11,31 @@ import Sidebar from "@/components/sidebar";
 import IconBox from "./components/IconBox";
 import VideoPlayer from "@/components/VideoPlayer";
 import CountsSection from "./components/CountsSection";
+import ProjectCard, { Project } from "@/components/ProjectCard";
 
 
 export default function Home() {
   const [showBrain, setShowBrain] = useState<boolean>(false);
 
   const [menuOpened, setMenuOpened] = useState(false);
+  
+
+  // Define your project data
+ const projects: Project[] = [
+  { projectNumber: 1, heading: 'Project 1', text: 'Neural Machine Translation using stacked LSTM with attention.' },
+  { projectNumber: 2, heading: 'Project 2', text: 'Sentiment Analysis using Roberta, BERT, DistillBERT, XLNET, GPT2 Computer vision.' },
+  { projectNumber: 3, heading: 'Project 3', text: 'ArchiGANs for automated Floor Plan detection.' },
+  { projectNumber: 4, heading: 'Project 4', text: 'CycleGANs for Image Denoising.' },
+  { projectNumber: 9, heading: 'Project 9', text: 'Explainable AI-enabled Predictive maintenance.' },
+  { projectNumber: 5, heading: 'Project 5', text: 'YOLOv8 Object Detection for Traffic signal with 28 Classes.' },
+  { projectNumber: 6, heading: 'Project 6', text: 'Pose Detection using Mediapipe and Posenet.' },
+  { projectNumber: 7, heading: 'Project 7', text: 'Face Detection and Recognition using Unet.' },
+  { projectNumber: 8, heading: 'Project 8', text: 'Human Image Segmentation using SegNet.' },
+  { projectNumber: 10, heading: 'Project 10', text: 'Electric Vehicle Route Optimization.' },
+  { projectNumber: 11, heading: 'Project 11', text: 'Convolutional Neural Networks for Diabetic Retinopathy' },
+  { projectNumber: 12, heading: 'Project 12', text: 'Deep Learning in IOT.' },
+];
+
 
   const updateMenuOpened = () => {
     setMenuOpened(!menuOpened);
@@ -27,6 +46,22 @@ export default function Home() {
     { value: 5000, label: 'Hours Of Support' },
     { value: 45, label: 'Hard Workers' },
   ];
+
+
+  const [selectedProject, setSelectedProject] = useState<number | 'all' | null>(null);
+
+  const handleProjectFilter = (projectNumber: number | 'all' | null) => {
+    if (projectNumber === 'all') {
+      // Handle the 'all' case (show all projects)
+      setSelectedProject('all');
+    } else if (typeof projectNumber === 'number' || projectNumber === null) {
+      // Handle the numeric case
+      setSelectedProject(projectNumber);
+    }
+  };
+  
+  
+  
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -261,88 +296,95 @@ export default function Home() {
               />
             </div>
 
-            {/* <div className="w-[100%] flex flex-wrap mt-[2%] border-t-red-600 rounded-xl">
-  <div>1</div>
-  <div>2</div>
-</div> */}
+           
           </div>
           <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden mt-[1%] mb-[5%]"></div>
           <CountsSection title={"OUR ACHIEVEMENTS"} counters={counters} />
           <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden mt-[5%]"></div>
 
-          {/* <div className="absolute inset-y-0 ml-[23vw] mb-[5vh] w-full max-h-screen bg-[#131415] overflow-hidden">
-        <Canvas camera={{ position: [.2, .02, 0.2], near: 0.0001 }}>
-          <ambientLight />
-          {showBrain && <Brain x_Scale={1.5} y_Scale={1.5} z_Scale={1.5} position={new THREE.Vector3(0, 0, 0)} />}
-        </Canvas>
-      </div> */}
-          <div className="w-full  bg-[#ffffff] flex flex-col ">
-            <div className="flex flex-col">
-              <div className=" font-abc flex flex-col items-center justify-center text-8xl text-[#100404] mt-[5%]">
-                PROJECTS
-                <div className=" border-4 border-[#100404] h-screen mt-[4%] ml-[2%] mr-[2%] w-[95%] rounded-lg  flex flex-row text-3xl overflow-hidden">
-                  <div className="w-[33%] m-[0.5%] flex flex-col">
-                    <div className="h-[40%] border-4 border-[#100404] bg-[#a62b2b] m-[1%] mr-[0.5%] rounded-lg transition duration-1000 ease-in-out hover:-translate-y-0.5 hover:scale-105 flex flex-col place-items-center">
-                      <div className="h-[10%] font-abc text-xxl text-center">
-                        NATURAL LANGUAGE PROCESSING
-                      </div>
-                      <div className="h-[90%] ellipsis text-lg text-center mt-[17%]">
-                        <p className="mb-[3%]"> Neural Machine Translation using stacked LSTM with attention.</p>
-                        <p> Sentiment Analysis using Roberta, BERT, DistillBERT, XLNET, GPT2 Computer vision.</p>
-                      </div>
+          <div className="w-full bg-[#ffffff] flex flex-col">
+  <div className="flex flex-col">
+    <div className="font-eclipse flex flex-col items-center justify-center text-2xl text-[#100404] mt-[5%]">
+      <div className="text-8xl mt-[-1%] mb-[2%] font-abc"> PROJECTS</div>
 
-                    </div>
-                    <div className="h-[60%] border-4 border-[#100404] text-[#ffffff] bg-[#100404] m-[1%] mr-[0.5%] rounded-lg transition duration-1000 ease-in-out hover:-translate-y-0.5 hover:scale-105 flex flex-col place-items-center">
-                      <div className="h-[10%] font-abc text-6xl text-center">
-                        GANs
-                      </div>
-                      <div className="h-[90%] ellipsis text-4xl text-center mt-[12%]">
-                        <p className="mb-[6%]"> ArchiGANs for automated Floor Plan detection.</p>
-                        <p>CycleGANs for Image Denoising.</p>
-                      </div>
-                    </div>
-                  </div>
+      <div className="flex space-x-4 mt-4">
+        <button
+          onClick={() => handleProjectFilter('all')}
+          className={`project-filter-button ${selectedProject === 'all' ? 'active' : ''}`}
+        >
+          All
+        </button>
+        <button
+  onClick={() => handleProjectFilter(1)}
+  className={`project-filter-button ${selectedProject === 1 ? 'active' : ''}`}
+>
+  NATURAL LANGUAGE PROCESSING
+</button>
 
-                  <div className="w-[33%] m-[0.5%] flex flex-col ">
-                    <div className=" h-[100%] border-4 border-[#100404] bg-[#ebb2b2] m-[1%] mr-[0.5%] rounded-lg transition duration-1000 ease-in-out hover:-translate-y-0.5 hover:scale-105 flex flex-col place-items-center">
-                      <div className="h-[10%] font-abc text-4xl text-center">
-                        COMPUTER VISION
-                      </div>
-                      <div className="h-[90%] ellipsis text-lg text-center mt-[5%]">
-                        <p className="text-3xl mt-[5%]">YOLOv8 Object Detection for Traffic signal with 28 Classes.
-                        </p>
-                        <p className="text-3xl mt-[7%]">  Pose Detection using Mediapipe and Posenet.</p>
-                        <p className="text-3xl mt-[7%]">Face Detection and Recognition using Unet.</p>
-                        <p className="text-3xl mt-[7%]">Human Image Segmentation using SegNet.</p>
-                      </div>
-                    </div>
-
-                  </div>
-                  < div className="w-[33%] m-[0.5%] flex flex-col ">
-                    <div className="h-[50%] border-4 border-[#100404] bg-[#ff0000] m-[1%] mr-[0.5%] rounded-lg transition duration-1000 ease-in-out hover:-translate-y-0.5 hover:scale-105 flex flex-col place-items-center">
-                      <div className="h-[10%] font-abc text-3xl text-center">
-                        MACHINE LEARNING
-                      </div>
-                      <div className="h-[90%] ellipsis text-3xl text-center mt-[12%]">
-                        <p className="mb-[6%]"> Explainable AI-enabled Predictive maintenance.</p>
-                        <p>Electric Vehicle Route Optimization.</p>
-                      </div>
-                    </div>
-                    <div className="h-[50%] border-4 border-[#100404] bg-[#ffffff] m-[1%] mr-[0.5%] rounded-lg transition duration-1000 ease-in-out hover:-translate-y-0.5 hover:scale-105 flex flex-col place-items-center">
-                    <div className="h-[10%] font-abc text-3xl text-center">
-                        DEEP LEARNING
-                      </div>
-                      <div className="h-[90%] ellipsis text-3xl text-center mt-[12%]">
-                        <p className="mb-[6%]"> Convolutional Neural Networks for Diabetic Retinopathy.</p>
-                        <p>Deep Learning in IOT.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+        <button
+          onClick={() => handleProjectFilter(3)}
+          className={`project-filter-button ${selectedProject === 3 ? 'active' : ''}`}
+        >
+          GANs
+        </button>
+        <button
+          onClick={() => handleProjectFilter(5)}
+          className={`project-filter-button ${selectedProject === 5 ? 'active' : ''}`}
+        >
+          COMPUTER VISION
+        </button>
+        <button
+          onClick={() => handleProjectFilter(9)}
+          className={`project-filter-button ${selectedProject === 9 ? 'active' : ''}`}
+        >
+          MACHINE LEARNING
+        </button>
+        <button
+          onClick={() => handleProjectFilter(11)}
+          className={`project-filter-button ${selectedProject === 11 ? 'active' : ''}`}
+        >
+          DEEP LEARNING
+        </button>
+      </div>
+      <div className="border-t-red-600 rounded-xl mt-4">
+        <div className="flex flex-wrap">
+          {projects
+            .filter((project) => {
+              if (selectedProject === 'all') {
+                return true; // Show all projects
+              } else {
+                switch (selectedProject) {
+                  case 1:
+                    return project.projectNumber === 1 || project.projectNumber === 2; // Show nlp projects when 'null'
+                  case 3:
+                    return project.projectNumber === 3 || project.projectNumber === 4; // Show GANs projects
+                  case 5:
+                    return project.projectNumber >= 5 && project.projectNumber <= 8; // Show COMPUTER VISION projects
+                  case 9:
+                    return project.projectNumber === 9 || project.projectNumber === 10; // Show MACHINE LEARNING projects
+                  case 11:
+                    return project.projectNumber === 11 || project.projectNumber === 12; // Show DEEP LEARNING projects
+                  default:
+                    return false; // For any other case, do not show
+                }
+              }
+            })
+            .map((project) => (
+              <div key={project.projectNumber} className="w-[30%] m-[1%] p-[2%] border-4 border-[#100404] rounded-lg hover:-translate-y-0.5 hover:scale-105">
+                <ProjectCard
+                  projectNumber={project.projectNumber}
+                  heading={project.heading}
+                  text={project.text}
+                />
               </div>
+            ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-            </div>
-          </div>
+
 
         </div>
       </div>
