@@ -54,9 +54,13 @@ export default function Home() {
     if (projectNumber === 'all') {
       // Handle the 'all' case (show all projects)
       setSelectedProject('all');
-    } else if (typeof projectNumber === 'number' || projectNumber === null) {
+    } else if (typeof projectNumber === 'number' )  {
       // Handle the numeric case
       setSelectedProject(projectNumber);
+    }
+    else if(projectNumber === null)
+    {
+      setSelectedProject('all');
     }
   };
   
@@ -354,6 +358,8 @@ export default function Home() {
                 return true; // Show all projects
               } else {
                 switch (selectedProject) {
+                  case null:
+                    return true;
                   case 1:
                     return project.projectNumber === 1 || project.projectNumber === 2; // Show nlp projects when 'null'
                   case 3:
@@ -383,6 +389,11 @@ export default function Home() {
     </div>
   </div>
 </div>
+<div className="w-full h-screen bg-[#100404] flex flex-col overflow-y-auto over">
+       <div className="flex justify-center items-center ">
+        <div className="font-abc text-8xl">TESTIMONIALS</div>
+        </div>
+        </div>
 
 
 
