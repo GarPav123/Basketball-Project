@@ -306,9 +306,9 @@ export default function Home() {
           <CountsSection title={"OUR ACHIEVEMENTS"} counters={counters} />
           <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden mt-[5%]"></div>
 
-          <div className="w-full bg-[#ffffff] flex flex-col">
+          <div className="w-full h-screen bg-[#ffffff] flex flex-col">
   <div className="flex flex-col">
-    <div className="font-eclipse flex flex-col items-center justify-center text-2xl text-[#100404] mt-[5%]">
+    <div className="font-eclipse flex flex-col items-center justify-center text-2xl text-[#100404] mt-[5%] bg-[#ffffff]">
       <div className="text-8xl mt-[-1%] mb-[2%] font-abc"> PROJECTS</div>
 
       <div className="flex space-x-4 mt-4">
@@ -389,11 +389,7 @@ export default function Home() {
     </div>
   </div>
 </div>
-{/* <div className="w-full h-screen bg-[#100404] flex flex-col overflow-y-auto over">
-       <div className="flex justify-center items-center ">
-        <div className="font-abc text-8xl">TESTIMONIALS</div>
-        </div>
-        </div> */}
+
 
 
 
