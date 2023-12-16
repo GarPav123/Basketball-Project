@@ -22,7 +22,9 @@ const config: Config = {
       serif: ['ui-serif', 'Georgia'],
       mono: ['ui-monospace', 'SFMono-Regular'],
       comfortaa: ['Comfortaa', 'sans'],
-      abc2 :['Dela Gothic One', 'sans']
+      abc2 :['Dela Gothic One', 'sans'],
+      open :[ 'Comfortaa', 'sans-serif'],
+      open1:[ 'Dela Gothic One', 'sans-serif'],
       
       
     },

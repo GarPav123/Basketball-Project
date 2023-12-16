@@ -83,17 +83,7 @@ body {
 
 /* background.css */
 
-.bg-image {
-  background-image: url('/images/cta-bg.jpg');
-  background-size: cover; /* Use cover to maintain aspect ratio and cover the entire viewport */
-  background-position: center center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
+
 /* styles.css or styles.scss */
 .project-card {
   background-color: #fff;
@@ -112,6 +102,12 @@ body {
 
 .project-filter-button.active {
   background-color: rgba(255, 255, 255, 0.603)
+}
+/* Add this to your global or component-specific styles */
+.testimonial-card {
+  backdrop-filter: blur(5px); /* Adjust the blur value as needed */
+  background: rgba(255, 255, 255, 0.5); /* Adjust the alpha value for transparency */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Optional: Add a border for better visibility */
 }
 
 
