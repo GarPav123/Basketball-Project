@@ -10,7 +10,7 @@ interface CountsSectionProps {
 const CountsSection: React.FC<CountsSectionProps> = ({ title, counters }) => (
   <section id="counts" className="counts">
     <div className="container">
-      <div className="text-center title font-abc text-8xl justify-center flex mt-[-3%] mb-[10%] text-[#ff0000]">
+      <div className="text-center title font-abc text-4xl justify-center flex mt-[-3%] mb-[10%] text-[#ff0000]">
         <h3>{title}</h3>
       </div>
     <div className='flex flex-row font-abc text-2xl m-[5%]  items-center justify-evenly font-semibold'>

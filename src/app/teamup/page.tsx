@@ -11,6 +11,7 @@ import * as THREE from "three";
 import IconBox from "../components/IconBox";
 import VideoPlayer from "@/components/VideoPlayer";
 import MapG from "@/components/MapG";
+
 const isClient = typeof window !== "undefined";
 
 function TeamUp() {
@@ -23,7 +24,7 @@ function TeamUp() {
   return (
     <div className="w-full h-screen bg-[#100404] flex flex-col overflow-y-auto over">
        
-        <div className="font-abc text-8xl">
+        <div className=" text-8xl">
           <div>
             <div className="absolute inset-y-0 left-0 w-16">
               <Sidebar
@@ -47,11 +48,14 @@ function TeamUp() {
             </button>
           </div>
           <div className="flex flex-col">
-        <div className=" font-abc flex justify-center text-8xl text-[#ffffff] ">
+        <div className=" font-abc flex justify-center text-4xl mt-[2%] text-[#ffffff] ">
           TEAM UP
         </div>
         <div className=" flex flex-row">
-          <div className="w-[50%]"><MapG/></div>
+          <div className="w-[50%] ml-[2%] mt-[2%]"><MapG/></div>
+          <div className="w-[50%] ml-[2%] mt-[2%]  flex flex-col">
+            <div className="font-open text-4xl justify-center flex mt-[2%]"></div>
+          </div>
         </div>
         
         </div>
