@@ -1,5 +1,6 @@
 
   // components/TestimonialCarousel.tsx
+import React from 'react';
 import { useState, useEffect } from 'react';
 
 // Import your image placeholder component
