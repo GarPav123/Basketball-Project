@@ -1,29 +1,56 @@
-// Example.tsx
-import React, { useEffect } from 'react';
-import { Loader } from '@googlemaps/js-api-loader';
+// MapG.tsx
+import React, { useEffect, useRef } from 'react';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
 
 const MapG: React.FC = () => {
+  const mapRef = useRef<L.Map | null>(null);
+
   useEffect(() => {
-    // Initialize Google Maps API Loader
-    const loader = new Loader({
-      apiKey: 'AIzaSyAC5FuV9NpFtPZUF1Kqvk166v1Q54Y4ErM',
-      version: 'weekly', // or specify the version you need
-    });
+    const initializeMap = () => {
+      if (!mapRef.current) {
+        const map = L.map('map').setView([12.894150115187488, 77.61643614602767], 13);
+        mapRef.current = map;
 
-    // Load the Google Maps API
-    loader.load().then((google) => {
-      // Now you can use the Google Maps API
-      const map = new google.maps.Map(
-        document.getElementById('map') as HTMLElement, // Use type assertion here
-        {
-          center: { lat: 12.893252474927126, lng: 77.6163086962132 },
-          zoom: 8,
-        }
-      );
-    });
-  }, []);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" class="text-blue-500">OpenStreetMap</a> contributors',
+        }).addTo(map);
 
-  return <div id="map" style={{ height: '400px', width: '100%' }} />;
+        // Use a custom image as a marker
+        const customIcon = L.icon({
+          iconUrl: 'https://img.icons8.com/fluency/48/000000/marker.png',
+          iconSize: [48, 48],
+          iconAnchor: [24, 48],
+          popupAnchor: [0, -48],
+        });
+
+        L.marker([12.894150115187488, 77.61643614602767], { icon: customIcon })
+          .addTo(map)
+          .bindPopup('ChiSquareX Technologies')
+          .openPopup();
+      }
+    };
+
+    // Ensure Leaflet is loaded before initializing the map
+    if (!L) {
+      import('leaflet').then(() => initializeMap());
+    } else {
+      initializeMap();
+    }
+
+    // Handle window resize
+    const handleResize = () => {
+      mapRef.current?.invalidateSize();
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []); // Empty dependency array ensures this effect runs only once after initial render
+
+  return <div id="map" className="w-full h-96" style={{ zIndex: 0 }} />;
 };
 
 export default MapG;

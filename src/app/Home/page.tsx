@@ -13,6 +13,7 @@ import VideoPlayer from "@/components/VideoPlayer";
 import CountsSection from "../components/CountsSection";
 import ProjectCard, { Project } from "@/components/ProjectCard";
 import TestimonialCarousel from "../components/TestimonialCarousel";
+import MapG from "@/components/MapG";
 
 export default function Home() {
   const [showBrain, setShowBrain] = useState<boolean>(false);
@@ -410,6 +411,17 @@ export default function Home() {
             </div>
             <TestimonialCarousel />
           </div>
+        </div>
+        
+        <div className="flex flex-col min-h-full w-full bg-[#ffffff] mt-[10%]">
+        <div className="font-abc flex justify-center text-4xl mt-[2%] text-[#000000]  ">
+          TEAM UP
+        </div>
+        <div className="flex flex-row">
+          <div className="w-[50%] m-[2%] border-2 border-black"></div>
+          <div id ="map" className="w-[50%] m-[2%] border-2 border-black"><MapG/></div>
+        </div>
+        
         </div>
       
     </main>

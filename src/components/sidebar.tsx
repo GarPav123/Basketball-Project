@@ -85,8 +85,8 @@ export default function Sidebar({ menuOpened, updateMenuOpened, delayDuration }:
     <div
       id="sidebar"
       onMouseEnter={handleSidebarMouseEnter}
-      className={`${menuOpened ? 'bg-[#171717] lg:w-[10%] lg:translate-x-0' : 'bg-[#171717] lg:w-[10%] lg:-translate-x-full'
-        } fixed w-[100%] p-2 mt-0 md:h-16 md:flex md:items-center md:justify-center text-xl lg:min-h-full lg:min-w-[10%] lg:p-0 lg:w-[20%] duration-300 ease-linear z-50 lg:fixed`}
+      className={`${menuOpened ? 'bg-[#171717] lg:w-[10%] lg:translate-x-0 z-50' : 'bg-[#171717] lg:w-[10%] lg:-translate-x-full'
+        } fixed w-[100%] p-2 mt-0 md:h-16 md:flex md:items-center md:justify-center text-xl lg:min-h-full lg:min-w-[10%] lg:p-0 lg:w-[20%] duration-300 ease-linear`}
     >
       <div
         className={`items-center ${menuOpened ? "lg:block" : "lg:hidden"
