@@ -12,7 +12,7 @@ const IconBox: React.FC<IconBoxProps> = ({ imageUrl, text, heading }) => {
 
   return (
     <div
-      className="relative border-red-600 p-20 border-4 overflow-hidden"
+      className="relative border-[#ffffff] p-20 border-4 overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

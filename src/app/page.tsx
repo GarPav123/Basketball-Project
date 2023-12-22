@@ -14,6 +14,8 @@ import CountsSection from "./components/CountsSection";
 import ProjectCard, { Project } from "@/components/ProjectCard";
 import TestimonialCarousel from "./components/TestimonialCarousel";
 import MapG from "@/components/MapG";
+import Navbar from "./components/Navbar";
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 
 export default function Home() {
   const [showBrain, setShowBrain] = useState<boolean>(false);
@@ -115,24 +117,25 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex flex-col min-h-screen items-center justify-center relative">
-      <div className="bg-image"></div>
+    <main id="home" className="flex flex-col min-h-screen items-center justify-center relative">
+      <div  className="bg-image"></div>
       <Head>
         <link rel="icon" href="/public/favicon.ico" />
       </Head>
 
-      <div className="absolute inset-y-0 left-0 w-16">
+        <Navbar/>
+      {/* <div className="absolute inset-y-0 left-0 w-16">
         <Sidebar
           menuOpened={menuOpened}
           updateMenuOpened={updateMenuOpened}
           delayDuration={2000}
         />
-      </div>
+      </div> */}
       <div className="font-abc text-center text-6xl  text-outline">
         {menuOpened ? (
           <div className=" mt-[1%] text-5xl h-screen flex flex-col">
-            <div className="font-abc2 mt-[5%]">CHI SQUAREX</div>
-            <div className="font-abc2 mt-[5%] mb-[5%]">TECHNOLOGIES</div>
+            <div className="font-abc2 mt-[5%] text-[#000000]">CHI SQUAREX</div>
+            <div className="font-abc2 mt-[5%] mb-[5%] text-[#000000]">TECHNOLOGIES</div>
 
             <div className="h-[20%] text-4xl text-[#100404]">
               {" "}
@@ -141,7 +144,7 @@ export default function Home() {
             </div>
             <div className="h-[12%] flex justify-center">
               <a
-                href="/teamup"
+                href="team"
                 className="flex justify-center items-center  bg-[#ff0000] text-[#100404]  font-thin px-3 py-3 text-3xl text-outlinew"
               >
                 Team Up
@@ -149,18 +152,18 @@ export default function Home() {
             </div>
           </div>
         ) : (
-          <div className=" mt-[1%] text-5xl h-screen flex flex-col">
-            <div className="font-abc2 mt-[5%]">CHI SQUAREX</div>
-            <div className="font-abc2 mt-[5%] mb-[5%]">TECHNOLOGIES</div>
+          <div className=" mt-[1%] text-1xl h-screen flex flex-col">
+            <div className="font-abc2 mt-[10%] text-[#000000]">CHI SQUAREX</div>
+            <div className="font-abc2 mt-[5%] mb-[5%] text-[#000000]">TECHNOLOGIES</div>
 
             <div className="h-[20%] text-4xl text-[#100404]">
-              {" "}
+              
               Bridging the Future - Uniting AI Research with
               Corporate Innovation
             </div>
             <div className="h-[12%] flex justify-center">
               <a
-                href="/teamup"
+                href="team"
                 className="flex justify-center items-center  bg-[#ff0000] text-[#100404]  font-thin px-3 py-3 text-3xl text-outlinew"
               >
                 Team Up
@@ -169,7 +172,7 @@ export default function Home() {
           </div>
         )}
 
-        <button
+        {/* <button
           onClick={updateMenuOpened}
           className={`absolute z-100 top-0 -left-1 mt-5 hover:scale-110 hover:duration-300 ease-in-out hover:-rotate-3`}
         >
@@ -181,19 +184,19 @@ export default function Home() {
             alt="Company Logo"
             priority
           />
-        </button>
+        </button> */}
       </div>
-  
-      <div id="aboutus" className="bg-black ">
-        <div className="font-abc text-5xl flex justify-center mt-[2%] text-[#ff0000]">
+      <div id="aboutus" className="">
+      <div  className="bg-[#5E2BFF] mt-[-1.5%] ">
+        <div className="font-abc text-6xl flex justify-center mt-[5%] pt-[5%] text-[#ffffff] ">
           ABOUT US
         </div>
 
-        <div className="flex flex-col flex-grow justify-start  text-6xl text-[#ff0000]">
+        <div className="flex flex-col flex-grow justify-start  text-6xl text-[#000000]">
           <div className="py-[2%] px-[1%] font-abc"></div>
           <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh] "></div>
           <div className="flex flex-around justify-evenly py-[2%] px-[2%] space-x-4 flex-grow  scrollbar-none">
-            <div className="relative text-ellipsis bg-slate-300/10 p-[2%] flex-grow w-[50%] h-[50vh] text-xl text-justify text-[#ff0000] overflow-y-auto scrollbar-none font-medium font-sans font-family-arial">
+            <div className="relative text-ellipsis bg-slate-300/10 p-[2%] flex-grow w-[50%] h-[50vh] text-xl text-justify text-[#ffffff] overflow-y-auto scrollbar-none font-medium font-sans font-family-arial">
               <p>
                 Chi SquareX Technologies is a leading DeepTech startup in India,
                 specializing in providing cutting-edge research assistance
@@ -237,9 +240,11 @@ export default function Home() {
               <VideoPlayer />
             </div>
           </div>
+          </div>
+          <div id="portfolio" className=""></div>
           <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden"></div>
-          <div className="flex flex-col mt-[5%]">
-            <div className="flex justify-center font-abc text-4xl">
+          <div className="flex flex-col mt-[6%]">
+            <div className="flex justify-center font-abc text-5xl">
               SERVICES WE PROVIDE
             </div>
           </div>
@@ -283,18 +288,18 @@ export default function Home() {
           <CountsSection title={"OUR ACHIEVEMENTS"} counters={counters} />
           <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden mt-[5%]"></div>
 
-          <div className="w-full min-h-full  bg-[#ffffff] flex flex-col">
+          <div className="w-full min-h-full  bg-[#bea7e5] flex flex-col">
             <div className="flex flex-col flex-grow">
-              <div className="font-open ml-[3%] flex flex-col items-center justify-center text-2xl text-[#100404] mt-[5%] bg-[#ffffff] mb-[5%] ">
-                <div className="text-4xl mt-[-1%] mb-[2%] font-abc">
+              <div className="font-open ml-[3%] flex flex-col items-center justify-center text-5xl text-[#100404] mt-[5%] bg-[#bea7e5] mb-[5%] ">
+                <div className="text-5xl mt-[-1%] mb-[2%] font-abc bg-[#bea7e5]">
                   {" "}
                   PROJECTS
                 </div>
 
-                <div className="flex space-x-4 mt-4">
+                <div className="flex space-x-4 mt-4 ">
                   <button
                     onClick={() => handleProjectFilter("all")}
-                    className={`project-filter-button ${
+                    className={` bg-[#bea7e5] project-filter-button ${
                       selectedProject === "all" ? "active" : ""
                     }`}
                   >
@@ -403,23 +408,24 @@ export default function Home() {
         </div>
         
                        
-        <div className="flex flex-col flex-grow ">
-        <div className="bg-cto "></div>
-          <div className="flex flex-col overflow-hidden">
-            <div className="font-abc text-6xl justify-center flex text-[#000000] mb-[1%] mt-[4%]">
-              TESTIMONIALS
-            </div>
-            <TestimonialCarousel />
-          </div>
-        </div>
+        <div id="testimonials" className="flex flex-col flex-grow w-full" style={{ background: 'linear-gradient(to bottom right, #bea7e5 0%, #bea7e5 50%, #5e2bff 50%, #5e2bff 100%)' }}>
+  <div></div>
+  <div className="flex flex-col overflow-hidden">
+    <div className="font-abc text-6xl justify-center flex text-[#000000] mb-[0%] mt-[4%]">
+      TESTIMONIALS
+    </div>
+    <TestimonialCarousel />
+  </div>
+</div>
+
         
-        <div className="flex flex-col min-h-full w-full bg-[#ffffff] mt-[10%]">
+        <div id="team" className="flex flex-col min-h-full w-full bg-[#ffffff] mt-[0%]">
         <div className="font-abc flex justify-center text-4xl mt-[2%] text-[#000000]  ">
           TEAM UP
         </div>
         <div className="flex flex-row">
-          <div className="w-[50%] m-[2%] border-2 border-black"></div>
-          <div id ="map" className="w-[50%] m-[2%] border-2 border-black"><MapG/></div>
+          <div className="w-[50%] m-[2%] border-2 border-black h-[50%]"></div>
+          <div id ="map" className="w-[50%] m-[2%] border-2 border-black h-[50%]"></div>
         </div>
         
         </div>

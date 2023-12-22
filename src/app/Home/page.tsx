@@ -15,6 +15,7 @@ import ProjectCard, { Project } from "@/components/ProjectCard";
 import TestimonialCarousel from "../components/TestimonialCarousel";
 import MapG from "@/components/MapG";
 
+
 export default function Home() {
   const [showBrain, setShowBrain] = useState<boolean>(false);
 
@@ -121,17 +122,18 @@ export default function Home() {
         <link rel="icon" href="/public/favicon.ico" />
       </Head>
 
-      <div className="absolute inset-y-0 left-0 w-16">
+        
+      {/* <div className="absolute inset-y-0 left-0 w-16">
         <Sidebar
           menuOpened={menuOpened}
           updateMenuOpened={updateMenuOpened}
           delayDuration={2000}
         />
-      </div>
+      </div> */}
       <div className="font-abc text-center text-6xl  text-outline">
         {menuOpened ? (
-          <div className=" mt-[1%] text-5xl h-screen flex flex-col">
-            <div className="font-abc2 mt-[5%]">CHI SQUAREX</div>
+          <div className=" mt-[1%] text-5xl h-screen flex flex-col text-[#100404]">
+            <div className="font-abc2 mt-[5%] text-[#100404]">CHI SQUAREX</div>
             <div className="font-abc2 mt-[5%] mb-[5%]">TECHNOLOGIES</div>
 
             <div className="h-[20%] text-4xl text-[#100404]">
@@ -169,7 +171,7 @@ export default function Home() {
           </div>
         )}
 
-        <button
+        {/* <button
           onClick={updateMenuOpened}
           className={`absolute z-100 top-0 -left-1 mt-5 hover:scale-110 hover:duration-300 ease-in-out hover:-rotate-3`}
         >
@@ -181,7 +183,7 @@ export default function Home() {
             alt="Company Logo"
             priority
           />
-        </button>
+        </button> */}
       </div>
   
       <div id="aboutus" className="bg-black ">
@@ -418,8 +420,8 @@ export default function Home() {
           TEAM UP
         </div>
         <div className="flex flex-row">
-          <div className="w-[50%] m-[2%] border-2 border-black"></div>
-          <div id ="map" className="w-[50%] m-[2%] border-2 border-black"><MapG/></div>
+          <div className="w-[50%] m-[2%] border-2 border-black h-[50%]"></div>
+          <div id ="map" className="w-[50%] m-[2%] border-2 border-black h-[50%]"></div>
         </div>
         
         </div>

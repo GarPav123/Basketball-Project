@@ -1,62 +1,76 @@
-// components/Navbar.tsx
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
+import Head from 'next/head';
+import React from 'react';
+import GlitchTextNoMargin from '@/components/GlitchTextNoMargin';
+import Link from 'next/link';
 
-import React, { useState } from 'react';
-
-const Navbar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleNavbar = () => {
-    setIsOpen(!isOpen);
+function Navbar() {
+  const scrollToTop = () => {
+    scroll.scrollToTop({
+      duration: 500,
+      smooth: "easeInOutQuart",
+    });
   };
 
   return (
-    <nav className="bg-gray-800 p-4">
-      <div className="flex items-center justify-between">
-        <div className="text-white font-bold text-xl">My Website</div>
-        <div className="md:hidden">
-          <button
-            onClick={toggleNavbar}
-            className="text-white hover:text-gray-400 focus:outline-none"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              {isOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
-            </svg>
-          </button>
-        </div>
-        <div className={`md:flex ${isOpen ? 'block' : 'hidden'}`}>
-          <a href="#" className="block mt-4 md:inline-block md:mt-0 text-white hover:text-gray-400 mr-4">
-            Home
-          </a>
-          <a href="#" className="block mt-4 md:inline-block md:mt-0 text-white hover:text-gray-400 mr-4">
-            About
-          </a>
-          <a href="#" className="bg-[rgb(18,8,8)] block mt-4 md:inline-block md:mt-0 text-white hover:text-gray-400">
-            Contact
-          </a>
-        </div>
+    <div className='fixed top-0 left-0 w-full bg-[#E6EED6] z-50 p-4 flex flex-row justify-evenly text-[#0A090B]'>
+      <div className='ml-[-5%] w-[12%]'>
+        <Head>
+          <link rel="icon" href="/public/favicon.ico" />
+        </Head>
       </div>
-    </nav>
+      <div>
+        <ScrollLink
+          to="home"
+          smooth={true}
+          style={{ cursor: 'pointer' }}
+        >
+          <GlitchTextNoMargin displayText={'HOME'} uniqueKey={'H'}/>
+        </ScrollLink>
+      </div>
+      <div>
+        <ScrollLink
+          to="aboutus"
+          smooth={true}
+          style={{ cursor: 'pointer' }}
+        >
+          <GlitchTextNoMargin displayText={'ABOUT US'} uniqueKey={'A'}/>
+        </ScrollLink>
+      </div>
+      <div>
+        <ScrollLink
+          to="portfolio"
+          smooth={true}
+          style={{ cursor: 'pointer' }}
+        >
+          <GlitchTextNoMargin displayText={'PORTFOLIO'} uniqueKey={'P'}/>
+        </ScrollLink>
+      </div>
+      <div>
+        <ScrollLink
+          to="testimonials"
+          smooth={true}
+          style={{ cursor: 'pointer' }}
+        >
+          <GlitchTextNoMargin displayText={'TESTIMONIALS'} uniqueKey={'T'}/>
+        </ScrollLink>
+      </div>
+      <div>
+        <ScrollLink
+          to="team"
+          smooth={true}
+          style={{ cursor: 'pointer' }}
+        >
+          <GlitchTextNoMargin displayText={'TEAM UP'} uniqueKey={'TU'}/>
+        </ScrollLink>
+      </div>
+      <div>
+       
+          <GlitchTextNoMargin displayText={'SOCIALS'} uniqueKey={'so'}/>
+        
+      </div>
+    </div>
   );
-};
+}
 
 export default Navbar;

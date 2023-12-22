@@ -85,123 +85,108 @@ export default function Sidebar({ menuOpened, updateMenuOpened, delayDuration }:
     <div
       id="sidebar"
       onMouseEnter={handleSidebarMouseEnter}
-      className={`${menuOpened ? 'bg-[#171717] lg:w-[10%] lg:translate-x-0 z-50' : 'bg-[#171717] lg:w-[10%] lg:-translate-x-full'
-        } fixed w-[100%] p-2 mt-0 md:h-16 md:flex md:items-center md:justify-center text-xl lg:min-h-full lg:min-w-[10%] lg:p-0 lg:w-[20%] duration-300 ease-linear`}
+      className={`${
+        menuOpened ? 'lg:w-[10%] lg:translate-x-0' : 'lg:w-[10%] lg:-translate-x-full'
+      } fixed w-[100%] p-2 mt-0 md:h-16 md:flex md:items-center md:justify-center text-xl lg:min-h-full lg:min-w-[10%] lg:p-0 lg:w-[20%] duration-300 ease-linear sm:flex-col sm:translate-x-full sm:w-[100%] sm:h-[100%] sm:p-4 sm:overflow-hidden`}
     >
       <div
-        className={`items-center ${menuOpened ? "lg:block" : "lg:hidden"
-          } flex-col gap-5 lg:flex lg:justify-around lg:w-[100%] lg:flex-col lg:text-xl lg:min-h-full lg:gap-0`}
+        className={`items-center ${menuOpened ? 'lg:block' : 'lg:hidden'} flex-col gap-5 lg:flex lg:justify-around lg:w-[100%] lg:flex-col lg:text-xl lg:min-h-full lg:gap-0`}
       >
-        <div className=" flex flex-col w-full mt-0">
-          <div
-            className="relative bg-transparent pt-3 pb-1 px-5 font-medium uppercase text-white-800 before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0  before:bg-[#ff0000]   before:transition-transform before:duration-500 before:content-[''] hover:text-black before:hover:scale-x-100 mb-1"
-            onMouseEnter={handleTopMouseEnter}
-            onMouseLeave={handleTopMouseLeave}
-          >
-            <button 
+        <Link href="#">
+          <div className="flex items-center w-full mt-0">
+            <button
               onClick={updateMenuOpened}
-              className="relative z-100 top-3 -left-[5.5%] mt-0 hover:scale-110 hover:duration-300 ease-in-out hover:-rotate-3"
+              className="relative z-100 top-3 ml-8 mr-1 hover:scale-110 hover:duration-300 ease-in-out hover:-rotate-3"
             >
-              <Image
-                className="md:w-[2rem] lg:w-[3rem]  ml-8 mr-1"
+              {/* <Image
+                className="md:w-[2rem] lg:w-[3rem]"
                 src="/images/chisquare.png"
                 width={160}
                 height={160}
                 alt="Company Logo"
-                priority
-              />
+                priority /> */}
             </button>
-            <Link
-              href="#"
-              className="w-full md:w-[14.28%] lg:w-full flex justify-center py-4 align-items-center md:justify-center md:gap-2 lg:flex-col duration-300 relative hover:text-black text-[#ff0000] text-outline font-abc"
-            >
-             CHI SQUARE X
-            </Link>
+            <div className="w-full md:w-[14.28%] lg:w-full flex justify-center py-4 align-items-center md:justify-center md:gap-2 lg:flex-col duration-300 relative hover:text-black text-[#ff0000] text-outline font-abc">
+              CHI SQUARE X
+            </div>
           </div>
-        </div>
-
+        </Link>
+      </div>
+    
+         <div className={`relative ${isTopHovered
+        ? delayedTopChange
+          ? "bg-gradient-to-r from-transparent from-5% via-zinc-500 via-50% to-transparent to-95% opacity-0"
+          : "bg-gradient-to-r from-transparent from-5% via-zinc-500 via-50% to-transparent to-95%"
+        : "bg-gradient-to-r from-transparent from-5% via-zinc-500 via-50% to-transparent to-95%"} w-full min-h-[0.2vh] transition-all duration-300`}
+      onMouseEnter={handleTopMouseEnter}
+      onMouseLeave={handleTopMouseLeave}
+    >
+        {/*Line*/}
+      </div><div className=" flex flex-col w-full mt-1 mb-1">
         <div
-          className={`relative ${isTopHovered
-              ? delayedTopChange
-                ? "bg-gradient-to-r from-transparent from-5% via-zinc-500 via-50% to-transparent to-95% opacity-0"
-                : "bg-gradient-to-r from-transparent from-5% via-zinc-500 via-50% to-transparent to-95%"
-              : "bg-gradient-to-r from-transparent from-5% via-zinc-500 via-50% to-transparent to-95%"
-            } w-full min-h-[0.2vh] transition-all duration-300`}
+          className="relative bg-transparent py-2.5 px-5 font-medium uppercase text-white-800 before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0  before:bg-[#ff0000] text-[#ff0000] before:transition-transform before:duration-500 before:content-[''] hover:text-black before:hover:scale-x-100 "
           onMouseEnter={handleTopMouseEnter}
           onMouseLeave={handleTopMouseLeave}
         >
-          {/*Line*/}
+          <Link
+            href="/Home"
+            className="w-full md:w-[14.28%] lg:w-full flex justify-center py-5 align-items-center md:justify-center md:gap-2 lg:flex-col duration-300 relative hover:text-black"
+          >
+            <GlitchText displayText="Home" uniqueKey="home" />
+          </Link>
         </div>
 
-        <div className=" flex flex-col w-full mt-1 mb-1">
-          <div
-            className="relative bg-transparent py-2.5 px-5 font-medium uppercase text-white-800 before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0  before:bg-[#ff0000] text-[#ff0000] before:transition-transform before:duration-500 before:content-[''] hover:text-black before:hover:scale-x-100 "
-            onMouseEnter={handleTopMouseEnter}
-            onMouseLeave={handleTopMouseLeave}
+        <div className="relative  bg-transparent py-2.5 px-5 font-medium uppercase text-white-800 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 text-[#ff0000]  before:bg-[#ff0000]  before:transition-transform before:duration-500 before:content-[''] hover:text-black before:hover:scale-x-100">
+          <Link
+            href="/Aboutus"
+            className="w-full md:w-[14.28%] lg:w-full flex justify-center py-5 align-items-center md:justify-center md:gap-2 lg:flex-col  duration-300 relative"
           >
-            <Link
-              href="/Home"
-              className="w-full md:w-[14.28%] lg:w-full flex justify-center py-5 align-items-center md:justify-center md:gap-2 lg:flex-col duration-300 relative hover:text-black"
-            >
-              <GlitchText displayText="Home" uniqueKey="home"/>
-            </Link>
-          </div>
+            <GlitchText displayText="About Us" uniqueKey="aboutus" />
+          </Link>
+        </div>
 
-          <div className="relative  bg-transparent py-2.5 px-5 font-medium uppercase text-white-800 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 text-[#ff0000]  before:bg-[#ff0000]  before:transition-transform before:duration-500 before:content-[''] hover:text-black before:hover:scale-x-100">
-            <Link
-              href="/Aboutus"
-              className="w-full md:w-[14.28%] lg:w-full flex justify-center py-5 align-items-center md:justify-center md:gap-2 lg:flex-col  duration-300 relative"
-            >
-              <GlitchText displayText="About Us" uniqueKey="aboutus"/>
-            </Link>
-          </div>
-
-          <div className="relative   bg-transparent py-2.5 px-5 font-medium uppercase text-white-800 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 text-[#ff0000]  before:bg-[#ff0000]   before:transition-transform before:duration-500 before:content-[''] hover:text-black before:hover:scale-x-100">
-            <Link
-              href="/testimonials"
-              className="w-full md:w-[14.28%] lg:w-full flex justify-center py-5 align-items-center md:justify-center md:gap-2 lg:flex-col  duration-300 relative"
-            >
-              <GlitchText displayText="Testimonials" uniqueKey="testimonials"/>
-            </Link>
-          </div>
-
-          <div className="relative  bg-transparent py-2.5 px-5 font-medium uppercase text-white-800 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 text-[#ff0000]  before:bg-[#ff0000] before:transition-transform before:duration-500 before:content-[''] hover:text-black before:hover:scale-x-100">
-            <Link
-              href="/portfolio"
-              className="w-full md:w-[14.28%] lg:w-full flex justify-center py-5 align-items-center md:justify-center md:gap-2 lg:flex-col  duration-300 relative"
-            >
-                <GlitchText displayText="Portfolio" uniqueKey="portfolio"/>
-            </Link>
-          </div>
-
-          <div
-            className="relative bg-transparent py-2.5 px-5 font-medium uppercase text-white-800 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 text-[#ff0000]   before:bg-[#ff0000]  before:transition-transform before:duration-500 before:content-[''] hover:text-black before:hover:scale-x-100"
-            onMouseEnter={handleBottomMouseEnter}
-            onMouseLeave={handleBottomMouseLeave}
+        <div className="relative   bg-transparent py-2.5 px-5 font-medium uppercase text-white-800 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 text-[#ff0000]  before:bg-[#ff0000]   before:transition-transform before:duration-500 before:content-[''] hover:text-black before:hover:scale-x-100">
+          <Link
+            href="/testimonials"
+            className="w-full md:w-[14.28%] lg:w-full flex justify-center py-5 align-items-center md:justify-center md:gap-2 lg:flex-col  duration-300 relative"
           >
-            <Link
-              href="/teamup"
-              className="w-full md:w-[14.28%] lg:w-full flex justify-center py-5 align-items-center md:justify-center md:gap-2 lg:flex-col  duration-300 relative"
-            >
-              <GlitchText displayText="Team Up" uniqueKey="teamup"/>
-            </Link>
-          </div>
+            <GlitchText displayText="Testimonials" uniqueKey="testimonials" />
+          </Link>
+        </div>
+
+        <div className="relative  bg-transparent py-2.5 px-5 font-medium uppercase text-white-800 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 text-[#ff0000]  before:bg-[#ff0000] before:transition-transform before:duration-500 before:content-[''] hover:text-black before:hover:scale-x-100">
+          <Link
+            href="/portfolio"
+            className="w-full md:w-[14.28%] lg:w-full flex justify-center py-5 align-items-center md:justify-center md:gap-2 lg:flex-col  duration-300 relative"
+          >
+            <GlitchText displayText="Portfolio" uniqueKey="portfolio" />
+          </Link>
         </div>
 
         <div
-          className={`relative ${isBottomHovered
-              ? delayedBottomChange
-                ? "bg-gradient-to-r from-transparent from-5% via-zinc-500 via-50% to-transparent to-95% opacity-0"
-                : "bg-gradient-to-r from-transparent from-5% via-zinc-500 via-50% to-transparent to-95%"
-              : "bg-gradient-to-r from-transparent from-5% via-zinc-500 via-50% to-transparent to-95%"
-            } w-full min-h-[0.2vh] transition-all duration-300`}
+          className="relative bg-transparent py-2.5 px-5 font-medium uppercase text-white-800 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 text-[#ff0000]   before:bg-[#ff0000]  before:transition-transform before:duration-500 before:content-[''] hover:text-black before:hover:scale-x-100"
           onMouseEnter={handleBottomMouseEnter}
           onMouseLeave={handleBottomMouseLeave}
         >
-          {/*Line*/}
+          <Link
+            href="/teamup"
+            className="w-full md:w-[14.28%] lg:w-full flex justify-center py-5 align-items-center md:justify-center md:gap-2 lg:flex-col  duration-300 relative">
+            <GlitchText displayText="Team Up" uniqueKey="teamup" />
+          </Link>
         </div>
+      </div>
+      <div className={`relative ${isBottomHovered
+          ? delayedBottomChange
+            ? "bg-gradient-to-r from-transparent from-5% via-zinc-500 via-50% to-transparent to-95% opacity-0"
+            : "bg-gradient-to-r from-transparent from-5% via-zinc-500 via-50% to-transparent to-95%"
+          : "bg-gradient-to-r from-transparent from-5% via-zinc-500 via-50% to-transparent to-95%"} w-full min-h-[0.2vh] transition-all duration-300`}
+        onMouseEnter={handleBottomMouseEnter}
+        onMouseLeave={handleBottomMouseLeave}
+      >
+        {/*Line*/}
+      </div>
 
-        {/* Socials */}
+       
 
         <div className="relative  bg-transparent py-2.5 px-5 font-medium uppercase text-white-800 transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0  before:bg-[#ffffff]  before:transition-transform before:duration-500 before:content-[''] hover:text-black before:hover:scale-x-100 flex justify-around w-full h-full mt-1 mb-5 
         "
@@ -258,7 +243,8 @@ export default function Sidebar({ menuOpened, updateMenuOpened, delayDuration }:
             </a>
           </div>
         </div>
-      </div>
-    </div>
+        </div>
+      
+    
   );
 }

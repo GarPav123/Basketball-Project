@@ -1,9 +1,5 @@
-
-  // components/TestimonialCarousel.tsx
-import React from 'react';
-import { useState, useEffect } from 'react';
-
-// Import your image placeholder component
+// components/TestimonialCarousel.tsx
+import React, { useState, useEffect } from 'react';
 
 interface Testimonial {
   id: number;
@@ -11,17 +7,17 @@ interface Testimonial {
   author: string;
   image: string;
 }
-const testimonials: Testimonial[] = [
+
+const TestimonialCarousel: React.FC = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const testimonials: Testimonial[] = [
     { id: 1, content: 'Testimonial 1 content', author: 'Author 1', image: 'image1.jpg' },
     { id: 2, content: 'Testimonial 2 content', author: 'Author 2', image: 'image2.jpg' },
     { id: 3, content: 'Testimonial 3 content', author: 'Author 3', image: 'image3.jpg' },
     { id: 4, content: 'Testimonial 4 content', author: 'Author 4', image: 'image4.jpg' },
     { id: 5, content: 'Testimonial 5 content', author: 'Author 5', image: 'image5.jpg' },
   ];
-
-
-const TestimonialCarousel: React.FC = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
@@ -41,22 +37,25 @@ const TestimonialCarousel: React.FC = () => {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [currentIndex]);
+  }, [currentIndex, nextSlide]);
+
+  // Define an array of colors
+  const testimonialColors = ["bg-blue-100", "bg-green-100", "bg-yellow-100", "bg-pink-100", "bg-purple-100"];
 
   return (
-    <div className="carousel relative overflow-hidden mt-8 flex flex-col">
+    <div className="carousel relative overflow-hidden mt-10 flex flex-col mx-auto max-w-screen-md bg-transparent">
       <div
         className="slides flex items-center mb-[5%]"
         style={{
-          width: `${(testimonials.length + 1) * 100}%`,
-          transform: `translateX(-${currentIndex * (100 / (testimonials.length + 1))}%)`,
+          width: `${(testimonials.length + 1) * 200}%`, // Change the width to 200%
+          transform: `translateX(-${currentIndex * (100 / (testimonials.length + 1))}%)`, // Adjust transform accordingly
           transition: 'transform 0.5s ease-in-out',
         }}
       >
-        {testimonials.map((testimonial) => (
-          <div key={testimonial.id} className="slide w-[20%]">
-            <div className="testimonial-card bg-gray-100 p-6 rounded-lg shadow-md mx-2 h-[400px] flex flex-row">
-              <div className="testimonial-image mb-4 text-[#000000] w-[50%]">
+        {testimonials.map((testimonial, index) => (
+          <div key={testimonial.id} className={`slide w-[50%] ${testimonialColors[index]}`}>
+            <div className="testimonial-card p-6 rounded-lg shadow-md mx-2 h-[400px] flex flex-row items-center">
+              <div className="testimonial-image mr-4 text-[#000000] w-[30%]">
                 hi {/* Replace with your image component and use testimonial.image */}
               </div>
               <div className="testimonial-content">
@@ -67,9 +66,9 @@ const TestimonialCarousel: React.FC = () => {
           </div>
         ))}
         {/* Duplicate the first testimonial to create a loop effect */}
-        <div key={testimonials.length + 1} className="slide w-[20%]">
-          <div className="testimonial-card bg-gray-100 p-6 rounded-lg shadow-md mx-2 h-[500px]">
-            <div className="testimonial-image mb-4 text-[#000000]">
+        <div key={testimonials.length + 1} className={`slide w-[50%] ${testimonialColors[0]}`}>
+          <div className="testimonial-card p-6 rounded-lg shadow-md mx-2 h-[500px] flex flex-row items-center">
+            <div className="testimonial-image mr-4 text-[#000000] w-[30%]">
               hi {/* Replace with your image component and use testimonials[0].image */}
             </div>
             <div className="testimonial-content">
