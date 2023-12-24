@@ -69,7 +69,7 @@ const TestimonialCarousel: React.FC = () => {
         <div key={testimonials.length + 1} className={`slide w-[50%] ${testimonialColors[0]}`}>
           <div className="testimonial-card p-6 rounded-lg shadow-md mx-2 h-[500px] flex flex-row items-center">
             <div className="testimonial-image mr-4 text-[#000000] w-[30%]">
-              hi {/* Replace with your image component and use testimonials[0].image */}
+              
             </div>
             <div className="testimonial-content">
               <p className="text-gray-700">{testimonials[0].content}</p>
@@ -79,7 +79,7 @@ const TestimonialCarousel: React.FC = () => {
         </div>
       </div>
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 mt-[5]">
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-row gap-10 mt-[1%]">
           <button className="prev bg-gray-300 px-5 py-1 text-[#000000]" onClick={prevSlide}>
             &#9664; Previous
           </button>
