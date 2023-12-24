@@ -117,135 +117,94 @@ export default function Home() {
   }, []);
 
   return (
-    <main id="home" className="flex flex-col min-h-screen items-center justify-center relative">
-      <div  className="bg-image"></div>
+    <main
+      id="home"
+      className="flex flex-col min-h-screen items-center justify-center relative"
+    >
+      <div className="bg-image"></div>
       <Head>
         <link rel="icon" href="/public/favicon.ico" />
       </Head>
 
-        <Navbar/>
-      {/* <div className="absolute inset-y-0 left-0 w-16">
-        <Sidebar
-          menuOpened={menuOpened}
-          updateMenuOpened={updateMenuOpened}
-          delayDuration={2000}
-        />
-      </div> */}
-      <div className="font-abc text-center text-6xl  text-outline">
-        {menuOpened ? (
-          <div className=" mt-[1%] text-5xl h-screen flex flex-col">
-            <div className="font-abc2 mt-[5%] text-[#000000]">CHI SQUAREX</div>
-            <div className="font-abc2 mt-[5%] mb-[5%] text-[#000000]">TECHNOLOGIES</div>
+      <Navbar />
 
-            <div className="h-[20%] text-4xl text-[#100404]">
-              {" "}
-              Bridging the Future - Uniting AI Research with
-              Corporate Innovation
+      <div className="text-outline">
+        {
+          <div className="mt-[1%] text-5xl h-screen flex flex-col font-abc">
+            <div className=" mt-[7%] ml-[25%] text-[#000000] flex flex-row text-6xl">
+              <div className="px-[2%] mt-[1%]">ChiSquareX</div>
+              <div className="mt-[1%]"> Technologies</div>
             </div>
-            <div className="h-[12%] flex justify-center">
-              <a
-                href="team"
-                className="flex justify-center items-center  bg-[#ff0000] text-[#100404]  font-thin px-3 py-3 text-3xl text-outlinew"
-              >
-                Team Up
-              </a>
+
+            <div className="mt-[5%]  text-3xl text-[#100404]   ml-[47%]">
+            Bridging the Future - Uniting AI Research with Corporate
+              Innovation
             </div>
           </div>
-        ) : (
-          <div className=" mt-[1%] text-1xl h-screen flex flex-col">
-            <div className="font-abc2 mt-[10%] text-[#000000]">CHI SQUAREX</div>
-            <div className="font-abc2 mt-[5%] mb-[5%] text-[#000000]">TECHNOLOGIES</div>
-
-            <div className="h-[20%] text-4xl text-[#100404]">
-              
-              Bridging the Future - Uniting AI Research with
-              Corporate Innovation
-            </div>
-            <div className="h-[12%] flex justify-center">
-              <a
-                href="team"
-                className="flex justify-center items-center  bg-[#ff0000] text-[#100404]  font-thin px-3 py-3 text-3xl text-outlinew"
-              >
-                Team Up
-              </a>
-            </div>
-          </div>
-        )}
-
-        {/* <button
-          onClick={updateMenuOpened}
-          className={`absolute z-100 top-0 -left-1 mt-5 hover:scale-110 hover:duration-300 ease-in-out hover:-rotate-3`}
-        >
-          <Image
-            className="md:w-[2rem] lg:w-[3rem] ml-8 mr-1"
-            src="/images/chisquare.png"
-            width={160}
-            height={160}
-            alt="Company Logo"
-            priority
-          />
-        </button> */}
+        }
       </div>
       <div id="aboutus" className="">
-      <div  className="bg-[#5E2BFF] mt-[-1.5%] ">
-        <div className="font-abc text-6xl flex justify-center mt-[5%] pt-[5%] text-[#ffffff] ">
-          ABOUT US
-        </div>
+        <div className="bg-[#5E2BFF] mt-[-1.5%] ">
+          <div className="font-abc text-5xl flex justify-center mt-[5%] pt-[5%] text-[#ffffff] ">
+            About Us
+          </div>
 
-        <div className="flex flex-col flex-grow justify-start  text-6xl text-[#000000]">
-          <div className="py-[2%] px-[1%] font-abc"></div>
-          <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh] "></div>
-          <div className="flex flex-around justify-evenly py-[2%] px-[2%] space-x-4 flex-grow  scrollbar-none">
-            <div className="relative text-ellipsis bg-slate-300/10 p-[2%] flex-grow w-[50%] h-[50vh] text-xl text-justify text-[#ffffff] overflow-y-auto scrollbar-none font-medium font-sans font-family-arial">
-              <p>
-                Chi SquareX Technologies is a leading DeepTech startup in India,
-                specializing in providing cutting-edge research assistance
-                solutions in the domains of Machine Learning, AI, Deep Learning,
-                Computer Vision, and Natural Language Processing. Our services
-                cater to a wide range of clients, including individual
-                researchers, small-scale startups, and established corporations
-                seeking professional assistance with their research projects. We
-                take pride in our ability to consistently deliver high-quality
-                research assistance, with a proven track record of completing
-                250+ research projects and satisfying over 100 happy clients.Our
-                team of highly skilled developers comprises graduates from the
-                top IITs, NITs, and other prestigious institutions, who bring to
-                the table a wealth of knowledge and experience.{" "}
-              </p>
-              <br></br>
-              <p>
-                {" "}
-                At Chi SquareX Technologies, we are passionate about pushing the
-                boundaries of research in AI and related fields. Our commitment
-                to innovation is reflected in the multiple publications we have
-                authored and the independent research we have conducted. We
-                believe that innovation is key to addressing critical challenges
-                in various sectors, and our solutions are designed to have a
-                meaningful impact on society. Our services are aimed at
-                providing customized and cost-effective research assistance
-                solutions to our clients. We work closely with our clients to
-                understand their unique needs and requirements, and then tailor
-                our solutions to match their specific research goals. Our
-                services include data analysis, model development, algorithm
-                design, and optimization, among others. We take pride in our
-                ability to provide personalized research assistance solutions
-                that are efficient, effective, and impactful. Our goal is to
-                help our clients achieve their research objectives and drive
-                meaningful innovation in their respective fields. To learn more
-                about our services, please visit our official website. Chi
-                SquareX Technologies.
-              </p>
-            </div>
-            <div className="w-[50%]">
-              <VideoPlayer />
+          <div className="flex flex-col flex-grow justify-start  text-6xl text-[#000000]">
+            <div className="py-[2%] px-[1%] font-abc"></div>
+            <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh] "></div>
+            <div className="flex flex-around justify-evenly py-[2%] px-[2%] space-x-4 flex-grow  scrollbar-none">
+              <div className="relative text-ellipsis bg-slate-300/10 p-[2%] flex-grow w-[50%] h-[50vh] text-xl text-justify text-[#ffffff] overflow-y-auto scrollbar-none font-medium font-sans font-family-arial">
+                <p>
+                  Chi SquareX Technologies is a leading DeepTech startup in
+                  India, specializing in providing cutting-edge research
+                  assistance solutions in the domains of Machine Learning, AI,
+                  Deep Learning, Computer Vision, and Natural Language
+                  Processing. Our services cater to a wide range of clients,
+                  including individual researchers, small-scale startups, and
+                  established corporations seeking professional assistance with
+                  their research projects. We take pride in our ability to
+                  consistently deliver high-quality research assistance, with a
+                  proven track record of completing 250+ research projects and
+                  satisfying over 100 happy clients.Our team of highly skilled
+                  developers comprises graduates from the top IITs, NITs, and
+                  other prestigious institutions, who bring to the table a
+                  wealth of knowledge and experience.{" "}
+                </p>
+                <br></br>
+                <p>
+                  {" "}
+                  At Chi SquareX Technologies, we are passionate about pushing
+                  the boundaries of research in AI and related fields. Our
+                  commitment to innovation is reflected in the multiple
+                  publications we have authored and the independent research we
+                  have conducted. We believe that innovation is key to
+                  addressing critical challenges in various sectors, and our
+                  solutions are designed to have a meaningful impact on society.
+                  Our services are aimed at providing customized and
+                  cost-effective research assistance solutions to our clients.
+                  We work closely with our clients to understand their unique
+                  needs and requirements, and then tailor our solutions to match
+                  their specific research goals. Our services include data
+                  analysis, model development, algorithm design, and
+                  optimization, among others. We take pride in our ability to
+                  provide personalized research assistance solutions that are
+                  efficient, effective, and impactful. Our goal is to help our
+                  clients achieve their research objectives and drive meaningful
+                  innovation in their respective fields. To learn more about our
+                  services, please visit our official website. Chi SquareX
+                  Technologies.
+                </p>
+              </div>
+              <div className="w-[50%]">
+                <VideoPlayer />
+              </div>
             </div>
           </div>
-          </div>
-          <div id="portfolio" className=""></div>
+          <div id="services" className=""></div>
           <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden"></div>
           <div className="flex flex-col mt-[6%]">
             <div className="flex justify-center font-abc text-5xl">
-              SERVICES WE PROVIDE
+              Services We Provide
             </div>
           </div>
           <div className="flex flex-col mt-[5%] h-[80%] w-[100%] mb-[3%]">
@@ -284,22 +243,29 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden mt-[1%] mb-[5%]"></div>
-          <CountsSection title={"OUR ACHIEVEMENTS"} counters={counters} />
-          <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden mt-[5%]"></div>
+          <div
+            id="our"
+            className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden mt-[1%] mb-[10%]"
+          ></div>
 
-          <div className="w-full min-h-full  bg-[#bea7e5] flex flex-col">
+          <CountsSection title={"Our Achievements"} counters={counters} />
+          <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden mt-[6%]"></div>
+
+          <div
+            id="projects"
+            className="w-full min-h-full  bg-[#bea7e5] flex flex-col"
+          >
             <div className="flex flex-col flex-grow">
               <div className="font-open ml-[3%] flex flex-col items-center justify-center text-5xl text-[#100404] mt-[5%] bg-[#bea7e5] mb-[5%] ">
-                <div className="text-5xl mt-[-1%] mb-[2%] font-abc bg-[#bea7e5]">
+                <div className="text-5xl mt-[2%] mb-[2%] font-abc bg-[#bea7e5]">
                   {" "}
-                  PROJECTS
+                  Projects
                 </div>
 
                 <div className="flex space-x-4 mt-4 ">
                   <button
                     onClick={() => handleProjectFilter("all")}
-                    className={` bg-[#bea7e5] project-filter-button ${
+                    className={` bg-[#bea7e5] font-abc project-filter-button ${
                       selectedProject === "all" ? "active" : ""
                     }`}
                   >
@@ -399,37 +365,46 @@ export default function Home() {
                           />
                         </div>
                       ))}
-                      </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        
-                       
-        <div id="testimonials" className="flex flex-col flex-grow w-full" style={{ background: 'linear-gradient(to bottom right, #bea7e5 0%, #bea7e5 50%, #5e2bff 50%, #5e2bff 100%)' }}>
-  <div></div>
-  <div className="flex flex-col overflow-hidden">
-    <div className="font-abc text-6xl justify-center flex text-[#000000] mb-[0%] mt-[4%]">
-      TESTIMONIALS
-    </div>
-    <TestimonialCarousel />
-  </div>
-</div>
+      </div>
 
-        
-        <div id="team" className="flex flex-col min-h-full w-full bg-[#ffffff] mt-[0%]">
+      <div
+        id="testimonials"
+        className="flex flex-col flex-grow w-full"
+        style={{
+          background:
+            "linear-gradient(to bottom right, #bea7e5 0%, #bea7e5 50%, #5e2bff 50%, #5e2bff 100%)",
+        }}
+      >
+        <div></div>
+        <div className="flex flex-col overflow-hidden">
+          <div className="font-abc text-6xl justify-center flex text-[#000000] mb-[0%] mt-[6%]">
+            Testimonials
+          </div>
+          <TestimonialCarousel />
+        </div>
+      </div>
+
+      <div
+        id="team"
+        className="flex flex-col min-h-full w-full bg-[#ffffff] mt-[0%]"
+      >
         <div className="font-abc flex justify-center text-4xl mt-[2%] text-[#000000]  ">
           TEAM UP
         </div>
         <div className="flex flex-row">
-          <div className="w-[50%] m-[2%] border-2 border-black h-[50%]"></div>
-          <div id ="map" className="w-[50%] m-[2%] border-2 border-black h-[50%]"></div>
+          <div className="w-[50%] m-[2%] border-2 border-black h-screen"></div>
+          <div
+            id="map"
+            className="w-[50%] m-[2%] border-2 border-black h-screen"
+          ></div>
         </div>
-        
-        </div>
-      
+      </div>
     </main>
   );
 }

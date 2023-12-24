@@ -16,17 +16,15 @@ const config: Config = {
       },
       
     },
-    fontFamily :{
-      abc:["Dela Gothic One","cursive"],
+    fontFamily: {
+      abc: ['Dela Gothic One', 'cursive'],
       sans: ['ui-sans-serif', 'system-ui'],
       serif: ['ui-serif', 'Georgia'],
       mono: ['ui-monospace', 'SFMono-Regular'],
       comfortaa: ['Comfortaa', 'sans'],
-      abc2 :['Dela Gothic One', 'sans'],
-      open :[ 'Comfortaa', 'sans-serif'],
-      open1:[ 'Dela Gothic One', 'sans-serif'],
-      
-      
+      abc2: ['Comfortaa', 'sans-serif'],
+      open: ['Lato', 'sans-serif'], // Use 'Lato' for the 'open' font family
+      open1: ['Dela Gothic One', 'sans-serif'],
     },
   },
   plugins: [],

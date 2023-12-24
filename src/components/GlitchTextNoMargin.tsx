@@ -59,7 +59,7 @@ function GlitchTextNoMargin({ displayText, uniqueKey }: GlitchTextProps) {
 
   return (
     <div>
-      <h1 id={uniqueKey} data-value={displayText} className='font-abc'>
+      <h1 id={uniqueKey} data-value={displayText} className='font-eclipse'>
         {displayText}
       </h1>
     </div>
