@@ -12,7 +12,7 @@
   background-position: center center;
 }
 
-.bg-image::before {
+/* .bg-image::before {
   content: "";
   position: fixed;
   top: 0;
@@ -21,7 +21,7 @@
   height: 100%;
   z-index: -1;
   background: rgba(128, 128, 128, 0.5); /* Adjust the opacity value as needed */
-}
+/* } */ */
 
 .bg-cto
 {

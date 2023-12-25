@@ -10,12 +10,12 @@ import Link from "next/link";
 import Sidebar from "@/components/sidebar";
 import IconBox from "./components/IconBox";
 import VideoPlayer from "@/components/VideoPlayer";
-import CountsSection from "./components/CountsSection";
 import ProjectCard, { Project } from "@/components/ProjectCard";
 import TestimonialCarousel from "./components/TestimonialCarousel";
 import MapG from "@/components/MapG";
 import Navbar from "./components/Navbar";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
+import Counters from "./components/Counters";
 
 export default function Home() {
   const [showBrain, setShowBrain] = useState<boolean>(false);
@@ -85,12 +85,19 @@ export default function Home() {
   const updateMenuOpened = () => {
     setMenuOpened(!menuOpened);
   };
-  const counters = [
-    { value: 200, label: "Happy Clients" },
-    { value: 300, label: "Projects" },
-    { value: 5000, label: "Hours Of Support" },
-    { value: 45, label: "Hard Workers" },
+  // const counters = [
+  //   { value: 200, label: "Happy Clients" },
+  //   { value: 300, label: "Projects" },
+  //   { value: 5000, label: "Hours Of Support" },
+  //   { value: 45, label: "Hard Workers" },
+  // ];
+  const countersData = [
+    { value: 200, label: 'Happy Clients' },
+    { value: 300, label: 'Projects' },
+    { value: 5000, label: 'Hours of Support' },
+    { value: 45, label: 'Hard Workers' },
   ];
+  
 
   const [selectedProject, setSelectedProject] = useState<number | "all" | null>(
     null
@@ -244,11 +251,11 @@ export default function Home() {
             </div>
           </div>
           <div
-            id="our"
-            className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden mt-[1%] mb-[10%]"
+            id="achievements"
+            className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden mt-[1%] mb-[7%]"
           ></div>
-
-          <CountsSection title={"Our Achievements"} counters={counters} />
+            <div className="mt-[1%] flex justify-center mb-[3%] text-5xl font-abc mt">Our Achievements</div>
+            <Counters counters={countersData} />
           <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden mt-[6%]"></div>
 
           <div

@@ -1,34 +1,22 @@
-import React, { useState } from 'react';
-import Image from 'next/image';
+// IconBox component
 
-type IconBoxProps = {
+import React from "react";
+import Image from "next/image";
+
+interface IconBoxProps {
   imageUrl: string;
-  text: string;
   heading: string;
-};
+  text: string;
+}
 
-const IconBox: React.FC<IconBoxProps> = ({ imageUrl, text, heading }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
+const IconBox: React.FC<IconBoxProps> = ({ imageUrl, heading, text }) => {
   return (
-    <div
-      className="relative border-[#ffffff] p-20 border-4 overflow-hidden"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <div className={`absolute inset-0 flex flex-col items-center justify-center text-center transition-opacity duration-300 ease-in-out ${isHovered ? 'opacity-100' : 'opacity-0'} pointer-events-none bg-opacity-75 bg-black`}>
-        <div className="font-medium font-sans font-family-arial text-xl mb-[3%] text-[#f1eeee]">
-          {heading}
-          <div className="font-medium font-sans font-family-arial text-sm mt-[3%] text-[#f1eeee]">{text}</div>
-        </div>
+    <div className="icon-box transform transition-transform hover:scale-110 px-[3%] overflow-hidden">
+      <div className="flex flex-col items-center">
+        <Image src={imageUrl} alt={heading} width={160} height={160} />
+        <h3 className="text-3xl font-bold mb-2 mt-[3%] px-2">{heading}</h3>
+        <p className="text-lg px-4 py-4">{text}</p>
       </div>
-      <Image
-        className={`transition-opacity duration-300 ease-in-out ${isHovered ? 'opacity-0' : 'opacity-100'}`}
-        src={imageUrl}
-        alt=""
-        width={250}
-        height={250}
-      />
     </div>
   );
 };

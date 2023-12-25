@@ -60,7 +60,7 @@ function Navbar() {
         {isPortfolioOpen && (
            <div
            id="dropdown"
-           className="absolute top-full right-0 z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-[#E6EED6] border-2 border-black"
+           className="absolute top-full right-0 z-10 bg-white divide-y divide-gray-100  shadow w-44 dark:bg-[#E6EED6] border-2 border-black"
            style={{ left: "-100%" }} 
          >
             <ul
@@ -80,7 +80,7 @@ function Navbar() {
               </li>
               <li>
                 <ScrollLink
-                  to="our"
+                  to="achievements"
                   smooth={true}
                   style={{ cursor: "pointer" }}
                   className="block px-4 py-2 hover:bg-[#E6EED6] dark:hover:bg-[#b6c795] dark:hover:text-black"
