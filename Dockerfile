@@ -1,11 +1,11 @@
 FROM node:21-alpine  
 
-WORKDIR /app
+WORKDIR /
 
-COPY package*.json ./
+COPY package*.json /
+COPY . .
 RUN npm install  # Install dependencies
 
-COPY . .
 
 EXPOSE 3000  
 
