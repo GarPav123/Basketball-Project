@@ -13,7 +13,7 @@ import VideoPlayer from "@/components/VideoPlayer";
 import ProjectCard, { Project } from "@/components/ProjectCard";
 import TestimonialCarousel from "./components/TestimonialCarousel";
 import MapG from "@/components/MapG";
-import Navbar from "./components/Navbar";
+// import Navbar from "./components/Navbar";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import Counters from "./components/Counters";
 
@@ -133,7 +133,7 @@ export default function Home() {
         <link rel="icon" href="/public/favicon.ico" />
       </Head>
 
-      <Navbar />
+      {/* <Navbar /> */}
 
       <div className="text-outline">
         {
