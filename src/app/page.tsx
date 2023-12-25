@@ -16,6 +16,7 @@ import MapG from "@/components/MapG";
 // import Navbar from "./components/Navbar";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import Counters from "./components/Counters";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   const [showBrain, setShowBrain] = useState<boolean>(false);
@@ -133,7 +134,7 @@ export default function Home() {
         <link rel="icon" href="/public/favicon.ico" />
       </Head>
 
-      {/* <Navbar /> */}
+       <Navbar /> 
 
       <div className="text-outline">
         {
