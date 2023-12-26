@@ -1,6 +1,7 @@
 // components/TestimonialCarousel.tsx
 import React, { useState, useEffect } from 'react';
 
+
 interface Testimonial {
   id: number;
   content: string;
@@ -54,8 +55,8 @@ const TestimonialCarousel: React.FC = () => {
       >
         {testimonials.map((testimonial, index) => (
           <div key={testimonial.id} className={`slide w-[50%] ${testimonialColors[index]}`}>
-            <div className="testimonial-card p-6 rounded-lg shadow-md mx-2 h-[400px] flex flex-row items-center">
-              <div className="testimonial-image mr-4 text-[#000000] w-[30%]">
+            <div className="testimonial-card p-6 rounded-lg shadow-md bg-acrylic h-[400px] flex flex-row items-center">
+              <div className="testimonial-image mr-10 text-[#000000] w-[30%]">
                 hi {/* Replace with your image component and use testimonial.image */}
               </div>
               <div className="testimonial-content">
@@ -67,7 +68,7 @@ const TestimonialCarousel: React.FC = () => {
         ))}
         {/* Duplicate the first testimonial to create a loop effect */}
         <div key={testimonials.length + 1} className={`slide w-[50%] ${testimonialColors[0]}`}>
-          <div className="testimonial-card p-6 rounded-lg shadow-md mx-2 h-[500px] flex flex-row items-center">
+          <div className="testimonial-card p-6 rounded-lg shadow-md mx-2 h-[470px] flex flex-row items-center">
             <div className="testimonial-image mr-4 text-[#000000] w-[30%]">
               
             </div>
@@ -78,8 +79,8 @@ const TestimonialCarousel: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 mt-[5]">
-        <div className="flex flex-row gap-10 mt-[1%]">
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 ">
+        <div className="flex flex-row gap-10 ">
           <button className="prev bg-gray-300 px-5 py-1 text-[#000000]" onClick={prevSlide}>
             &#9664; Previous
           </button>

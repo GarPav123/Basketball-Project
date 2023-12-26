@@ -103,7 +103,7 @@ body {
 .project-filter-button:hover {
   padding: 10px 16px;
   font-size: 18px;
-  background-color: #8a61d1;
+  background-color: #E6EED6;
   border: 3px solid #000000;
   border-radius: 8px;
   cursor: pointer;
@@ -137,6 +137,12 @@ a {
 .hover{
   background-color: #bea7e5;
 }
+/* styles.css or your Tailwind CSS file */
+.bg-acrylic {
+  background: rgba(255, 255, 255, 0.8); /* Adjust the alpha value for transparency */
+  backdrop-filter: blur(2px); /* Adjust the blur value for the acrylic effect */
+}
+
 
 
 

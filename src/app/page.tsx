@@ -267,7 +267,7 @@ export default function Home() {
             className="w-full min-h-full  bg-[#A1CCA5] flex flex-col"
           >
             <div className="flex flex-col flex-grow">
-              <div className="font-open ml-[3%] flex flex-col items-center justify-center text-5xl text-[#100404] mt-[5%] bg-[#A1CCA5] mb-[5%] ">
+              <div className="font-open ml-[3%] flex flex-col items-center justify-center text-5xl text-[#100404] mt-[3.5%] bg-[#A1CCA5] mb-[5%] ">
                 <div className="text-5xl mt-[2%] mb-[2%] font-abc bg-[#A1CCA5]">
                   {" "}
                   Projects
@@ -324,7 +324,7 @@ export default function Home() {
                     DEEP LEARNING
                   </button>
                 </div>
-                <div className="border-t-red-600 rounded-xl mt-4">
+                <div className="border-t-red-600 rounded-xl mt-3">
                   <div className="flex flex-wrap ">
                     {projects
                       .filter((project) => {
@@ -367,7 +367,7 @@ export default function Home() {
                       .map((project) => (
                         <div
                           key={project.projectNumber}
-                          className="w-[30%] m-[1%] p-[2%] border-4 border-[#100404] rounded-lg hover:-translate-y-0.5 hover:scale-105"
+                          className="w-[30%] h-3/4 m-[1%] p-[1%] border-4 border-[#100404] rounded-lg hover:-translate-y-0.5 hover:scale-105"
                         >
                           <ProjectCard
                             projectNumber={project.projectNumber}
@@ -403,7 +403,7 @@ export default function Home() {
 
       <div
         id="team"
-        className="flex flex-col min-h-full w-full bg-[#36dceb] mt-[0%]"
+        className="flex flex-col min-h-full w-full bg-[#36dceb] mt-[0%] bg-acrylic"
       >
         <div  className="font-abc flex justify-center text-4xl mt-[6%] text-[#000000]  ">
           TEAM UP
