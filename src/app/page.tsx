@@ -17,13 +17,16 @@ import MapG from "@/components/MapG";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import Counters from "./components/Counters";
 import Navbar from "@/components/Navbar";
+import dynamic from "next/dynamic";
+import ContactForm from "./components/ContactForm";
+
 
 export default function Home() {
   const [showBrain, setShowBrain] = useState<boolean>(false);
-
+  const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '';
   const [menuOpened, setMenuOpened] = useState(false);
 
-  // Define your project data
+ const MapG = dynamic(() => import("../components/MapG"), {ssr:false});
   const projects: Project[] = [
     {
       projectNumber: 1,
@@ -409,11 +412,11 @@ export default function Home() {
           TEAM UP
         </div>
         <div className="flex flex-row">
-          <div className="w-[50%] m-[2%] h-[500px] border-2 border-black "></div>
+          <div className="w-[50%] m-[2%] h-[537px] border-2 border-black "><ContactForm/></div>
           <div
             id="map"
-            className="w-[50%] m-[2%] border-2 border-black h-[500px]"
-          ></div>
+            className="w-[50%] m-[2%] border-2 border-black h-[390px] "
+          ><MapG apiKey={googleMapsApiKey}/></div>
         </div>
       </div>
       <div id="socials" className="bg-[black] h-[300px] w-full"></div>
