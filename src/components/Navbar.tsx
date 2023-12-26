@@ -18,7 +18,7 @@ function Navbar() {
 
   return (
     <div className="fixed top-0 left-0 w-full bg-[#E6EED6] z-50 p-4 flex flex-row place-items-center text-[#0A090B] justify-evenly">
-      <div className="ml-[-5%] w-[12%]">
+      <div className="ml-[-5%] w-[12%] ">
         <div className="mt-[0px]">
           <ScrollLink to="home" smooth={true} style={{ cursor: "pointer" }}>
             <Image
@@ -121,7 +121,9 @@ function Navbar() {
       </div>
 
       <div className="font-sans font-medium text-xl hover:border-b-2 border-black">
+      <ScrollLink to="socials" smooth={true} style={{ cursor: "pointer" }}>
         Socials
+        </ScrollLink>
       </div>
     </div>
   );

@@ -40,8 +40,8 @@ const Counter: React.FC<CounterProps> = ({ value, label }) => {
     <div className="col-lg-3 col-6 text-center">
       <CountUp start={0} end={countingStarted ? value : 0} duration={2} delay={0.5} redraw={true}>
         {({ countUpRef }) => (
-          <div className="flex flex-col items-center">
-            <span ref={countUpRef} className="text-5xl text-[#ffffff] font-sans font-medium mb-[3%]" />
+          <div className="flex flex-col items-center text-white">
+            <span ref={countUpRef} className="text-5xl text-white font-sans font-medium mb-[3%]" />
             <p>{label}</p>
           </div>
         )}

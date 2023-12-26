@@ -14,7 +14,7 @@ export interface Project {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ projectNumber, heading, text }) => {
   return (
-    <div className={` bg-[#bea7e5] project-card project-${projectNumber} text-2xl font-sans mb-4 bg-[#bea7e5]`}>
+    <div className={` bg-[#A1CCA5] project-card project-${projectNumber} text-2xl font-sans mb-4 bg-[#A1CCA5]`}>
       
       <p>{text}</p>
     </div>

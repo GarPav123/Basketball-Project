@@ -139,8 +139,8 @@ export default function Home() {
       <div className="text-outline">
         {
           <div className="mt-[1%] text-5xl h-screen flex flex-col font-abc">
-            <div className=" mt-[7%] ml-[25%] text-[#000000] flex flex-row text-6xl">
-              <div className="px-[2%] mt-[1%]">ChiSquareX</div>
+            <div className=" mt-[7%] ml-[25%] text-[#000000] flex flex-row text-6xl ">
+              <div className="px-[2%] mt-[1%] ">ChiSquareX</div>
               <div className="mt-[1%]"> Technologies</div>
             </div>
 
@@ -160,7 +160,7 @@ export default function Home() {
           <div className="flex flex-col flex-grow justify-start  text-6xl text-[#000000]">
             <div className="py-[2%] px-[1%] font-abc"></div>
             <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh] "></div>
-            <div className="flex flex-around justify-evenly py-[2%] px-[2%] space-x-4 flex-grow  scrollbar-none">
+            <div className="flex flex-around justify-evenly py-[5%] px-[2%] space-x-4 flex-grow  scrollbar-none">
               <div className="relative text-ellipsis bg-slate-300/10 p-[2%] flex-grow w-[50%] h-[50vh] text-xl text-justify text-[#ffffff] overflow-y-auto scrollbar-none font-medium font-sans font-family-arial">
                 <p>
                   Chi SquareX Technologies is a leading DeepTech startup in
@@ -208,14 +208,14 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div id="services" className=""></div>
+          <div id="services" className="bg-[#D2CCA1] text-black">
           <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden"></div>
           <div className="flex flex-col mt-[6%]">
             <div className="flex justify-center font-abc text-5xl">
               Services We Provide
             </div>
           </div>
-          <div className="flex flex-col mt-[5%] h-[80%] w-[100%] mb-[3%]">
+          <div className="flex flex-col mt-[5%] h-[80%] w-[100%] ">
             <div className="grid grid-flow-col justify-evenly mb-[5%] ">
               <IconBox
                 imageUrl="/images/desktop.png"
@@ -251,21 +251,24 @@ export default function Home() {
               />
             </div>
           </div>
+          </div>
+          <div className="bg-[#D2CCA1] p-[1%]"></div>
+          <div className="bg-black">
           <div
             id="achievements"
-            className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden mt-[1%] mb-[7%]"
+            className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden mt-[0%] mb-[7%]"
           ></div>
-            <div className="mt-[1%] flex justify-center mb-[3%] text-5xl font-abc mt">Our Achievements</div>
+            <div className="mt-[1%] flex justify-center mb-[3%] text-5xl font-abc mt text-white ">Our Achievements</div>
             <Counters counters={countersData} />
           <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden mt-[6%]"></div>
-
+          </div>
           <div
             id="projects"
-            className="w-full min-h-full  bg-[#bea7e5] flex flex-col"
+            className="w-full min-h-full  bg-[#A1CCA5] flex flex-col"
           >
             <div className="flex flex-col flex-grow">
-              <div className="font-open ml-[3%] flex flex-col items-center justify-center text-5xl text-[#100404] mt-[5%] bg-[#bea7e5] mb-[5%] ">
-                <div className="text-5xl mt-[2%] mb-[2%] font-abc bg-[#bea7e5]">
+              <div className="font-open ml-[3%] flex flex-col items-center justify-center text-5xl text-[#100404] mt-[5%] bg-[#A1CCA5] mb-[5%] ">
+                <div className="text-5xl mt-[2%] mb-[2%] font-abc bg-[#A1CCA5]">
                   {" "}
                   Projects
                 </div>
@@ -273,7 +276,7 @@ export default function Home() {
                 <div className="flex space-x-4 mt-4 ">
                   <button
                     onClick={() => handleProjectFilter("all")}
-                    className={` bg-[#bea7e5] font-abc project-filter-button ${
+                    className={` bg-[#] font-abc project-filter-button ${
                       selectedProject === "all" ? "active" : ""
                     }`}
                   >
@@ -400,19 +403,20 @@ export default function Home() {
 
       <div
         id="team"
-        className="flex flex-col min-h-full w-full bg-[#ffffff] mt-[0%]"
+        className="flex flex-col min-h-full w-full bg-[#36dceb] mt-[0%]"
       >
-        <div className="font-abc flex justify-center text-4xl mt-[2%] text-[#000000]  ">
+        <div  className="font-abc flex justify-center text-4xl mt-[6%] text-[#000000]  ">
           TEAM UP
         </div>
         <div className="flex flex-row">
-          <div className="w-[50%] m-[2%] border-2 border-black h-screen"></div>
+          <div className="w-[50%] m-[2%] h-[500px] border-2 border-black "></div>
           <div
             id="map"
-            className="w-[50%] m-[2%] border-2 border-black h-screen"
+            className="w-[50%] m-[2%] border-2 border-black h-[500px]"
           ></div>
         </div>
       </div>
+      <div id="socials" className="bg-[black] h-[300px] w-full"></div>
     </main>
   );
 }
