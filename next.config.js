@@ -7,7 +7,7 @@ module.exports = {
       return [
         {
           source: '/api/:path*',
-          destination: '/src/app/api/pages/api/:path*', // Adjust the path accordingly
+          destination: '/src/app/api/:path*', // Adjust the path accordingly
         },
       ];
     },

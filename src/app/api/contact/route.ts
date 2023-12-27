@@ -1,6 +1,12 @@
+'use server'
+require('dotenv').config();
+
 import { NextApiRequest, NextApiResponse } from 'next';
+import { NextResponse } from 'next/server'
+
 import nodemailer from 'nodemailer';
 import { env } from 'process';
+import ContactForm from '@/app/components/ContactForm';
 
 interface ContactFormData {
   name: string;
@@ -9,9 +15,10 @@ interface ContactFormData {
   message: string;
 }
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse<any>) {
+export  async function POST(req: NextApiRequest, res: NextApiResponse<any>) {
   if (req.method !== 'POST') {
-    return res.status(405).json({ message: 'Method not allowed' });
+    // return res.status(405).json({ message: 'Method not allowed' });
+    return NextResponse.json({status: 405, message: 'Method not allowed' });
   }
 
   const { name, email, subject, message }: ContactFormData = req.body;
@@ -20,14 +27,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: env.EMAIL_ADDRESS,
-        pass: env.EMAIL_APP_PASSWORD,
+        user: 'acsx2310@gmail.com',
+        pass: 'raix zxmj vvzs kamh',
       },
     });
 
     const mailOptions = {
-      from: env.EMAIL_ADDRESS,
-      to: env.EMAIL_ADDRESS, // Send to yourself
+      from: 'acsx2310@gmail.com',
+      to: 'acsx2310@gmail.com', // Send to yourself
       subject: `New Contact Form Message: ${subject}`,
       html: `
         <p>Name: ${name}</p>
@@ -39,9 +46,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 
     await transporter.sendMail(mailOptions);
 
-    res.status(200).json({ message: 'Email sent successfully!' });
+    return NextResponse.json({status: 200, message: 'Email sent successfully!' });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Failed to send email' });
+    return NextResponse.json({status: 200, message: 'Failed to send email' });
   }
 }
