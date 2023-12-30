@@ -1,5 +1,6 @@
+// src/app/api/contact/route.ts
+
 import { NextApiRequest, NextApiResponse } from 'next';
-import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
 interface ContactFormData {
@@ -11,7 +12,8 @@ interface ContactFormData {
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<any>) {
   if (req.method !== 'POST') {
-    return NextResponse.json({ status: 405, message: 'Method not allowed' });
+    res.status(405).json({ message: 'Method not allowed' });
+    return;
   }
 
   const { name, email, subject, message }: ContactFormData = req.body;
@@ -39,9 +41,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 
     await transporter.sendMail(mailOptions);
 
-    return NextResponse.json({ status: 200, message: 'Email sent successfully!' });
+    res.status(200).json({ message: 'Email sent successfully!' });
   } catch (error) {
     console.error(error);
-    return NextResponse.json({ status: 200, message: 'Failed to send email' });
+    res.status(500).json({ message: 'Failed to send email' });
   }
 }
