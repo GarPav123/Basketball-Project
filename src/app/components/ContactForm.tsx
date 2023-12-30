@@ -19,8 +19,7 @@ const ContactForm = () => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
-  
-  
+
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
