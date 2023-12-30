@@ -18,7 +18,7 @@ import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import Counters from "./components/Counters";
 import Navbar from "@/components/Navbar";
 import dynamic from "next/dynamic";
-import ContactForm from "./components/ContactForm";
+// import ContactForm from "./components/ContactForm";
 
 export default function Home() {
   const [showBrain, setShowBrain] = useState<boolean>(false);
@@ -413,7 +413,7 @@ export default function Home() {
         </div>
         <div className="flex flex-row">
           <div className="w-[50%] m-[2%] h-[500px] border-2 border-black ">
-            <ContactForm />
+            {/* <ContactForm /> */}
           </div>
           <div
             id="map"
