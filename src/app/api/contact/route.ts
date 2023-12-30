@@ -10,7 +10,7 @@ interface ContactFormData {
   message: string;
 }
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse<any>) {
+const handler = async (req: NextApiRequest, res: NextApiResponse<any>) => {
   if (req.method !== 'POST') {
     res.status(405).json({ message: 'Method not allowed' });
     return;
@@ -46,4 +46,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     console.error(error);
     res.status(500).json({ message: 'Failed to send email' });
   }
-}
+};
+
+export default handler;
