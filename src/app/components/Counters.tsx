@@ -54,9 +54,11 @@ interface CountersProps {
   counters: CounterProps[];
 }
 
+// ... (your other imports)
+
 const Counters: React.FC<CountersProps> = ({ counters }) => {
   return (
-    <div className="row counters flex flex-row justify-evenly">
+    <div className="pl-[20%] pb-[7%] lg:pl-0 lg:pb-2 counters lg:flex lg:flex-row lg:justify-evenly flex flex-col items-center">
       {counters.map((counter, index) => (
         <Counter key={index} {...counter} />
       ))}

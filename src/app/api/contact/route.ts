@@ -1,5 +1,5 @@
 'use server'
-require('dotenv').config();
+
 
 import { NextApiRequest, NextApiResponse } from 'next';
 import { NextResponse } from 'next/server'
@@ -35,7 +35,7 @@ export  async function POST(req: NextApiRequest, res: NextApiResponse<any>) {
     const mailOptions = {
       from: 'acsx2310@gmail.com',
       to: 'acsx2310@gmail.com', // Send to yourself
-      subject: `New Contact Form Message: ${subject}`,
+      subject: subject ? `New Contact Form Message: ${subject}` : 'New Contact Form Message',
       html: `
         <p>Name: ${name}</p>
         <p>Email: ${email}</p>
@@ -49,6 +49,6 @@ export  async function POST(req: NextApiRequest, res: NextApiResponse<any>) {
     return NextResponse.json({status: 200, message: 'Email sent successfully!' });
   } catch (error) {
     console.error(error);
-    return NextResponse.json({status: 200, message: 'Failed to send email' });
+    return NextResponse.json({ status: 500, message: 'Failed to send email' });
   }
 }

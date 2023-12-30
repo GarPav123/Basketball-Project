@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import { useState } from "react";
 import Image from "next/image";
@@ -115,14 +116,19 @@ function Navbar() {
       </div>
 
       <div className="font-sans font-medium text-xl hover:border-b-2 border-black">
-        <ScrollLink to="team" smooth={true} style={{ cursor: "pointer" }}>
-          Team Up
+        <ScrollLink to="contact" smooth={true} style={{ cursor: "pointer" }}>
+          Contact Us
+        </ScrollLink>
+      </div>
+      <div className="font-sans font-medium text-xl hover:border-b-2 border-black">
+        <ScrollLink to="faq" smooth={true} style={{ cursor: "pointer" }}>
+          FAQ's
         </ScrollLink>
       </div>
 
       <div className="font-sans font-medium text-xl hover:border-b-2 border-black">
-      <ScrollLink to="socials" smooth={true} style={{ cursor: "pointer" }}>
-        Socials
+      <ScrollLink to="team" smooth={true} style={{ cursor: "pointer" }}>
+        Team Up
         </ScrollLink>
       </div>
     </div>

@@ -20,13 +20,12 @@ import Navbar from "@/components/Navbar";
 import dynamic from "next/dynamic";
 import ContactForm from "./components/ContactForm";
 
-
 export default function Home() {
   const [showBrain, setShowBrain] = useState<boolean>(false);
-  const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '';
+  const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
   const [menuOpened, setMenuOpened] = useState(false);
 
- const MapG = dynamic(() => import("../components/MapG"), {ssr:false});
+  const MapG = dynamic(() => import("../components/MapG"), { ssr: false });
   const projects: Project[] = [
     {
       projectNumber: 1,
@@ -96,12 +95,11 @@ export default function Home() {
   //   { value: 45, label: "Hard Workers" },
   // ];
   const countersData = [
-    { value: 200, label: 'Happy Clients' },
-    { value: 300, label: 'Projects' },
-    { value: 5000, label: 'Hours of Support' },
-    { value: 45, label: 'Hard Workers' },
+    { value: 200, label: "Happy Clients" },
+    { value: 300, label: "Projects" },
+    { value: 5000, label: "Hours of Support" },
+    { value: 45, label: "Hard Workers" },
   ];
-  
 
   const [selectedProject, setSelectedProject] = useState<number | "all" | null>(
     null
@@ -130,41 +128,41 @@ export default function Home() {
   return (
     <main
       id="home"
-      className="flex flex-col min-h-screen items-center justify-center relative"
+      className="flex flex-col min-h-screen items-center justify-center relative overflow-x-hidden"
     >
       <div className="bg-image"></div>
       <Head>
         <link rel="icon" href="/public/favicon.ico" />
       </Head>
 
-       <Navbar /> 
+      <Navbar />
 
       <div className="text-outline">
         {
-          <div className="mt-[1%] text-5xl h-screen flex flex-col font-abc">
-            <div className=" mt-[7%] ml-[25%] text-[#000000] flex flex-row text-6xl ">
+          <div className="mt-[1%] h-screen flex flex-col font-abc">
+            <div className=" flex justify-center mt-[30%] lg:mt-[7%] md:mt-[10%] lg:ml-[25%] text-[#000000] lg:flex flex-row text-2xl md:text-4xl lg:text-6xl ">
               <div className="px-[2%] mt-[1%] ">ChiSquareX</div>
               <div className="mt-[1%]"> Technologies</div>
             </div>
 
-            <div className="mt-[5%]  text-3xl text-[#100404]   ml-[47%]">
-            Bridging the Future - Uniting AI Research with Corporate
+            <div className="mt-[5%] md:ml-[6%] text-xl text-[#100404] ml-[2%] lg:text-3xl lg:ml-[40%] lg:mt-[4%] flex justify-center">
+              Bridging the Future - Uniting AI Research with Corporate
               Innovation
             </div>
           </div>
         }
       </div>
-      <div id="aboutus" className="">
-        <div className="bg-[#5E2BFF] mt-[-1.5%] ">
-          <div className="font-abc text-5xl flex justify-center mt-[5%] pt-[5%] text-[#ffffff] ">
+      <div id="aboutus" className="w-full">
+        <div className="bg-[#5E2BFF]  mt-[20%] lg:mt-[-1.5%]">
+          <div className="font-abc text-5xl flex justify-center mt-[5%] pt-[5%] text-[#ffffff] lg:mt-[5%] lg:mb-[1%] ">
             About Us
           </div>
 
-          <div className="flex flex-col flex-grow justify-start  text-6xl text-[#000000]">
-            <div className="py-[2%] px-[1%] font-abc"></div>
+          <div className="flex flex-col flex-grow justify-start text-6xl text-[#000000]">
+            <div className="py-[2%] lg:px-[1%] px-0 font-abc"></div>
             <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh] "></div>
-            <div className="flex flex-around justify-evenly py-[5%] px-[2%] space-x-4 flex-grow  scrollbar-none">
-              <div className="relative text-ellipsis bg-slate-300/10 p-[2%] flex-grow w-[50%] h-[50vh] text-xl text-justify text-[#ffffff] overflow-y-auto scrollbar-none font-medium font-sans font-family-arial">
+            <div className="flex flex-col lg:flex-row justify-evenly py-[5%] lg:py-[2%] px-[2%] space-x-4 flex-grow  scrollbar-none">
+              <div className=" w-full h-[50%] relative text-ellipsis bg-slate-300/10 lg:mt-[1%] lg:p-[1%] p-[2%] flex-grow lg:w-[50%] lg:h-[50vh] lg:text-xl lg:ml-[2%] text-sm ml-[0] text-justify text-[#ffffff] overflow-y-auto scrollbar-none font-medium font-sans font-family-arial">
                 <p>
                   Chi SquareX Technologies is a leading DeepTech startup in
                   India, specializing in providing cutting-edge research
@@ -206,72 +204,74 @@ export default function Home() {
                   Technologies.
                 </p>
               </div>
-              <div className="w-[50%]">
+              <div className="lg:w-[50%] lg:mt-[0] w-[90%] mt-[18%]">
                 <VideoPlayer />
               </div>
             </div>
           </div>
           <div id="services" className="bg-[#D2CCA1] text-black">
-          <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden"></div>
-          <div className="flex flex-col mt-[6%]">
-            <div className="flex justify-center font-abc text-5xl">
-              Services We Provide
+            <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden"></div>
+            <div className="flex flex-col mt-[6%]">
+              <div className="flex font-abc lg:text-5xl lg:mt-[1%] text-2xl mt-[20%] justify-center">
+                Services We Provide
+              </div>
             </div>
-          </div>
-          <div className="flex flex-col mt-[5%] h-[80%] w-[100%] ">
-            <div className="grid grid-flow-col justify-evenly mb-[5%] ">
-              <IconBox
-                imageUrl="/images/desktop.png"
-                text="Our ML/AI blog writing services help businesses establish thought leadership in the field of AI and machine learning. We offer high-quality, informative blog content covering topics such as emerging industry trends, best practices for implementing AI, and the latest technological advancements. Our team of experienced writers and data scientists perform in-depth research and work closely with clients to ensure that each piece of content aligns with their brand and message. Contact us to learn more about how our ML/AI blog writing services can help your business succeed."
-                heading="ML/AI blog writing services"
-              />
-              <IconBox
-                imageUrl="/images/aibrain.png"
-                text="Our Natural Language Processing (NLP) services include sentiment analysis, explanation regeneration, sentence and word tagging, machine translation, and multi-lingual models. We specialize in static word embeddings and language models such as BERT, RoBERTa, and ELECTRA. Our services help businesses better understand and communicate with their customers, improve operational efficiency, and gain a competitive edge."
-                heading="Natural Language Processing"
-              />
-              <IconBox
-                imageUrl="/images/robot.png"
-                text="We provide comprehensive machine learning model implementation services to help businesses leverage the power of AI. Our services cover the entire ML development cycle, including data preparation, model training, optimization, and deployment. We specialize in developing custom ML models tailored to our clients' specific needs, using popular frameworks like TensorFlow and PyTorch. Our team of experienced ML professionals ensures that the models we develop are accurate, efficient, and scalable."
-                heading="Machine Learning Models"
-              />
+            <div className="flex flex-col mt-[5%] h-[80%] w-[100%] ">
+              <div className="flex flex-col lg:flex-row justify-evenly mb-[5%] ">
+                <IconBox
+                  imageUrl="/images/desktop.png"
+                  text="Our ML/AI blog writing services help businesses establish thought leadership in the field of AI and machine learning. We offer high-quality, informative blog content covering topics such as emerging industry trends, best practices for implementing AI, and the latest technological advancements. Our team of experienced writers and data scientists perform in-depth research and work closely with clients to ensure that each piece of content aligns with their brand and message. Contact us to learn more about how our ML/AI blog writing services can help your business succeed."
+                  heading="ML/AI blog writing services"
+                />
+                <IconBox
+                  imageUrl="/images/aibrain.png"
+                  text="Our Natural Language Processing (NLP) services include sentiment analysis, explanation regeneration, sentence and word tagging, machine translation, and multi-lingual models. We specialize in static word embeddings and language models such as BERT, RoBERTa, and ELECTRA. Our services help businesses better understand and communicate with their customers, improve operational efficiency, and gain a competitive edge."
+                  heading="Natural Language Processing"
+                />
+                <IconBox
+                  imageUrl="/images/robot.png"
+                  text="We provide comprehensive machine learning model implementation services to help businesses leverage the power of AI. Our services cover the entire ML development cycle, including data preparation, model training, optimization, and deployment. We specialize in developing custom ML models tailored to our clients' specific needs, using popular frameworks like TensorFlow and PyTorch. Our team of experienced ML professionals ensures that the models we develop are accurate, efficient, and scalable."
+                  heading="Machine Learning Models"
+                />
+              </div>
+              <div className="flex flex-col lg:flex-row justify-evenly">
+                <IconBox
+                  imageUrl="/images/application.png"
+                  text="Our computer vision models can be deployed using three methods, depending on the client's requirements. The first option is on-premises deployment, which involves installing and operating the model directly on the client's hardware or servers. This approach provides greater control and security over the model and data, but may require additional resources and technical expertise. The second option is cloud deployment, using services such as AWS, Azure, or Google Cloud. This method provides greater scalability, flexibility, and accessibility for the model and data, and eliminates the need for on-premises infrastructure. However, it may require ongoing maintenance and subscription costs."
+                  heading="Deployement services"
+                />
+                <IconBox
+                  imageUrl="/images/machine-learning.png"
+                  text="We provide comprehensive computer vision services using PyTorch, TensorFlow, and OpenCV. Our services include image classification, image captioning, and video classification models. We ensure accuracy and efficiency by performing feature engineering and data preprocessing techniques like data augmentation, feature extraction, and normalization. Our computer vision services help businesses better understand and analyze visual data for informed decision-making."
+                  heading="Computer Vision Models"
+                />
+                <IconBox
+                  imageUrl="/images/classification.png"
+                  text="At Chi SquareX Technologies, we provide ML consultancy services to help businesses navigate the complex field of machine learning and artificial intelligence. Our team of experienced data scientists and machine learning experts works closely with clients to understand their unique challenges and goals and provide customized solutions to meet their needs. Our ML consultancy services cover a wide range of topics, including data analysis and management, algorithm selection and development, model training and optimization, and deployment and monitoring. We also offer guidance on best practices for implementing machine learning in various industries, such as finance, healthcare, and manufacturing."
+                  heading="ML Consultancy services"
+                />
+              </div>
             </div>
-            <div className="grid grid-flow-col justify-evenly">
-              <IconBox
-                imageUrl="/images/application.png"
-                text="Our computer vision models can be deployed using three methods, depending on the client's requirements. The first option is on-premises deployment, which involves installing and operating the model directly on the client's hardware or servers. This approach provides greater control and security over the model and data, but may require additional resources and technical expertise. The second option is cloud deployment, using services such as AWS, Azure, or Google Cloud. This method provides greater scalability, flexibility, and accessibility for the model and data, and eliminates the need for on-premises infrastructure. However, it may require ongoing maintenance and subscription costs."
-                heading="Deployement services"
-              />
-              <IconBox
-                imageUrl="/images/machine-learning.png"
-                text="We provide comprehensive computer vision services using PyTorch, TensorFlow, and OpenCV. Our services include image classification, image captioning, and video classification models. We ensure accuracy and efficiency by performing feature engineering and data preprocessing techniques like data augmentation, feature extraction, and normalization. Our computer vision services help businesses better understand and analyze visual data for informed decision-making."
-                heading="Computer Vision Models"
-              />
-              <IconBox
-                imageUrl="/images/classification.png"
-                text="At Chi SquareX Technologies, we provide ML consultancy services to help businesses navigate the complex field of machine learning and artificial intelligence. Our team of experienced data scientists and machine learning experts works closely with clients to understand their unique challenges and goals and provide customized solutions to meet their needs. Our ML consultancy services cover a wide range of topics, including data analysis and management, algorithm selection and development, model training and optimization, and deployment and monitoring. We also offer guidance on best practices for implementing machine learning in various industries, such as finance, healthcare, and manufacturing."
-                heading="ML Consultancy services"
-              />
-            </div>
-          </div>
           </div>
           <div className="bg-[#D2CCA1] p-[1%]"></div>
           <div className="bg-black">
-          <div
-            id="achievements"
-            className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden mt-[0%] mb-[7%]"
-          ></div>
-            <div className="mt-[1%] flex justify-center mb-[3%] text-5xl font-abc mt text-white ">Our Achievements</div>
+            <div
+              id="achievements"
+              className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden mt-[0%] mb-[7%]"
+            ></div>
+            <div className="lg:mt-[1%]  mt-[15%] flex justify-center lg:ml-0 mb-[3%] ml-[23%] text-3xl lg:text-5xl font-abc mt text-white ">
+              Our Achievements
+            </div>
             <Counters counters={countersData} />
-          <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden mt-[6%]"></div>
+            <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden mt-[6%]"></div>
           </div>
           <div
             id="projects"
-            className="w-full min-h-full  bg-[#A1CCA5] flex flex-col"
+            className="w-full min-h-full  bg-[#A1CCA5] flex lg:flex-col"
           >
             <div className="flex flex-col flex-grow">
-              <div className="font-open ml-[3%] flex flex-col items-center justify-center text-5xl text-[#100404] mt-[3.5%] bg-[#A1CCA5] mb-[5%] ">
-                <div className="text-5xl mt-[2%] mb-[2%] font-abc bg-[#A1CCA5]">
+              <div className="font-open ml-[3%] flex flex-col lg:items-center lg:justify-center text-5xl text-[#100404] mt-[3.5%] bg-[#A1CCA5] mb-[5%] ">
+                <div className="mt-[10%] lg:ml-0 ml-[43%] text-5xl lg:mt-[2%] mb-[2%] font-abc bg-[#A1CCA5]">
                   {" "}
                   Projects
                 </div>
@@ -405,21 +405,25 @@ export default function Home() {
       </div>
 
       <div
-        id="team"
+        id="contact"
         className="flex flex-col min-h-full w-full bg-[#36dceb] mt-[0%] bg-acrylic"
       >
-        <div  className="font-abc flex justify-center text-4xl mt-[6%] text-[#000000]  ">
-          TEAM UP
+        <div className="font-abc flex justify-center text-5xl mt-[6%] text-[#000000]  ">
+          Contact Us
         </div>
         <div className="flex flex-row">
-          <div className="w-[50%] m-[2%] h-[537px] border-2 border-black "><ContactForm/></div>
+          <div className="w-[50%] m-[2%] h-[500px] border-2 border-black ">
+            <ContactForm />
+          </div>
           <div
             id="map"
-            className="w-[50%] m-[2%] border-2 border-black h-[390px] "
-          ><MapG apiKey={googleMapsApiKey}/></div>
+            className="w-[50%] m-[2%] border-2 border-black h-[390px] mt-[90px] "
+          >
+            <MapG apiKey={googleMapsApiKey} />
+          </div>
         </div>
       </div>
-      <div id="socials" className="bg-[black] h-[300px] w-full"></div>
+      <div id="faq" className="h-[400px] w-full"></div>
     </main>
   );
 }
