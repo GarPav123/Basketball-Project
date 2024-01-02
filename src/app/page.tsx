@@ -421,10 +421,10 @@ export default function Home() {
 
       <div
         id="faq"
-        className="h-[470px] w-full bg-white  flex flex-row overflow-scroll overscroll-none"
+        className="h-[470px] w-full bg-white  flex flex-row overflow-y:scroll"
       >
         <div  className="w-[60%] lg:mt-[7%]">
-          <div className="flex justify-left items-center lg:ml-[1%] text-black border-1 border-black lg:text-5xl font-abc">
+          <div className="flex justify-left items-center lg:ml-[1%] text-black border-1 border-black lg:text-3xl font-abc">
             Frequently Asked Questions
           </div>
           <div className="lg:mt-[0%]">
