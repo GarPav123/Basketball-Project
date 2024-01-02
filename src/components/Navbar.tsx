@@ -114,12 +114,6 @@ function Navbar() {
           Testimonials
         </ScrollLink>
       </div>
-
-      <div className="font-sans font-medium text-xl hover:border-b-2 border-black">
-        <ScrollLink to="contact" smooth={true} style={{ cursor: "pointer" }}>
-          Contact Us
-        </ScrollLink>
-      </div>
       <div className="font-sans font-medium text-xl hover:border-b-2 border-black">
         <ScrollLink to="faq" smooth={true} style={{ cursor: "pointer" }}>
           FAQ's
@@ -127,10 +121,13 @@ function Navbar() {
       </div>
 
       <div className="font-sans font-medium text-xl hover:border-b-2 border-black">
-      <ScrollLink to="team" smooth={true} style={{ cursor: "pointer" }}>
-        Team Up
+        <ScrollLink to="contact" smooth={true} style={{ cursor: "pointer" }}>
+          Contact Us
         </ScrollLink>
       </div>
+      
+
+      
     </div>
   );
 }

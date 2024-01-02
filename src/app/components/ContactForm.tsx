@@ -7,7 +7,7 @@ interface ContactFormData {
   message: string;
 }
 
-const ContactForm = () => {
+const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
@@ -32,7 +32,7 @@ const ContactForm = () => {
 
       if (response.ok) {
         alert('Email sent successfully!');
-        setFormData({ name: '', email: '', subject: '', message: '' }); 
+        setFormData({ name: '', email: '', subject: '', message: '' });
       } else {
         alert('Failed to send email. Please try again.');
       }
@@ -43,37 +43,39 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="p-4 bg-slate-300 rounded-lg shadow-md">
-      <div className="mb-4">
-        <label htmlFor="name" className="block text-gray-700 font-bold mb-2">
-          Name
-        </label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          className="text-black w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-500 focus:border-indigo-500"
-        />
+    <form onSubmit={handleSubmit} className="p-4">
+      <div className="grid grid-cols-2 gap-4 mb-4 font-open">
+        <div>
+          <label htmlFor="name" className="text-gray-700 font-bold font-open mb-2 block">
+            Name
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            className="text-black w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-500 focus:border-indigo-500"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="email" className="text-gray-700 font-bold mb-2 block">
+            Email
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            className="text-black w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-500 focus:border-indigo-500"
+          />
+        </div>
       </div>
 
       <div className="mb-4">
-        <label htmlFor="email" className="block text-gray-700 font-bold mb-2">
-          Email
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          className="text-black w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-500 focus:border-indigo-500"
-        />
-      </div>
-
-      <div className="mb-4">
-        <label htmlFor="subject" className="block text-gray-700 font-bold mb-2">
+        <label htmlFor="subject" className="text-gray-700 font-bold mb-2 block">
           Subject
         </label>
         <input
@@ -82,12 +84,12 @@ const ContactForm = () => {
           name="subject"
           value={formData.subject}
           onChange={handleChange}
-          className="text-black w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-500 focus:border-indigo-500"
+          className="text-black w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-500 focus:border-indigo-500"
         />
       </div>
 
       <div className="mb-4">
-        <label htmlFor="message" className="block text-gray-700 font-bold mb-2">
+        <label htmlFor="message" className="text-gray-700 font-bold mb-2 block">
           Message
         </label>
         <textarea
@@ -96,14 +98,14 @@ const ContactForm = () => {
           rows={5}
           value={formData.message}
           onChange={handleChange}
-          className="text-black w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-500 focus:border-indigo-500"
-          style={{ resize: 'none' }} 
+          className="text-black w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-500 focus:border-indigo-500"
+          style={{ resize: 'none' }}
         />
       </div>
 
       <button
         type="submit"
-        className="w-full py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-indigo-500 focus:ring-opacity-75"
+        className="mx-auto block py-2 px-2 bg-indigo-600 text-white hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-indigo-500 focus:ring-opacity-75"
       >
         Send Message
       </button>

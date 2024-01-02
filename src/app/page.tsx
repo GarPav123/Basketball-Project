@@ -18,12 +18,27 @@ import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import Counters from "./components/Counters";
 import Navbar from "@/components/Navbar";
 import dynamic from "next/dynamic";
+import FaqSection from "@/components/FaqSection";
+import ContactForm from "./components/ContactForm";
+
 // import ContactForm from "./components/ContactForm";
 
 export default function Home() {
   const [showBrain, setShowBrain] = useState<boolean>(false);
   const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
   const [menuOpened, setMenuOpened] = useState(false);
+  const faqItems = [
+    { question: "What are our skills and qualifications?"
+    , answer: "All our members are from the Indian Institute of Technology, one of the most premier Engineering Institutes in India so you can expect quality work. We provide services in the domain of Machine Learning, AI, Deep Learning, Natural Language Processing." },
+    {
+      question: "What kind of fees do we charge for our services?",
+      answer: "The fees charged depend on the nature and deadlines of the respective project. We provide free appraisals and estimates of the fees charged on the website, in the pricing section.",
+    },
+    {
+      question: "What kind of projects do we do?",
+      answer: "We work on a variety of sub-domains in AI/ML, including but not limited to Natural Language Processing, Computer Vision, Reinforcement Learning, Generative Models, etc. We work on independent projects as well as research projects. Full details of the projects we have done can be found in the projects section of this website.",
+    },
+  ];
 
   const MapG = dynamic(() => import("../components/MapG"), { ssr: false });
   const projects: Project[] = [
@@ -405,25 +420,49 @@ export default function Home() {
       </div>
 
       <div
+        id="faq"
+        className="h-[470px] w-full bg-white  flex flex-row overflow-scroll overscroll-none"
+      >
+        <div  className="w-[60%] lg:mt-[7%]">
+          <div className="flex justify-left items-center lg:ml-[1%] text-black border-1 border-black lg:text-5xl font-abc">
+            Frequently Asked Questions
+          </div>
+          <div className="lg:mt-[0%]">
+          <FaqSection faqItems={faqItems} />
+          </div>
+        </div>
+        <div className="w-[40%] ">
+          <Image src={"/images/faq.jpg"} alt={"faq"} width={620} height={20}/>
+        </div>
+      </div>
+
+      <div
         id="contact"
-        className="flex flex-col min-h-full w-full bg-[#36dceb] mt-[0%] bg-acrylic"
+        className="flex flex-col min-h-full w-full bg-[#ffffff] mt-[0%] "
       >
         <div className="font-abc flex justify-center text-5xl mt-[6%] text-[#000000]  ">
           Contact Us
         </div>
         <div className="flex flex-row">
-          <div className="w-[50%] m-[2%] h-[500px] border-2 border-black ">
-            {/* <ContactForm /> */}
+          <div className="w-[40%] m-[2%] h-[500px]  flex flex-col text-black p-[2%] ">
+            
+            <Image
+              src={"/images/deet.png"}
+              alt={""}
+              height={400}
+              width={400}
+              quality={100}
+            ></Image>
           </div>
+
           <div
-            id="map"
-            className="w-[50%] m-[2%] border-2 border-black h-[390px] mt-[90px] "
+            
+            className="lg:w-[60%] lg:mr-[2%]  lg:h-[400px] lg:mt-[4%]  "
           >
-            <MapG apiKey={googleMapsApiKey} />
+            <ContactForm/>
           </div>
         </div>
       </div>
-      <div id="faq" className="h-[400px] w-full"></div>
     </main>
   );
 }
