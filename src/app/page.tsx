@@ -444,7 +444,7 @@ export default function Home() {
           Contact Us
         </div>
         <div className="flex flex-row">
-          <div className="w-[40%] m-[2%] h-[500px]  flex flex-col text-black p-[2%] ">
+          <div className="lg:w-[40%] m-[2%] lg:h-[450px]  flex flex-col text-black p-[2%] ">
             
             <Image
               src={"/images/deet.png"}
@@ -462,6 +462,23 @@ export default function Home() {
             <ContactForm/>
           </div>
         </div>
+      </div>
+      <div id="map" className="w-full bg-[#E6EED6] lg:h-[650px] flex justify-center items-center"><MapG apiKey={googleMapsApiKey}/></div>
+      <div id="footer" className="w-full bg-black lg:h-[300px] flex flex-col justify-evenly items-center">
+        <div className="lg:text-5xl font-abc">Chi SquareX</div>
+        <div className="lg:text-md italic">Let us know if you any suggestions via email</div>
+        <div className="flex flex-row lg:w-[20%] lg:h-[40px] justify-center items-center ">
+          <Link href={"https://www.facebook.com/chisquarex/"} className=" w-1/3 flex justify-center">
+            <Image src={"/images/fb.png"} alt={"fb"} width={32} height={32} priority={true} quality={100}/>
+          </Link>
+          <Link href={"https://github.com/Chi-SquareX"} className=" w-1/3 flex justify-center">
+            <Image src={"/images/x.png"} alt={"git"} width={32} height={32} priority={true}/>
+          </Link>
+          <Link href={"https://www.linkedin.com/company/chi-squarex/mycompany/"} className=" w-1/3 flex justify-center">
+            <Image src={"/images/lkdn.png"} alt={"linkedin"} width={32} height={32} priority={true}/>
+          </Link>
+        </div>
+        <div className="lg:text-sm font-open">© Copyright ChiSquareX. All Rights Reserved</div>
       </div>
     </main>
   );

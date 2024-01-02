@@ -38,7 +38,7 @@ const MapG: React.FC<MapGProps> = ({ apiKey }) => {
     };
   }, [apiKey]);
 
-  return <div ref={mapContainerRef} className="w-full h-96" />;
+  return <div ref={mapContainerRef} className="lg:w-[80%] lg:h-[600px]" />;
 };
 
 export default MapG;
