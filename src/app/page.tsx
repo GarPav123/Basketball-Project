@@ -466,7 +466,7 @@ export default function Home() {
       <div id="map" className="w-full bg-[#E6EED6] lg:h-[650px] flex justify-center items-center"><MapG apiKey={googleMapsApiKey}/></div>
       <div id="footer" className="w-full bg-black lg:h-[300px] flex flex-col justify-evenly items-center">
         <div className="lg:text-5xl font-abc">Chi SquareX</div>
-        <div className="lg:text-md italic">Let us know if you any suggestions via email</div>
+        <div className="lg:text-md italic">Let us know if you have any suggestions via email</div>
         <div className="flex flex-row lg:w-[20%] lg:h-[40px] justify-center items-center ">
           <Link href={"https://www.facebook.com/chisquarex/"} className=" w-1/3 flex justify-center">
             <Image src={"/images/fb.png"} alt={"fb"} width={32} height={32} priority={true} quality={100}/>
