@@ -1,5 +1,5 @@
 // components/TestimonialCarousel.tsx
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 
 interface Testimonial {
@@ -13,18 +13,18 @@ const TestimonialCarousel: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const testimonials: Testimonial[] = [
-    { id: 1, content: 'Testimonial 1 content', author: 'Author 1', image: 'image1.jpg' },
-    { id: 2, content: 'Testimonial 2 content', author: 'Author 2', image: 'image2.jpg' },
-    { id: 3, content: 'Testimonial 3 content', author: 'Author 3', image: 'image3.jpg' },
-    { id: 4, content: 'Testimonial 4 content', author: 'Author 4', image: 'image4.jpg' },
-    { id: 5, content: 'Testimonial 5 content', author: 'Author 5', image: 'image5.jpg' },
+    { id: 1, content: 'Success is not an accident, success is actually a choice. ', author: 'Stephen Curry', image: 'image1.jpg' },
+    { id: 2, content: 'I like criticism. It makes you stronger', author: 'Lebron James', image: 'image2.jpg' },
+    { id: 3, content: 'After all, greatness is not for everybody.', author: 'Kobe Bryant', image: 'image3.jpg' },
+    { id: 4, content: 'Some people want it to happen, some wish it would happen, others make it happen.', author: 'Micheal Jordon', image: 'image4.jpg' },
+    { id: 5, content: 'When you are righteous, you do not have to tell people that you are righteous.', author: 'Shaq', image: 'image5.jpg' },
   ];
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentIndex((prevIndex) =>
       prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
     );
-  };
+  });
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) =>
