@@ -28,109 +28,39 @@ export default function Home() {
   const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
   const [menuOpened, setMenuOpened] = useState(false);
   const faqItems = [
-    { question: "What are our skills and qualifications?"
-    , answer: "All our members are from the Indian Institute of Technology, one of the most premier Engineering Institutes in India so you can expect quality work. We provide services in the domain of Machine Learning, AI, Deep Learning, Natural Language Processing." },
+    {
+      question: "What are our skills and qualifications?",
+      answer:
+        "All our members are from the Indian Institute of Technology, one of the most premier Engineering Institutes in India so you can expect quality work. We provide services in the domain of Machine Learning, AI, Deep Learning, Natural Language Processing.",
+    },
     {
       question: "What kind of fees do we charge for our services?",
-      answer: "The fees charged depend on the nature and deadlines of the respective project. We provide free appraisals and estimates of the fees charged on the website, in the pricing section.",
+      answer:
+        "The fees charged depend on the nature and deadlines of the respective project. We provide free appraisals and estimates of the fees charged on the website, in the pricing section.",
     },
     {
       question: "What kind of projects do we do?",
-      answer: "We work on a variety of sub-domains in AI/ML, including but not limited to Natural Language Processing, Computer Vision, Reinforcement Learning, Generative Models, etc. We work on independent projects as well as research projects. Full details of the projects we have done can be found in the projects section of this website.",
+      answer:
+        "We work on a variety of sub-domains in AI/ML, including but not limited to Natural Language Processing, Computer Vision, Reinforcement Learning, Generative Models, etc. We work on independent projects as well as research projects. Full details of the projects we have done can be found in the projects section of this website.",
     },
   ];
 
   const MapG = dynamic(() => import("../components/MapG"), { ssr: false });
-  const projects: Project[] = [
-    {
-      projectNumber: 1,
-      heading: "Project 1",
-      text: "Neural Machine Translation using stacked LSTM with attention.",
-    },
-    {
-      projectNumber: 2,
-      heading: "Project 2",
-      text: "Sentiment Analysis using Roberta, BERT, DistillBERT, XLNET, GPT2 Computer vision.",
-    },
-    {
-      projectNumber: 3,
-      heading: "Project 3",
-      text: "ArchiGANs for automated Floor Plan detection.",
-    },
-    {
-      projectNumber: 4,
-      heading: "Project 4",
-      text: "CycleGANs for Image Denoising.",
-    },
-    {
-      projectNumber: 9,
-      heading: "Project 9",
-      text: "Explainable AI-enabled Predictive maintenance.",
-    },
-    {
-      projectNumber: 5,
-      heading: "Project 5",
-      text: "YOLOv8 Object Detection for Traffic signal with 28 Classes.",
-    },
-    {
-      projectNumber: 6,
-      heading: "Project 6",
-      text: "Pose Detection using Mediapipe and Posenet.",
-    },
-    {
-      projectNumber: 7,
-      heading: "Project 7",
-      text: "Face Detection and Recognition using Unet.",
-    },
-    {
-      projectNumber: 8,
-      heading: "Project 8",
-      text: "Human Image Segmentation using SegNet.",
-    },
-    {
-      projectNumber: 10,
-      heading: "Project 10",
-      text: "Electric Vehicle Route Optimization.",
-    },
-    {
-      projectNumber: 11,
-      heading: "Project 11",
-      text: "Convolutional Neural Networks for Diabetic Retinopathy",
-    },
-    { projectNumber: 12, heading: "Project 12", text: "Deep Learning in IOT." },
-  ];
 
   const updateMenuOpened = () => {
     setMenuOpened(!menuOpened);
   };
-  // const counters = [
-  //   { value: 200, label: "Happy Clients" },
-  //   { value: 300, label: "Projects" },
-  //   { value: 5000, label: "Hours Of Support" },
-  //   { value: 45, label: "Hard Workers" },
-  // ];
+
   const countersData = [
-    { value: 200, label: "Happy Clients" },
-    { value: 300, label: "Projects" },
-    { value: 5000, label: "Hours of Support" },
-    { value: 45, label: "Hard Workers" },
+    { value: 4800, label: "NBA Players overall" },
+    { value: 132126, label: "Total Games Played" },
+    { value: 30, label: "Teams Actively Participating" },
+    { value: 1, label: "GOAT" },
   ];
 
   const [selectedProject, setSelectedProject] = useState<number | "all" | null>(
     null
   );
-
-  const handleProjectFilter = (projectNumber: number | "all" | null) => {
-    if (projectNumber === "all") {
-      // Handle the 'all' case (show all projects)
-      setSelectedProject("all");
-    } else if (typeof projectNumber === "number") {
-      // Handle the numeric case
-      setSelectedProject(projectNumber);
-    } else if (projectNumber === null) {
-      setSelectedProject("all");
-    }
-  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -155,68 +85,57 @@ export default function Home() {
       <div className="text-outline">
         {
           <div className="mt-[1%] h-screen flex flex-col font-abc">
-            <div className=" flex justify-center mt-[30%] lg:mt-[7%] md:mt-[10%] lg:ml-[25%] text-[#000000] lg:flex flex-row text-2xl md:text-4xl lg:text-6xl ">
-              <div className="px-[2%] mt-[1%] ">ChiSquareX</div>
-              <div className="mt-[1%]"> Technologies</div>
+            <div className=" flex justify-center mt-[30%] lg:mt-[7%] md:mt-[10%] lg:ml-[4%] lg:mr-[70%] text-[#ffffff] lg:flex flex-row text-2xl md:text-4xl lg:text-7xl ">
+              <div className="px-[2%] mt-[1%] ">Basketball</div>
             </div>
 
-            <div className="mt-[5%] md:ml-[6%] text-xl text-[#100404] ml-[2%] lg:text-3xl lg:ml-[40%] lg:mt-[4%] flex justify-center">
-              Bridging the Future - Uniting AI Research with Corporate
-              Innovation
+            <div className="mt-[5%]  text-xl text-[#ffffff] ml-[3%] lg:text-3xl lg:mr-[70%]  lg:mt-[4%] flex justify-center">
+              "Basketball isn’t just a sport. It is an art, one that must be
+              mastered to succeed." - SC30
             </div>
           </div>
         }
       </div>
+
       <div id="aboutus" className="w-full">
-        <div className="bg-[#5E2BFF]  mt-[20%] lg:mt-[-1.5%]">
-          <div className="font-abc text-5xl flex justify-center mt-[5%] pt-[5%] text-[#ffffff] lg:mt-[5%] lg:mb-[1%] ">
-            About Us
+        <div
+          className="mt-[20%] lg:mt-[-1.5%]"
+          style={{
+            background:
+              "linear-gradient(to bottom right, #c8102e 0%, white 25%, #17408b 75%)",
+          }}
+        >
+          <div className="font-abc text-5xl flex justify-center mt-[5%] pt-[5%] text-[#000000] lg:mt-[4%] lg:mb-[3%] ">
+            NBA - National Basketball Association
           </div>
 
           <div className="flex flex-col flex-grow justify-start text-6xl text-[#000000]">
             <div className="py-[2%] lg:px-[1%] px-0 font-abc"></div>
             <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh] "></div>
             <div className="flex flex-col lg:flex-row justify-evenly py-[5%] lg:py-[2%] px-[2%] space-x-4 flex-grow  scrollbar-none">
-              <div className=" w-full h-[50%] relative text-ellipsis bg-slate-300/10 lg:mt-[1%] lg:p-[1%] p-[2%] flex-grow lg:w-[50%] lg:h-[50vh] lg:text-xl lg:ml-[2%] text-sm ml-[0] text-justify text-[#ffffff] overflow-y-auto scrollbar-none font-medium font-sans font-family-arial">
+              <div className=" w-full h-[50%] relative text-ellipsis bg-slate-300/10 lg:mt-[1%] lg:p-[1%] p-[2%] flex-grow lg:w-[50%] lg:h-[50vh] lg:text-xl lg:ml-[2%] text-sm ml-[0] text-justify text-[#000000] overflow-y-auto scrollbar-none font-medium font-sans font-family-arial">
                 <p>
-                  Chi SquareX Technologies is a leading DeepTech startup in
-                  India, specializing in providing cutting-edge research
-                  assistance solutions in the domains of Machine Learning, AI,
-                  Deep Learning, Computer Vision, and Natural Language
-                  Processing. Our services cater to a wide range of clients,
-                  including individual researchers, small-scale startups, and
-                  established corporations seeking professional assistance with
-                  their research projects. We take pride in our ability to
-                  consistently deliver high-quality research assistance, with a
-                  proven track record of completing 250+ research projects and
-                  satisfying over 100 happy clients.Our team of highly skilled
-                  developers comprises graduates from the top IITs, NITs, and
-                  other prestigious institutions, who bring to the table a
-                  wealth of knowledge and experience.{" "}
+                  The NBA, short for the National Basketball Association, stands
+                  as one of the premier professional basketball leagues
+                  globally, boasting a rich history and a global fan base.
+                  Established in New York City on June 6, 1946, the NBA has
+                  evolved into a powerhouse of basketball talent, showcasing the
+                  world's best players and captivating audiences with its
+                  high-flying dunks, intense rivalries, and thrilling games.{" "}
                 </p>
                 <br></br>
                 <p>
                   {" "}
-                  At Chi SquareX Technologies, we are passionate about pushing
-                  the boundaries of research in AI and related fields. Our
-                  commitment to innovation is reflected in the multiple
-                  publications we have authored and the independent research we
-                  have conducted. We believe that innovation is key to
-                  addressing critical challenges in various sectors, and our
-                  solutions are designed to have a meaningful impact on society.
-                  Our services are aimed at providing customized and
-                  cost-effective research assistance solutions to our clients.
-                  We work closely with our clients to understand their unique
-                  needs and requirements, and then tailor our solutions to match
-                  their specific research goals. Our services include data
-                  analysis, model development, algorithm design, and
-                  optimization, among others. We take pride in our ability to
-                  provide personalized research assistance solutions that are
-                  efficient, effective, and impactful. Our goal is to help our
-                  clients achieve their research objectives and drive meaningful
-                  innovation in their respective fields. To learn more about our
-                  services, please visit our official website. Chi SquareX
-                  Technologies.
+                  At the heart of the NBA are its teams, currently comprising 30
+                  franchises spread across major cities in the United States and
+                  Canada. Each season, teams compete fiercely for the coveted
+                  Larry O'Brien Championship Trophy, awarded to the winner of
+                  the NBA Finals, the league's pinnacle event. The NBA's
+                  popularity extends far beyond North America, with a
+                  significant international following drawn to the league's
+                  fast-paced gameplay, iconic stars like LeBron James, Stephen
+                  Curry, and Giannis Antetokounmpo, and the cultural impact of
+                  basketball on a global scale.
                 </p>
               </div>
               <div className="lg:w-[50%] lg:mt-[0] w-[90%] mt-[18%]">
@@ -224,198 +143,85 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div id="services" className="bg-[#D2CCA1] text-black">
+          <div
+            id="services"
+            className=" text-black"
+            style={{
+              background:
+                "linear-gradient(to bottom right, #c8102e 0%, white 25%, #17408b 75%)",
+            }}
+          >
             <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden"></div>
-            <div className="flex flex-col mt-[6%]">
-              <div className="flex font-abc lg:text-5xl lg:mt-[1%] text-2xl mt-[20%] justify-center">
-                Services We Provide
+            <div className="flex flex-col mt-[6%] pb-[2%]">
+              <div className="flex font-abc lg:text-5xl lg:mt-[1%] text-2xl mt-[20%] justify-center ">
+                The Essentials of Basketball
               </div>
             </div>
             <div className="flex flex-col mt-[5%] h-[80%] w-[100%] ">
-              <div className="flex flex-col lg:flex-row justify-evenly mb-[5%] ">
+              <div className="flex flex-col lg:flex-row justify-evenly mb-[6%] ">
                 <IconBox
-                  imageUrl="/images/desktop.png"
-                  text="Our ML/AI blog writing services help businesses establish thought leadership in the field of AI and machine learning. We offer high-quality, informative blog content covering topics such as emerging industry trends, best practices for implementing AI, and the latest technological advancements. Our team of experienced writers and data scientists perform in-depth research and work closely with clients to ensure that each piece of content aligns with their brand and message. Contact us to learn more about how our ML/AI blog writing services can help your business succeed."
-                  heading="ML/AI blog writing services"
+                  imageUrl="/images/shooting.png"
+                  text="Shooting is a foundational skill in basketball, indispensable for scoring points and influencing game outcomes. It encompasses a range of techniques and strategies, from mid-range jumpers to long-range three-pointers. Mastering shooting mechanics involves precise hand placement, consistent follow-through, and proper footwork, all essential for accuracy and efficiency on the court.Effective shooters not only contribute significantly to their team's offensive capabilities but also command attention from opposing defenses, opening up opportunities for teammates. The ability to consistently make shots under pressure is a hallmark of elite players, showcasing their dedication to honing this critical skill."
+                  heading="Shooting"
                 />
                 <IconBox
-                  imageUrl="/images/aibrain.png"
-                  text="Our Natural Language Processing (NLP) services include sentiment analysis, explanation regeneration, sentence and word tagging, machine translation, and multi-lingual models. We specialize in static word embeddings and language models such as BERT, RoBERTa, and ELECTRA. Our services help businesses better understand and communicate with their customers, improve operational efficiency, and gain a competitive edge."
-                  heading="Natural Language Processing"
+                  imageUrl="/images/dribble.png"
+                  text="Dribbling is a fundamental skill in basketball that involves controlling and maneuvering the ball with one hand while moving around the court. It's essential for players to navigate through defenders, create scoring opportunities, and maintain possession during offensive plays.Proper dribbling techniques include keeping the ball low to the ground, using fingertips for control, and maintaining a protective stance to shield the ball from defenders. Players often practice various dribbling drills to improve their ball-handling skills, including crossover dribbles, behind-the-back dribbles, and hesitation moves."
+                  heading="Dribbling"
                 />
                 <IconBox
-                  imageUrl="/images/robot.png"
-                  text="We provide comprehensive machine learning model implementation services to help businesses leverage the power of AI. Our services cover the entire ML development cycle, including data preparation, model training, optimization, and deployment. We specialize in developing custom ML models tailored to our clients' specific needs, using popular frameworks like TensorFlow and PyTorch. Our team of experienced ML professionals ensures that the models we develop are accurate, efficient, and scalable."
-                  heading="Machine Learning Models"
+                  imageUrl="/images/layup.png"
+                  text="Layups are fundamental scoring shots in basketball performed close to the basket. They involve a player dribbling the ball towards the hoop, usually using their dominant hand, and then laying the ball off the backboard or directly into the basket with a soft touch.Executing a successful layup requires good footwork, body control, and spatial awareness to evade defenders and position oneself for a high-percentage shot. Players often use various layup techniques, such as the finger roll or reverse layup, to adapt to different defensive scenarios."
+                  heading="Layups"
                 />
               </div>
               <div className="flex flex-col lg:flex-row justify-evenly">
                 <IconBox
-                  imageUrl="/images/application.png"
-                  text="Our computer vision models can be deployed using three methods, depending on the client's requirements. The first option is on-premises deployment, which involves installing and operating the model directly on the client's hardware or servers. This approach provides greater control and security over the model and data, but may require additional resources and technical expertise. The second option is cloud deployment, using services such as AWS, Azure, or Google Cloud. This method provides greater scalability, flexibility, and accessibility for the model and data, and eliminates the need for on-premises infrastructure. However, it may require ongoing maintenance and subscription costs."
-                  heading="Deployement services"
+                  imageUrl="/images/dunk.png"
+                  text="Dunks are one of the most exciting and visually impressive plays in basketball, where a player jumps near the basket and slams the ball through the hoop with one or both hands. They often occur in fast-break situations, after offensive rebounds, or during set plays near the basket. Executing a dunk requires exceptional athleticism, vertical leap, and timing. Players must generate enough upward momentum to clear the rim and finish the dunk with power and style. Dunks can energize teams and fans, swinging momentum and demoralizing opponents."
+                  heading="Dunks"
                 />
                 <IconBox
-                  imageUrl="/images/machine-learning.png"
-                  text="We provide comprehensive computer vision services using PyTorch, TensorFlow, and OpenCV. Our services include image classification, image captioning, and video classification models. We ensure accuracy and efficiency by performing feature engineering and data preprocessing techniques like data augmentation, feature extraction, and normalization. Our computer vision services help businesses better understand and analyze visual data for informed decision-making."
-                  heading="Computer Vision Models"
+                  imageUrl="/images/passing.png"
+                  text="Passing in basketball is a fundamental skill that involves transferring the ball from one player to another with precision and accuracy. It plays a crucial role in team offense, facilitating ball movement, creating scoring opportunities, and exploiting defensive weaknesses.Good passing requires vision, decision-making, and communication among teammates. It's a skill that enhances team chemistry, promotes unselfish play, and contributes to offensive efficiency in basketball."
+                  heading="Passing"
                 />
                 <IconBox
-                  imageUrl="/images/classification.png"
-                  text="At Chi SquareX Technologies, we provide ML consultancy services to help businesses navigate the complex field of machine learning and artificial intelligence. Our team of experienced data scientists and machine learning experts works closely with clients to understand their unique challenges and goals and provide customized solutions to meet their needs. Our ML consultancy services cover a wide range of topics, including data analysis and management, algorithm selection and development, model training and optimization, and deployment and monitoring. We also offer guidance on best practices for implementing machine learning in various industries, such as finance, healthcare, and manufacturing."
-                  heading="ML Consultancy services"
+                  imageUrl="/images/defense.png"
+                  text="Defense in basketball is the backbone of a team's success, encompassing a range of strategies and skills aimed at thwarting the opposing team's scoring efforts. It begins with individual defenders employing techniques like staying low, moving laterally, and using active hands to disrupt passes and shots. Man-to-man defense assigns each player to guard a specific opponent, focusing on containment and forcing difficult shots. Zone defense involves players guarding specific areas, working together to close gaps and contest shots effectively."
+                  heading="Defense"
                 />
               </div>
             </div>
           </div>
-          <div className="bg-[#D2CCA1] p-[1%]"></div>
-          <div className="bg-black">
-            <div
-              id="achievements"
-              className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden mt-[0%] mb-[7%]"
-            ></div>
-            <div className="lg:mt-[1%]  mt-[15%] flex justify-center lg:ml-0 mb-[3%] ml-[23%] text-3xl lg:text-5xl font-abc mt text-white ">
-              Our Achievements
-            </div>
-            <Counters counters={countersData} />
-            <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden mt-[6%]"></div>
-          </div>
-          <div
-            id="projects"
-            className="w-full min-h-full  bg-[#A1CCA5] flex lg:flex-col"
-          >
-            <div className="flex flex-col flex-grow">
-              <div className="font-open ml-[3%] flex flex-col lg:items-center lg:justify-center text-5xl text-[#100404] mt-[3.5%] bg-[#A1CCA5] mb-[5%] ">
-                <div className="mt-[10%] lg:ml-0 ml-[43%] text-5xl lg:mt-[2%] mb-[2%] font-abc bg-[#A1CCA5]">
-                  {" "}
-                  Projects
-                </div>
 
-                <div className="flex space-x-4 mt-4 ">
-                  <button
-                    onClick={() => handleProjectFilter("all")}
-                    className={` bg-[#] font-abc project-filter-button ${
-                      selectedProject === "all" ? "active" : ""
-                    }`}
-                  >
-                    All
-                  </button>
-                  <button
-                    onClick={() => handleProjectFilter(1)}
-                    className={`project-filter-button ${
-                      selectedProject === 1 ? "active" : ""
-                    }`}
-                  >
-                    NATURAL LANGUAGE PROCESSING
-                  </button>
-
-                  <button
-                    onClick={() => handleProjectFilter(3)}
-                    className={`project-filter-button ${
-                      selectedProject === 3 ? "active" : ""
-                    }`}
-                  >
-                    GANs
-                  </button>
-                  <button
-                    onClick={() => handleProjectFilter(5)}
-                    className={`project-filter-button ${
-                      selectedProject === 5 ? "active" : ""
-                    }`}
-                  >
-                    COMPUTER VISION
-                  </button>
-                  <button
-                    onClick={() => handleProjectFilter(9)}
-                    className={`project-filter-button ${
-                      selectedProject === 9 ? "active" : ""
-                    }`}
-                  >
-                    MACHINE LEARNING
-                  </button>
-                  <button
-                    onClick={() => handleProjectFilter(11)}
-                    className={`project-filter-button ${
-                      selectedProject === 11 ? "active" : ""
-                    }`}
-                  >
-                    DEEP LEARNING
-                  </button>
-                </div>
-                <div className="border-t-red-600 rounded-xl mt-3">
-                  <div className="flex flex-wrap ">
-                    {projects
-                      .filter((project) => {
-                        if (selectedProject === "all") {
-                          return true; // Show all projects
-                        } else {
-                          switch (selectedProject) {
-                            case null:
-                              return true;
-                            case 1:
-                              return (
-                                project.projectNumber === 1 ||
-                                project.projectNumber === 2
-                              ); // Show nlp projects when 'null'
-                            case 3:
-                              return (
-                                project.projectNumber === 3 ||
-                                project.projectNumber === 4
-                              ); // Show GANs projects
-                            case 5:
-                              return (
-                                project.projectNumber >= 5 &&
-                                project.projectNumber <= 8
-                              ); // Show COMPUTER VISION projects
-                            case 9:
-                              return (
-                                project.projectNumber === 9 ||
-                                project.projectNumber === 10
-                              ); // Show MACHINE LEARNING projects
-                            case 11:
-                              return (
-                                project.projectNumber === 11 ||
-                                project.projectNumber === 12
-                              ); // Show DEEP LEARNING projects
-                            default:
-                              return false; // For any other case, do not show
-                          }
-                        }
-                      })
-                      .map((project) => (
-                        <div
-                          key={project.projectNumber}
-                          className="w-[30%] h-3/4 m-[1%] p-[1%] border-4 border-[#100404] rounded-lg hover:-translate-y-0.5 hover:scale-105"
-                        >
-                          <ProjectCard
-                            projectNumber={project.projectNumber}
-                            heading={project.heading}
-                            text={project.text}
-                          />
-                        </div>
-                      ))}
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div id="achievements"></div>
+          <div className="lg:mt-[1%] pt-[6%]  mt-[15%] flex justify-center lg:ml-0 mb-[3%] ml-[23%] text-3xl lg:text-5xl font-abc mt text-black ">
+            Statistics of the NBA
           </div>
+          <Counters counters={countersData} />
+          <div className="bg-gradient-to-r from-transparent from-0% via-zinc-500 via-50% to-transparent to-100% min-h-[0.2vh]  overscroll-x-hidden mt-[6%]"></div>
         </div>
       </div>
 
-      <div
-        id="testimonials"
-        className="flex flex-col flex-grow w-full"
-        style={{
-          background:
-            "linear-gradient(to bottom right, #bea7e5 0%, #bea7e5 50%, #5e2bff 50%, #5e2bff 100%)",
-        }}
-      >
+      <div id="goat" className="flex flex-col flex-grow w-full bg-[#fff000]">
         <div></div>
         <div className="flex flex-col overflow-hidden">
           <div className="font-abc text-6xl justify-center flex text-[#000000] mb-[0%] mt-[6%]">
-            Testimonials
+            Who is the G.O.A.T?
           </div>
-          <TestimonialCarousel />
+          <div className="h-[400px] bg-white w-[80%] flex ml-[10%] mt-[5%] mb-[5%] flex-row">
+            <div className="w-[60%] text-black text-xl mt-[3%] ml-[1%]">In my opinion, Stephen Curry is the GOAT in basketball. His incredible shooting abilities have transformed the game, making him a legend in his own right. Watching Curry sink shots from seemingly impossible angles and distances is a spectacle that few players can match. His impact on the game goes beyond statistics; he has inspired a whole generation of players to emulate his style and work ethic. With multiple NBA championships, MVP awards, and records shattered, Curry's legacy is cemented as one of the greatest players to ever grace the court. His skill, leadership, and influence make him my ultimate choice for the GOAT title in basketball.His accolades include 4 championships, 2 season MVPs, 1 Finals MVP and 10 time ALL Star player and a member of the 75th annual team.</div>
+            <div className="ml-[7%] pt-[0.5%] w-[30%] text-black ">
+            <Image
+              src="/images/curry.jpg"
+              alt="4_rings"
+              width={256}
+              height={32}
+              quality={100}
+            />
+            </div>
+          </div>
         </div>
       </div>
 
@@ -423,62 +229,32 @@ export default function Home() {
         id="faq"
         className="h-[470px] w-full bg-white  flex flex-row overflow-y:scroll"
       >
-        <div  className="w-[60%] lg:mt-[7%]">
+        <div className="w-[60%] lg:mt-[7%]">
           <div className="flex justify-left items-center lg:ml-[1%] text-black border-1 border-black lg:text-3xl font-abc">
-            Frequently Asked Questions
+            Jersey Number 22
           </div>
           <div className="lg:mt-[0%]">
-          <FaqSection faqItems={faqItems} />
+            <FaqSection faqItems={faqItems} />
           </div>
         </div>
-        <div className="w-[40%] ">
-          <Image src={"/images/faq.jpg"} alt={"faq"} width={620} height={20}/>
+        <div className="w-[40%] mt-[5%] ">
+          <Image src={"/images/myj.jpg"} alt={"team"} width={620} height={20} />
         </div>
       </div>
 
+      {/* <div id="map" className="w-full bg-[#E6EED6] lg:h-[650px] flex justify-center items-center"><MapG apiKey={googleMapsApiKey}/></div> */}
       <div
-        id="contact"
-        className="flex flex-col min-h-full w-full bg-[#ffffff] mt-[0%] "
+        id="footer"
+        className="w-full bg-black lg:h-[300px] flex flex-col justify-evenly items-center"
       >
-        <div className="font-abc flex justify-center text-5xl mt-[6%] text-[#000000]  ">
-          Contact Us
+        <div className="lg:text-5xl font-abc">Basketball</div>
+        <div className="lg:text-md italic">
+          The best sport to ever be created.
         </div>
-        <div className="flex flex-row">
-          <div className="lg:w-[40%] m-[2%] lg:h-[450px]  flex flex-col text-black p-[2%] ">
-            
-            <Image
-              src={"/images/deet.png"}
-              alt={""}
-              height={400}
-              width={400}
-              quality={100}
-            ></Image>
-          </div>
-
-          <div
-            
-            className="lg:w-[60%] lg:mr-[2%]  lg:h-[400px] lg:mt-[4%]  "
-          >
-            <ContactForm/>
-          </div>
+       
+        <div className="lg:text-sm font-open">
+          © Copyright Garimella Pavan Teja. All Rights Reserved
         </div>
-      </div>
-      <div id="map" className="w-full bg-[#E6EED6] lg:h-[650px] flex justify-center items-center"><MapG apiKey={googleMapsApiKey}/></div>
-      <div id="footer" className="w-full bg-black lg:h-[300px] flex flex-col justify-evenly items-center">
-        <div className="lg:text-5xl font-abc">Chi SquareX</div>
-        <div className="lg:text-md italic">Let us know if you have any suggestions via email</div>
-        <div className="flex flex-row lg:w-[20%] lg:h-[40px] justify-center items-center ">
-          <Link href={"https://www.facebook.com/chisquarex/"} className=" w-1/3 flex justify-center">
-            <Image src={"/images/fb.png"} alt={"fb"} width={32} height={32} priority={true} quality={100}/>
-          </Link>
-          <Link href={"https://github.com/Chi-SquareX"} className=" w-1/3 flex justify-center">
-            <Image src={"/images/x.png"} alt={"git"} width={32} height={32} priority={true}/>
-          </Link>
-          <Link href={"https://www.linkedin.com/company/chi-squarex/mycompany/"} className=" w-1/3 flex justify-center">
-            <Image src={"/images/lkdn.png"} alt={"linkedin"} width={32} height={32} priority={true}/>
-          </Link>
-        </div>
-        <div className="lg:text-sm font-open">© Copyright ChiSquareX. All Rights Reserved</div>
       </div>
     </main>
   );

@@ -23,7 +23,7 @@ function Navbar() {
         <div className="mt-[0px]">
           <ScrollLink to="home" smooth={true} style={{ cursor: "pointer" }}>
             <Image
-              src="/images/logoC.png"
+              src="/images/basketball.png"
               alt="Logo"
               width={48}
               height={48}
@@ -41,7 +41,7 @@ function Navbar() {
 
       <div className="font-sans font-medium text-xl hover:border-b-2 border-black">
         <ScrollLink to="aboutus" smooth={true} style={{ cursor: "pointer" }}>
-          About Us
+          About the N.B.A
         </ScrollLink>
       </div>
 
@@ -55,7 +55,7 @@ function Navbar() {
           className="font-sans font-medium text-xl "
           type="button"
         >
-          Portfolio
+          Overview
         </button>
 
         {isPortfolioOpen && (
@@ -76,7 +76,7 @@ function Navbar() {
                   
                   className="block px-4 py-2 hover:bg-[#c4d79e] dark:hover:bg-[#b6c795] dark:hover:text-black"
                 >
-                  Services
+                  Essentials
                 </ScrollLink>
               </li>
               <li>
@@ -86,19 +86,10 @@ function Navbar() {
                   style={{ cursor: "pointer" }}
                   className="block px-4 py-2 hover:bg-[#E6EED6] dark:hover:bg-[#b6c795] dark:hover:text-black"
                 >
-                  Our Achievements
+                  Statistics
                 </ScrollLink>
               </li>
-              <li>
-                <ScrollLink
-                  to="projects"
-                  smooth={true}
-                  style={{ cursor: "pointer" }}
-                  className="block px-4 py-2 :hover:bg-[#E6EED6] dark:hover:bg-[#b6c795] dark:hover:text-black"
-                >
-                  Projects
-                </ScrollLink>
-              </li>
+             
               
             </ul>
           </div>
@@ -107,22 +98,22 @@ function Navbar() {
 
       <div className="font-sans font-medium text-xl hover:border-b-2 border-black">
         <ScrollLink
-          to="testimonials"
+          to="goat"
           smooth={true}
           style={{ cursor: "pointer" }}
         >
-          Testimonials
+          G.O.A.T
         </ScrollLink>
       </div>
       <div className="font-sans font-medium text-xl hover:border-b-2 border-black">
         <ScrollLink to="faq" smooth={true} style={{ cursor: "pointer" }}>
-          FAQ's
+          My Journey
         </ScrollLink>
       </div>
 
       <div className="font-sans font-medium text-xl hover:border-b-2 border-black">
-        <ScrollLink to="contact" smooth={true} style={{ cursor: "pointer" }}>
-          Contact Us
+        <ScrollLink to="footer" smooth={true} style={{ cursor: "pointer" }}>
+          Footer
         </ScrollLink>
       </div>
       

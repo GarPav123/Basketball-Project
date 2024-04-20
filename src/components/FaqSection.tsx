@@ -17,26 +17,11 @@ const FaqSection: React.FC<FAQSectionProps> = ({ faqItems }) => {
     };
   
     return (
-      <div className="faq-section w-full max-w-3xl flex justify-items-start mt-6 flex-col lg:ml-[2%]">
-        {faqItems.map((item, index) => (
-          <div key={index} className="mb-4">
-            {/* Question Box */}
-            <div
-              className="cursor-pointer bg-white p-4 rounded-md shadow-md transition duration-300 ease-in-out flex justify-between items-start text-black "
-              onClick={() => toggleDropdown(index)}
-            >
-              <div className="text-lg font-semibold">{item.question}</div>
-              <div className="ml-2">{openIndex === index ? '▲' : '▼'}</div>
-            </div>
-  
-            {/* Answer Box */}
-            {openIndex === index && (
-              <div className={` bg-white p-4 rounded-md shadow-md ${index === 2 ? 'overflow-y-scroll max-h-40' : ''}`}>
-                <div className="text-gray-700 lg:text-sm">{item.answer}</div>
-              </div>
-            )}
-          </div>
-        ))}
+      <div className="faq-section w-full max-w-3xl flex justify-items-start mt-6 flex-col lg:ml-[2%] text-black">
+       My journey as a basketball player started four years ago as an enthusiastic Stephen Curry fan. Day in and day out, I have worked on honing my skills as a shooter and playmaker, excelling in the art of shooting the ball. Right now, I am playing as the 6th man for the esteemed VIT University basketball team. Although I'm more suited to play as a shooting guard, my height and wingspan have propelled me to become a small forward and assist my team in winning matches.<br></br>
+       One of the most rewarding aspects of being part of the VIT University basketball team is the camaraderie and support we share. Whether it's celebrating a victory together or lifting each other up during challenging moments, the bond among teammates is what drives us to push our limits and strive for greatness.
+
+As I continue my basketball journey, I aim to further enhance my skills, contribute even more to the team's success, and inspire others to pursue their passion for the game.
       </div>
     );
   };
